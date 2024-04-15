@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3hmsw34dnjxl"
-path="res://.godot/imported/center-bottom.png-2fb3f90969621b12902d22443c5dbc7b.ctex"
+uid="uid://bp1fnxnij0pj6"
+path="res://.godot/imported/contour_carte.png-cf6557d8c1f3d845c61aa6431ed9c6f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/center-bottom.png"
-dest_files=["res://.godot/imported/center-bottom.png-2fb3f90969621b12902d22443c5dbc7b.ctex"]
+source_file="res://resources/cartes_fond_bordure/contour_carte.png"
+dest_files=["res://.godot/imported/contour_carte.png-cf6557d8c1f3d845c61aa6431ed9c6f7.ctex"]
 
 [params]
 

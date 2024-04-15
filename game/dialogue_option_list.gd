@@ -9,13 +9,14 @@ func _ready():
 	for i in range(options.size()):
 		var option = options[i]
 		var op = OPTION.instantiate()
-		op.text = option
+		op.text = option.text
 		op.index = i
 		op.listener = self
+		op.tags = option.tags
 		$MarginContainer/VBoxContainer.add_child(op)
 
 func select_option(option):
-	listener.select_option(option.index)
+	listener.select_option(option)
 	#queue_free()
 	await get_tree().physics_frame
 	visible = false

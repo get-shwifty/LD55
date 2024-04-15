@@ -1,5 +1,6 @@
 extends Node2D
 
+var has_perso = false
 
 func name_to_id(name: String):
 	if name == "hototo":
@@ -16,9 +17,12 @@ func name_to_id(name: String):
 
 func select_perso(perso: String):
 	if perso == "" or perso == "nobody":
-		$AnimatedSprite2D.visible = false
+		if has_perso:
+			$AnimationPlayer.play_backwards("fade_in")
+			has_perso = false
 	else:
-		$AnimatedSprite2D.visible = true
+		has_perso = true
+		$AnimationPlayer.play("fade_in")
 		$AnimatedSprite2D.frame = name_to_id(perso)
 
 # Called when the node enters the scene tree for the first time.

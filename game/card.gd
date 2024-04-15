@@ -14,7 +14,6 @@ var trigger_select = false
 var original: Card = null
 var speed = 4
 
-
 func type_to_index(type: CardType):
 	if type == CardType.c1:
 		return 0
@@ -42,8 +41,8 @@ func type_to_background(type: CardType):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Node2D/Background.frame = type_to_background(card_type)
-	$Node2D/Symbol.frame = type_to_index(card_type)
+	$Node2D/Node2D/Background.frame = type_to_background(card_type)
+	$Node2D/Node2D/Symbol.frame = type_to_index(card_type)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,7 +60,9 @@ func hover():
 	if state != 0:
 		return
 	state = 1
-	modulate = Color(0,1,1,1)
+	$Node2D/Node2D/Background.modulate = Color(0,1,1,1)
+	#$Node2D/Node2D/Symbol.modulate = Color(0,1,1,1)
+	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 99
 	$AnimationPlayer.play("up")
 	
@@ -69,13 +70,17 @@ func stop_hover():
 	if state != 1:
 		return
 	state = 0
-	modulate = Color(1,1,1,1)
+	$Node2D/Node2D/Background.modulate = Color(1,1,1,1)
+	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,1)
+	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 0
 	$AnimationPlayer.play_backwards("up")
 	
 func set_available():
 	state = 0
-	modulate = Color(1,1,1,1)
+	$Node2D/Node2D/Background.modulate = Color(1,1,1,1)
+	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,1)
+	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 0
 	
 func select():
@@ -84,7 +89,9 @@ func select():
 	stop_hover()
 	state = 2
 	trigger_select = true
-	modulate = Color(1,1,1,0.4)
+	$Node2D/Node2D/Background.modulate = Color(2,2,2,1)
+	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,0.4)
+	#$Node2D/Node2D/ContourCarte.visible = true
 	
 func send_back():
 	if not original:

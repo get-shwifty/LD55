@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpjx6agu8yhj1"]
+[gd_scene load_steps=22 format=3 uid="uid://bpjx6agu8yhj1"]
 
 [ext_resource type="Script" path="res://game/card.gd" id="2_5eo2h"]
+[ext_resource type="Script" path="res://game/wobble.gd" id="2_js5td"]
 [ext_resource type="Texture2D" uid="uid://bx0fgs2q40e8y" path="res://resources/cartes_fond_bordure/all_cartes.png" id="2_xgdjl"]
+[ext_resource type="Texture2D" uid="uid://bp1fnxnij0pj6" path="res://resources/cartes_fond_bordure/contour_carte.png" id="3_vihj8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83n8k"]
 atlas = ExtResource("2_xgdjl")
@@ -100,6 +102,21 @@ animations = [{
 resource_local_to_scene = true
 size = Vector2(56, 80)
 
+[sub_resource type="Animation" id="Animation_g6426"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_kprn4"]
 resource_name = "up"
 length = 0.2
@@ -116,21 +133,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(2.08165e-12, -10)]
 }
 
-[sub_resource type="Animation" id="Animation_g6426"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_trowp"]
 _data = {
 "RESET": SubResource("Animation_g6426"),
@@ -142,11 +144,18 @@ script = ExtResource("2_5eo2h")
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="Background" type="AnimatedSprite2D" parent="Node2D"]
+[node name="Node2D" type="Node2D" parent="Node2D"]
+script = ExtResource("2_js5td")
+
+[node name="Background" type="AnimatedSprite2D" parent="Node2D/Node2D"]
 sprite_frames = SubResource("SpriteFrames_2u0k8")
 
-[node name="Symbol" type="AnimatedSprite2D" parent="Node2D"]
+[node name="Symbol" type="AnimatedSprite2D" parent="Node2D/Node2D"]
 sprite_frames = SubResource("SpriteFrames_ar5yy")
+
+[node name="ContourCarte" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+texture = ExtResource("3_vihj8")
 
 [node name="Area2D" type="Area2D" parent="."]
 

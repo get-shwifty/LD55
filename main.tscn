@@ -1,80 +1,268 @@
-[gd_scene load_steps=16 format=3 uid="uid://d5244x02n0sf"]
+[gd_scene load_steps=30 format=3 uid="uid://d5244x02n0sf"]
 
-[ext_resource type="Texture2D" uid="uid://c4voxdbf80y6q" path="res://resources/fff.png" id="1_getxg"]
 [ext_resource type="Script" path="res://main.gd" id="1_nqpq4"]
 [ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="1_x27rs"]
-[ext_resource type="Resource" uid="uid://diet4iblkk4nm" path="res://resources/stories/ld55_writing_tests.ink.json" id="2_ts8j2"]
-[ext_resource type="Texture2D" uid="uid://4lk88mfn3kh8" path="res://resources/left.png" id="2_wlcjj"]
-[ext_resource type="Texture2D" uid="uid://i55h028wp1rc" path="res://resources/right.png" id="3_iovrb"]
-[ext_resource type="Texture2D" uid="uid://d3hmsw34dnjxl" path="res://resources/center-bottom.png" id="4_r4fbh"]
-[ext_resource type="Texture2D" uid="uid://brosqt712lk3c" path="res://resources/center-top.png" id="5_vv1c2"]
+[ext_resource type="Resource" uid="uid://chaovxtklvxb" path="res://resources/stories/ld55_writing_tests_with_tag_test.ink.json" id="3_2df88"]
 [ext_resource type="Script" path="res://card_hand.gd" id="6_q236j"]
 [ext_resource type="Texture2D" uid="uid://cys0qq7oycr04" path="res://resources/cartes_fond_bordure/fond.png" id="9_atcr7"]
 [ext_resource type="PackedScene" uid="uid://bo3yrfdmccwtw" path="res://game/perso_select.tscn" id="10_f6cmx"]
-[ext_resource type="Texture2D" uid="uid://cfs7oyremv4h8" path="res://resources/cartes_fond_bordure/bordure.png" id="10_wdcdb"]
+[ext_resource type="Texture2D" uid="uid://ioxwqb8u7t1m" path="res://resources/persos_esprits/ESPRITS/air.png" id="10_mwbf2"]
+[ext_resource type="Script" path="res://SpiritSpawn.gd" id="10_q2soh"]
 [ext_resource type="PackedScene" uid="uid://b2okijt84uysj" path="res://attrape_reve.tscn" id="11_bq32h"]
+[ext_resource type="Texture2D" uid="uid://dh7own3ns2o4b" path="res://resources/cartes_fond_bordure/bordure-sheet.png" id="11_qjuyx"]
+[ext_resource type="Texture2D" uid="uid://bhmwui0ng14ym" path="res://resources/persos_esprits/ESPRITS/EAU.png" id="11_rce0s"]
+[ext_resource type="Script" path="res://game/dialogue_ui.gd" id="12_5453e"]
+[ext_resource type="Texture2D" uid="uid://cfoff7e03mhcp" path="res://resources/persos_esprits/ESPRITS/feu.png" id="12_67026"]
 [ext_resource type="PackedScene" uid="uid://cwdrixjsg0qv0" path="res://game/dialogue_ui.tscn" id="13_lj55m"]
+[ext_resource type="Texture2D" uid="uid://by31lajk2koy0" path="res://resources/persos_esprits/ESPRITS/terre.png" id="13_ot34v"]
 [ext_resource type="Script" path="res://GameManager.gd" id="14_4ydm0"]
+[ext_resource type="Texture2D" uid="uid://dlaeorhi5lj8r" path="res://resources/persos_esprits/ESPRITS/vide.png" id="14_mxhn3"]
+[ext_resource type="Script" path="res://spirit.gd" id="15_ypb3q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vcem"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_mwbf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rce0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_67026")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ot34v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mxhn3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ysjp0"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkj0x"]
+_data = {
+"fade_in": SubResource("Animation_ysjp0")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3qcc"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bejvb"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eob6h"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.75, 0.75, 0.75, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu6tg"]
+content_margin_left = 1.0
+content_margin_top = 0.0
+content_margin_right = 1.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ot5cn"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_ahl2q"]
+resource_local_to_scene = true
+/fonts/size = null
+RichTextLabel/font_sizes/bold_font_size = 20
+RichTextLabel/font_sizes/normal_font_size = 10
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_a3qcc")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_bejvb")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_eob6h")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_pu6tg")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_ot5cn")
+
+[sub_resource type="Animation" id="Animation_xuci4"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4c8f"]
+_data = {
+"hide": SubResource("Animation_xuci4")
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nqpq4")
 
 [node name="InkPlayer" type="Node" parent="."]
 script = ExtResource("1_x27rs")
-ink_file = ExtResource("2_ts8j2")
+ink_file = ExtResource("3_2df88")
 loads_in_background = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="placeholders" type="Node2D" parent="."]
-visible = false
-
-[node name="Fff" type="Sprite2D" parent="placeholders"]
-texture = ExtResource("1_getxg")
-
-[node name="Left" type="Sprite2D" parent="placeholders"]
-position = Vector2(-160, 0)
-texture = ExtResource("2_wlcjj")
-
-[node name="Right" type="Sprite2D" parent="placeholders"]
-position = Vector2(180, 0)
-texture = ExtResource("3_iovrb")
-
-[node name="Center-bottom" type="Sprite2D" parent="placeholders"]
-position = Vector2(20, 80)
-texture = ExtResource("4_r4fbh")
-
-[node name="Center-top" type="Sprite2D" parent="placeholders"]
-position = Vector2(20, -80)
-texture = ExtResource("5_vv1c2")
 
 [node name="Fond" type="Node2D" parent="."]
 
 [node name="Fond2" type="Sprite2D" parent="Fond"]
 texture = ExtResource("9_atcr7")
 
+[node name="Bordure-sheet" type="Sprite2D" parent="Fond"]
+position = Vector2(165, -1)
+texture = ExtResource("11_qjuyx")
+hframes = 2
+
 [node name="Perso" parent="Fond" instance=ExtResource("10_f6cmx")]
+position = Vector2(180, -77)
 
 [node name="Bordure" type="Sprite2D" parent="Fond"]
 position = Vector2(164, 2.08165e-12)
-texture = ExtResource("10_wdcdb")
+texture = ExtResource("11_qjuyx")
+hframes = 2
+frame = 1
 
 [node name="AttrapeReve" parent="." instance=ExtResource("11_bq32h")]
 position = Vector2(-240, -160)
 
 [node name="Dialogue UI" parent="." instance=ExtResource("13_lj55m")]
+custom_minimum_size = Vector2(115, 130)
 offset_left = 123.0
+offset_top = -12.0
 offset_right = 238.0
-offset_bottom = 156.0
-
-[node name="card_hand" type="Node2D" parent="."]
-position = Vector2(0, 111)
-script = ExtResource("6_q236j")
-is_hand = true
+offset_bottom = 148.0
 
 [node name="selected_cards" type="Node2D" parent="."]
 script = ExtResource("6_q236j")
 y_max_offset = 0
 
+[node name="SpiritSpawn" type="Node2D" parent="."]
+position = Vector2(2.08165e-12, 20)
+script = ExtResource("10_q2soh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpiritSpawn"]
+sprite_frames = SubResource("SpriteFrames_6vcem")
+script = ExtResource("15_ypb3q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpiritSpawn"]
+libraries = {
+"": SubResource("AnimationLibrary_jkj0x")
+}
+speed_scale = 2.0
+
+[node name="card_hand" type="Node2D" parent="." node_paths=PackedStringArray("selected_hand")]
+position = Vector2(0, 111)
+script = ExtResource("6_q236j")
+is_hand = true
+selected_hand = NodePath("../selected_cards")
+
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("14_4ydm0")
+
+[node name="StartBackground" type="Node2D" parent="."]
+
+[node name="Fond2" type="Sprite2D" parent="StartBackground"]
+modulate = Color(0.32549, 0.32549, 0.32549, 1)
+texture = ExtResource("9_atcr7")
+
+[node name="Dialogue UI" type="ScrollContainer" parent="StartBackground"]
+custom_minimum_size = Vector2(115, 120)
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+theme = SubResource("Theme_ahl2q")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("12_5453e")
+center_all = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartBackground/Dialogue UI"]
+custom_minimum_size = Vector2(300, 2.08165e-12)
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StartBackground"]
+libraries = {
+"": SubResource("AnimationLibrary_b4c8f")
+}

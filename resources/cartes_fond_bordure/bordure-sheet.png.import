@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4voxdbf80y6q"
-path="res://.godot/imported/fff.png-4c51085e563ced62726d53724f3cd9d1.ctex"
+uid="uid://dh7own3ns2o4b"
+path="res://.godot/imported/bordure-sheet.png-f240e9d9da62732d6bdc3786f29ffdec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/fff.png"
-dest_files=["res://.godot/imported/fff.png-4c51085e563ced62726d53724f3cd9d1.ctex"]
+source_file="res://resources/cartes_fond_bordure/bordure-sheet.png"
+dest_files=["res://.godot/imported/bordure-sheet.png-f240e9d9da62732d6bdc3786f29ffdec.ctex"]
 
 [params]
 

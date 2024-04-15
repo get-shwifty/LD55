@@ -4,6 +4,9 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8werg"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 1
+border_color = Color(0.564706, 0.411765, 0.0392157, 1)
+border_blend = true
 
 [node name="PanelContainer" type="PanelContainer"]
 theme_override_styles/panel = SubResource("StyleBoxFlat_8werg")
