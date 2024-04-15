@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 __InkRuntime="*res://addons/inkgd/ink_runtime.gd"
 Enums="*res://game/enums.gd"
+Sound="*res://game/sound.gd"
 
 [display]
 

@@ -65,6 +65,7 @@ func hover():
 	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 99
 	$AnimationPlayer.play("up")
+	Sound.ctx.card_hover.play()
 	
 func stop_hover():
 	if state != 1:
@@ -92,6 +93,7 @@ func select():
 	$Node2D/Node2D/Background.modulate = Color(2,2,2,1)
 	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,0.4)
 	#$Node2D/Node2D/ContourCarte.visible = true
+	Sound.set_card()
 	
 func send_back():
 	if not original:

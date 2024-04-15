@@ -15,6 +15,7 @@ func write_to_ui():
 	if center_all:
 		res = '[center]' + final_text + '[/center]'
 	$MarginContainer/PanelContainer/MarginContainer/RichTextLabel4.text = res
+	Sound.write()
 
 func _ready():
 	text_buffer = text

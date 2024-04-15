@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d5244x02n0sf"]
+[gd_scene load_steps=39 format=3 uid="uid://d5244x02n0sf"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_nqpq4"]
 [ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="1_x27rs"]
@@ -18,6 +18,15 @@
 [ext_resource type="Script" path="res://GameManager.gd" id="14_4ydm0"]
 [ext_resource type="Texture2D" uid="uid://dlaeorhi5lj8r" path="res://resources/persos_esprits/ESPRITS/vide.png" id="14_mxhn3"]
 [ext_resource type="Script" path="res://spirit.gd" id="15_ypb3q"]
+[ext_resource type="Script" path="res://SoundSystemBoomBoom.gd" id="19_anxbs"]
+[ext_resource type="AudioStream" uid="uid://cxagwjwg042y" path="res://resources/sounds/Sorcerers spirit.ogg" id="19_cc1h0"]
+[ext_resource type="AudioStream" uid="uid://bgyk4ltd65ldv" path="res://resources/sounds/pouf.ogg" id="21_u5xha"]
+[ext_resource type="AudioStream" uid="uid://bgqdskubae34n" path="res://resources/sounds/card_look.wav" id="22_aepnc"]
+[ext_resource type="AudioStream" uid="uid://cpbq2dypacoc0" path="res://resources/sounds/tac2.wav" id="23_ups7b"]
+[ext_resource type="AudioStream" uid="uid://co5mx2mvyhn67" path="res://resources/sounds/tac1.wav" id="24_hiwcq"]
+[ext_resource type="AudioStream" uid="uid://btaxtg8axx6aj" path="res://resources/sounds/k1.wav" id="25_r7g4a"]
+[ext_resource type="AudioStream" uid="uid://bp4f4vlj55yj5" path="res://resources/sounds/k2.wav" id="26_orqhn"]
+[ext_resource type="AudioStream" uid="uid://clwbkhx71ocel" path="res://resources/sounds/k3.wav" id="27_1nukx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6vcem"]
 animations = [{
@@ -218,6 +227,7 @@ script = ExtResource("6_q236j")
 y_max_offset = 0
 
 [node name="SpiritSpawn" type="Node2D" parent="."]
+visible = false
 position = Vector2(2.08165e-12, 20)
 script = ExtResource("10_q2soh")
 
@@ -266,3 +276,41 @@ layout_mode = 2
 libraries = {
 "": SubResource("AnimationLibrary_b4c8f")
 }
+
+[node name="SoundSystemBoomBoom" type="Node" parent="."]
+script = ExtResource("19_anxbs")
+
+[node name="Background" type="AudioStreamPlayer2D" parent="SoundSystemBoomBoom"]
+stream = ExtResource("19_cc1h0")
+autoplay = true
+
+[node name="Invocation" type="AudioStreamPlayer3D" parent="SoundSystemBoomBoom"]
+stream = ExtResource("21_u5xha")
+
+[node name="CardHover" type="AudioStreamPlayer2D" parent="SoundSystemBoomBoom"]
+stream = ExtResource("22_aepnc")
+
+[node name="SetCard" type="Node" parent="SoundSystemBoomBoom"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SoundSystemBoomBoom/SetCard"]
+stream = ExtResource("23_ups7b")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="SoundSystemBoomBoom/SetCard"]
+stream = ExtResource("23_ups7b")
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="SoundSystemBoomBoom/SetCard"]
+stream = ExtResource("24_hiwcq")
+
+[node name="Write" type="Node" parent="SoundSystemBoomBoom"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SoundSystemBoomBoom/Write"]
+stream = ExtResource("25_r7g4a")
+volume_db = -11.161
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="SoundSystemBoomBoom/Write"]
+stream = ExtResource("26_orqhn")
+volume_db = -21.815
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="SoundSystemBoomBoom/Write"]
+stream = ExtResource("27_1nukx")
+volume_db = -16.741
