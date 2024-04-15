@@ -21,9 +21,9 @@ const CardType = Enums.CardType
 @onready var cards_hand = $"../card_hand"
 
 const OPPOSITE = {
-	1: 3, 3: 1, 2: 4, 4: 2,
-	5: 8, 8: 5, 10: 7, 7: 10, 6: 9, 9: 6,
-	11: 13, 13: 11, 14: 12, 12: 14
+	2: 3, 3: 2, 1: 4, 4: 1,
+	10: 6, 6: 10, 9: 7, 7: 9,
+	14: 12, 12: 14
 }
 const DOWN = {
 	1: 0, 2: 0, 3: 0, 4: 0,
@@ -39,48 +39,42 @@ var path_cards = []
 func _ready():
 	_on_selected_cards_clear_hand()
 
-func step(card: CardType, coeff=1):
+func step(card: CardType):
 	var cur = path_nodes[-1]
 	var next = -1
 	if card == CardType.Clockwise:
 		if cur < 5:
-			next = (cur + coeff) % 5
+			next = (cur + 1) % 5
 		elif cur < 11:
-			next = ((cur - 5 + coeff) % 6) + 5
+			next = ((cur - 5 + 1) % 6) + 5
 		elif cur < 15:
-			next = ((cur - 11 + coeff) % 4) + 11
+			next = ((cur - 11 + 1) % 4) + 11
 		step_one(next)
 	elif card == CardType.Anticlockwise:
 		if cur < 5:
-			next = (cur - coeff + 5) % 5
+			next = (cur - 2 + 5) % 5
 		elif cur < 11:
-			next = ((cur - 5 - coeff + 6) % 6) + 5
+			next = ((cur - 5 - 2 + 6) % 6) + 5
 		elif cur < 15:
-			next = ((cur - 11 - coeff + 4) % 4) + 11
+			next = ((cur - 11 - 2 + 4) % 4) + 11
 		step_one(next)
 	elif card == CardType.Repeat:
 		if len(path_cards) >= 1:
-			step_repeat(path_cards[-1])
+			step(path_cards[-1])
 	elif card == CardType.Repeat2:
-		var previous_card = -1
-		var ratio = 1
-		if len(path_cards) >= 2 and path_cards[-1] == CardType.Repeat:
-			previous_card = path_cards[-2]
-			if previous_card == CardType.Repeat:
-				previous_card = -1
-				if len(path_cards) >= 3 and path_cards[-2] == CardType.Repeat:
-					previous_card = path_cards[-3]
-					ratio = 2
-		if previous_card == CardType.Clockwise or \
-			previous_card == CardType.Anticlockwise:
-			if cur < 5:
-				step_repeat(CardType.Repeat, ratio)
-				step_repeat(CardType.Repeat, ratio)
-				step_repeat(CardType.Repeat, ratio)
-				step_repeat(CardType.Repeat, ratio)
-			elif cur < 11:
-				step_repeat(CardType.Repeat, ratio)
-				step_repeat(CardType.Repeat, ratio)
+		if len(path_cards) >= 1:
+			var previous_card = path_cards[-1]
+			var ratio = 1
+			if previous_card == CardType.Repeat and len(path_cards) >= 2:
+				previous_card = path_cards[-2]
+			if previous_card == CardType.Clockwise or \
+				previous_card == CardType.Anticlockwise:
+				if cur < 11:
+					step(previous_card)
+					step(previous_card)
+				if cur < 5:
+					step(previous_card)
+					step(previous_card)
 	elif card == CardType.Opposite:
 		if cur in OPPOSITE:
 			step_one(OPPOSITE[cur])
@@ -123,24 +117,6 @@ func step_one(next):
 		rope_show(path_nodes[-1], next)
 		path_nodes.append(next)
 
-func step_repeat(previous_card, ratio=1):
-	if previous_card == CardType.Opposite or \
-		previous_card == CardType.Transform:
-			step(previous_card)
-	elif previous_card == CardType.Clockwise:
-		step(CardType.Anticlockwise)
-		step(CardType.Clockwise, 2)
-	elif previous_card == CardType.Anticlockwise:
-		step(CardType.Clockwise)
-		step(CardType.Anticlockwise, 2)
-	elif previous_card == CardType.Repeat:
-		if len(path_cards) >= 2:
-			var pprevious_card = path_cards[-1-ratio]
-			if pprevious_card == CardType.Clockwise or \
-				pprevious_card == CardType.Anticlockwise:
-				step(pprevious_card)
-			step_repeat(pprevious_card)
-
 func get_rope(from, to):
 	return str(min(from, to)) + " " + str(max(from, to))
 	
@@ -178,6 +154,6 @@ func _on_selected_cards_clear_hand():
 		attrape_reve.set_discovery_step(2)
 	if len(cards_hand.card_list) >= 7:
 		attrape_reve.set_discovery_step(3)
-	if len(cards_hand.card_list) >= 11:
+	if len(cards_hand.card_list) >= 10:
 		attrape_reve.set_discovery_step(4)
 
