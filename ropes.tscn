@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://40paodugkcmp"]
+
+[ext_resource type="Texture2D" uid="uid://bqu8bit347lrd" path="res://resources/traits.png" id="1_qr1rf"]
+
+[node name="Ropes" type="Sprite2D"]
+texture = ExtResource("1_qr1rf")
+centered = false
+hframes = 6
+vframes = 5
+frame = 10
+region_rect = Rect2(0, 0, 680, 1350)

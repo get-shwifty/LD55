@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddvr34tntr1se"]
+
+[ext_resource type="Texture2D" uid="uid://m32onpj1p3ei" path="res://resources/highlights.png" id="1_nfwnm"]
+
+[node name="IlluminatedNodes" type="Sprite2D"]
+texture = ExtResource("1_nfwnm")
+centered = false
+hframes = 4
+vframes = 4

@@ -1,9 +1,196 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2okijt84uysj"]
+[gd_scene load_steps=10 format=3 uid="uid://b2okijt84uysj"]
 
-[ext_resource type="Texture2D" uid="uid://dkrn3j6ll17lp" path="res://resources/attrape_reve_grand.png" id="1_stmlo"]
+[ext_resource type="Script" path="res://attrape_reve.gd" id="1_glkju"]
+[ext_resource type="PackedScene" uid="uid://40paodugkcmp" path="res://ropes.tscn" id="2_0q6h1"]
+[ext_resource type="Texture2D" uid="uid://b1secwsnxvt4" path="res://resources/attrape_reve_morceaux.png" id="3_2ykuj"]
+[ext_resource type="PackedScene" uid="uid://ddvr34tntr1se" path="res://illuminated_nodes.tscn" id="4_f6xr4"]
+
+[sub_resource type="Animation" id="Animation_n8xwf"]
+resource_name = "AttrapeReveGrand"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttrapeReveGrand2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 200), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttrapeReveGrand2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wqds5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttrapeReveGrand2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttrapeReveGrand3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttrapeReveGrand4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dsm6i"]
+resource_name = "AttrapeReveGrand3"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttrapeReveGrand3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 200), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttrapeReveGrand3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ul5xm"]
+resource_name = "AttrapeReveGrand4"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttrapeReveGrand4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 200), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttrapeReveGrand4:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3eiow"]
+_data = {
+"AttrapeReveGrand2": SubResource("Animation_n8xwf"),
+"AttrapeReveGrand3": SubResource("Animation_dsm6i"),
+"AttrapeReveGrand4": SubResource("Animation_ul5xm"),
+"RESET": SubResource("Animation_wqds5")
+}
 
 [node name="AttrapeReve" type="Node2D"]
+script = ExtResource("1_glkju")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3eiow")
+}
+
+[node name="Ropes" parent="." instance=ExtResource("2_0q6h1")]
+visible = false
+
+[node name="IlluminatedNodes" parent="." instance=ExtResource("4_f6xr4")]
+visible = false
+frame = 9
 
 [node name="AttrapeReveGrand" type="Sprite2D" parent="."]
-position = Vector2(-161, 0)
-texture = ExtResource("1_stmlo")
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("3_2ykuj")
+centered = false
+hframes = 2
+vframes = 2
+
+[node name="AttrapeReveGrand1" type="Sprite2D" parent="."]
+position = Vector2(60, 122)
+texture = ExtResource("3_2ykuj")
+centered = false
+region_enabled = true
+region_rect = Rect2(189, 122, 14, 29)
+
+[node name="AttrapeReveGrand2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("3_2ykuj")
+centered = false
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="AttrapeReveGrand3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2.08165e-12, 200)
+texture = ExtResource("3_2ykuj")
+centered = false
+hframes = 2
+vframes = 2
+frame = 2
+
+[node name="AttrapeReveGrand4" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0)
+position = Vector2(2.08165e-12, 200)
+texture = ExtResource("3_2ykuj")
+centered = false
+hframes = 2
+vframes = 2
+frame = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
