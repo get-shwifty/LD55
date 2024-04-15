@@ -40,6 +40,10 @@ var move_speed = 4
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+	#if is_hand:
+		#get_cards()
+		#await get_tree().create_timer(2).timeout
+		#test()
 		
 func clear():
 	for card in card_list:
@@ -156,3 +160,23 @@ func compute_positions():
 		var card = card_list[i]
 		if i < card_list.size()-1:
 			card.update_shape(min(card_dist, card.total_width))
+			
+func test():
+	var counter = 0
+	while true:
+		print(counter)
+		if counter < 5:
+			#print('size ' + str(card_list.size()))
+			for c in card_list:
+				if c.state == 0:
+					#print('should select')
+					c.state = 1
+					c.select()
+					break
+			counter += 1
+		else:
+			selected_hand.send_back()
+			counter = 0
+		await get_tree().create_timer(0.5).timeout
+
+		

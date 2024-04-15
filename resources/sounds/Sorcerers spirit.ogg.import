@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxagwjwg042y"
+path="res://.godot/imported/Sorcerers spirit.ogg-fcceff3b16b75b430b0197bfbe30be6b.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sounds/Sorcerers spirit.ogg"
+dest_files=["res://.godot/imported/Sorcerers spirit.ogg-fcceff3b16b75b430b0197bfbe30be6b.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

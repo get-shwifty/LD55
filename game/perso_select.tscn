@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo3yrfdmccwtw"]
+[gd_scene load_steps=9 format=3 uid="uid://bo3yrfdmccwtw"]
 
 [ext_resource type="Script" path="res://PersoSelection.gd" id="1_l4wqg"]
 [ext_resource type="Texture2D" uid="uid://c07mv7l3i68f6" path="res://resources/persos_esprits/persos/chasseuse.png" id="2_l6yvc"]
@@ -26,9 +26,35 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_jw2nl"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nxoin"]
+_data = {
+"fade_in": SubResource("Animation_jw2nl")
+}
+
 [node name="Perso" type="Node2D"]
 position = Vector2(180, -72)
 script = ExtResource("1_l4wqg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 sprite_frames = SubResource("SpriteFrames_difme")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nxoin")
+}
