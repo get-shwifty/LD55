@@ -11,4 +11,4 @@ class_name SoundSystemBoomBoom
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Sound.ctx = self
-	$Background.play()
+	#$Background.play()

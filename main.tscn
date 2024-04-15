@@ -1,8 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://d5244x02n0sf"]
+[gd_scene load_steps=42 format=3 uid="uid://d5244x02n0sf"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_nqpq4"]
 [ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="1_x27rs"]
-[ext_resource type="Resource" uid="uid://chaovxtklvxb" path="res://resources/stories/ld55_writing_tests_with_tag_test.ink.json" id="3_2df88"]
+[ext_resource type="Resource" uid="uid://diet4iblkk4nm" path="res://resources/stories/ld55_writing_tests.ink.json" id="3_qt0im"]
 [ext_resource type="Script" path="res://card_hand.gd" id="6_q236j"]
 [ext_resource type="Texture2D" uid="uid://cys0qq7oycr04" path="res://resources/cartes_fond_bordure/fond.png" id="9_atcr7"]
 [ext_resource type="PackedScene" uid="uid://bo3yrfdmccwtw" path="res://game/perso_select.tscn" id="10_f6cmx"]
@@ -27,6 +27,8 @@
 [ext_resource type="AudioStream" uid="uid://btaxtg8axx6aj" path="res://resources/sounds/k1.wav" id="25_r7g4a"]
 [ext_resource type="AudioStream" uid="uid://bp4f4vlj55yj5" path="res://resources/sounds/k2.wav" id="26_orqhn"]
 [ext_resource type="AudioStream" uid="uid://clwbkhx71ocel" path="res://resources/sounds/k3.wav" id="27_1nukx"]
+[ext_resource type="Texture2D" uid="uid://dm6slubuov3u7" path="res://icon.svg" id="28_7uf8o"]
+[ext_resource type="Script" path="res://summon.gd" id="28_y5wel"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6vcem"]
 animations = [{
@@ -183,12 +185,15 @@ _data = {
 "hide": SubResource("Animation_xuci4")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlm3"]
+size = Vector2(24, 24)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nqpq4")
 
 [node name="InkPlayer" type="Node" parent="."]
 script = ExtResource("1_x27rs")
-ink_file = ExtResource("3_2df88")
+ink_file = ExtResource("3_qt0im")
 loads_in_background = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -227,7 +232,6 @@ script = ExtResource("6_q236j")
 y_max_offset = 0
 
 [node name="SpiritSpawn" type="Node2D" parent="."]
-visible = false
 position = Vector2(2.08165e-12, 20)
 script = ExtResource("10_q2soh")
 
@@ -250,6 +254,7 @@ is_hand = true
 script = ExtResource("14_4ydm0")
 
 [node name="StartBackground" type="Node2D" parent="."]
+visible = false
 
 [node name="Fond2" type="Sprite2D" parent="StartBackground"]
 modulate = Color(0.32549, 0.32549, 0.32549, 1)
@@ -314,5 +319,20 @@ volume_db = -21.815
 stream = ExtResource("27_1nukx")
 volume_db = -16.741
 
+[node name="Summon" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, -119)
+script = ExtResource("28_y5wel")
+
+[node name="Icon" type="Sprite2D" parent="Summon"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("28_7uf8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Summon"]
+shape = SubResource("RectangleShape2D_0rlm3")
+
 [connection signal="card_selected" from="selected_cards" to="GameManager" method="_on_selected_cards_card_selected"]
 [connection signal="clear_hand" from="selected_cards" to="GameManager" method="_on_selected_cards_clear_hand"]
+[connection signal="input_event" from="Summon" to="Summon" method="_on_input_event"]
+[connection signal="summon" from="Summon" to="." method="_on_summon_summon"]

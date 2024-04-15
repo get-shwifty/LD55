@@ -5,7 +5,7 @@ var current_spirit = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide_spirit()
-	show_spirit("earth")
+	#show_spirit("earth")
 
 
 

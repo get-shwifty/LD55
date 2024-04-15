@@ -4,6 +4,11 @@ extends Node2D
 @onready var start_dialogue: DialogeUI = $"StartBackground/Dialogue UI"
 @onready var character_selection = $Fond/Perso
 @onready var dialogue = start_dialogue
+@onready var card_hand = $card_hand
+@onready var spirit_spawn = $SpiritSpawn
+@onready var summon_button = $Summon
+@onready var game_manager = $GameManager
+@onready var dream_catcher = $AttrapeReve
 
 var start_window = true
 
@@ -36,8 +41,9 @@ func select_choice(index: int):
 	_continue_story()
 	
 func _process(delta):
-	if Input.is_action_just_pressed("escape"):
-		reset()
+	pass
+	#if Input.is_action_just_pressed("escape"):
+		#reset()
 		
 func reset():
 	_ink_player.reset()
@@ -53,6 +59,10 @@ func execute_tags(tags):
 			character_selection.select_perso("")
 		if t == "clear":
 			dialogue.clear()
+			card_hand.clear()
+			dream_catcher.clear_all()
+			spirit_spawn.hide_spirit()
+			
 		if t == "start":
 			start_game()
 			
@@ -86,8 +96,11 @@ func _continue_story():
 	if _ink_player.has_choices:
 		## 'current_choices' contains a list of the choices, as strings.
 		#for choice in _ink_player.current_choices:
-
-		dialogue.add_choices(_ink_player.current_choices)
+		var choices = _ink_player.current_choices
+		for c in choices:
+			print(c.text + '   ' + str(c.tags))
+		if not manage_craft(choices):
+			dialogue.add_choices(choices)
 		#for c in _ink_player.current_choices:
 			#if c.tags:
 				#print(c.tags)
@@ -100,6 +113,54 @@ func _continue_story():
 		# This code runs when the story reaches it's end.
 		print("The End")
 
+var possible_spirits = []
+var is_crafting = false
+func start_craft(spirits):
+	print(spirits)
+	card_hand.get_cards()
+	is_crafting = true
+	possible_spirits = spirits
+	summon_button.visible = true
+	
+func stop_craft():
+	card_hand.selected_hand.clear()
+	card_hand.clear()
+	is_crafting = false
+	possible_spirits.clear()
+
+func try_summon(spirit):
+	if possible_spirits.has(spirit):
+		summon(spirit)
+	else:
+		print('warning cant do')
+		start_craft(possible_spirits)
+
+func summon(spirit):
+	spirit_spawn.show_spirit(spirit)
+	summon_button.visible = false
+	card_hand.selected_hand.clear()
+	var index = possible_spirits.find(spirit)
+	_ink_player.choose_choice_index(index)
+	_continue_story()
+	
+func manage_craft(choices):
+	var choice = choices[0]
+	if not choice.tags or not choice.tags.has("spirit_choice"):
+		return false
+	_ink_player.choose_choice_index(0)
+	_ink_player.continue_story()
+	var next_choices = _ink_player.current_choices
+	for c in next_choices:
+		print(c.text)
+	var spirits = []
+	for c in next_choices:
+		spirits.append(c.text)
+	start_craft(spirits)
+	return true
+
+func cannot_summon():
+	print('cannot summon')
+	card_hand.get_cards()
 
 func _on_selected_cards_card_selected(card_type):
 	print('selected')
@@ -108,3 +169,15 @@ func _on_selected_cards_card_selected(card_type):
 
 func _on_selected_cards_clear_hand():
 	print('clear hand')
+
+
+func _on_summon_summon():
+	if game_manager.path_nodes.size() == 0:
+		cannot_summon()
+	var index = game_manager.path_nodes[-1]
+	var spirit = spirit_map[index]
+	try_summon(spirit)
+	
+	
+	
+var spirit_map = ["void", "fire", "water", "earth", "air"]
