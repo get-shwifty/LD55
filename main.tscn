@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://d5244x02n0sf"]
+
+[ext_resource type="Texture2D" uid="uid://c4voxdbf80y6q" path="res://resources/fff.png" id="1_getxg"]
+[ext_resource type="Script" path="res://main.gd" id="1_nqpq4"]
+[ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="1_x27rs"]
+[ext_resource type="Resource" uid="uid://diet4iblkk4nm" path="res://resources/stories/ld55_writing_tests.ink.json" id="2_ts8j2"]
+[ext_resource type="Texture2D" uid="uid://4lk88mfn3kh8" path="res://resources/left.png" id="2_wlcjj"]
+[ext_resource type="Texture2D" uid="uid://i55h028wp1rc" path="res://resources/right.png" id="3_iovrb"]
+[ext_resource type="Texture2D" uid="uid://d3hmsw34dnjxl" path="res://resources/center-bottom.png" id="4_r4fbh"]
+[ext_resource type="Texture2D" uid="uid://brosqt712lk3c" path="res://resources/center-top.png" id="5_vv1c2"]
+[ext_resource type="Script" path="res://card_hand.gd" id="6_q236j"]
+[ext_resource type="Texture2D" uid="uid://dyu3qlflj1g73" path="res://resources/fond.png" id="6_rmuhh"]
+[ext_resource type="Texture2D" uid="uid://dkrn3j6ll17lp" path="res://resources/attrape_reve_grand.png" id="7_rsdye"]
+[ext_resource type="Texture2D" uid="uid://vqtmbkj2wbko" path="res://resources/bordure.png" id="7_xhuu0"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nqpq4")
+
+[node name="InkPlayer" type="Node" parent="."]
+script = ExtResource("1_x27rs")
+ink_file = ExtResource("2_ts8j2")
+loads_in_background = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="placeholders" type="Node2D" parent="."]
+visible = false
+
+[node name="Fff" type="Sprite2D" parent="placeholders"]
+texture = ExtResource("1_getxg")
+
+[node name="Left" type="Sprite2D" parent="placeholders"]
+position = Vector2(-160, 0)
+texture = ExtResource("2_wlcjj")
+
+[node name="Right" type="Sprite2D" parent="placeholders"]
+position = Vector2(180, 0)
+texture = ExtResource("3_iovrb")
+
+[node name="Center-bottom" type="Sprite2D" parent="placeholders"]
+position = Vector2(20, 80)
+texture = ExtResource("4_r4fbh")
+
+[node name="Center-top" type="Sprite2D" parent="placeholders"]
+position = Vector2(20, -80)
+texture = ExtResource("5_vv1c2")
+
+[node name="Fond" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Fond"]
+texture = ExtResource("6_rmuhh")
+
+[node name="Bordure" type="Sprite2D" parent="Fond"]
+position = Vector2(164, 0)
+texture = ExtResource("7_xhuu0")
+
+[node name="AttrapeReve" type="Node2D" parent="."]
+
+[node name="AttrapeReveGrand" type="Sprite2D" parent="AttrapeReve"]
+position = Vector2(-161, 0)
+texture = ExtResource("7_rsdye")
+
+[node name="card_hand" type="Node2D" parent="." node_paths=PackedStringArray("selected_hand")]
+position = Vector2(0, 111)
+script = ExtResource("6_q236j")
+is_hand = true
+selected_hand = NodePath("../selected_cards")
+
+[node name="selected_cards" type="Node2D" parent="."]
+script = ExtResource("6_q236j")
+y_max_offset = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 132.0
+offset_top = 6.0
+offset_right = 232.0
+offset_bottom = 46.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+text = "Some long text for testing lalaa
+dkfhkehf dfh jfh
+feh fjehf je
+fh ejfhef"
+fit_content = true
+autowrap_mode = 0
