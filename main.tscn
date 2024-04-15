@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://brosqt712lk3c" path="res://resources/center-top.png" id="5_vv1c2"]
 [ext_resource type="Script" path="res://card_hand.gd" id="6_q236j"]
 [ext_resource type="Texture2D" uid="uid://dyu3qlflj1g73" path="res://resources/fond.png" id="6_rmuhh"]
-[ext_resource type="Texture2D" uid="uid://dkrn3j6ll17lp" path="res://resources/attrape_reve_grand.png" id="7_rsdye"]
 [ext_resource type="Texture2D" uid="uid://vqtmbkj2wbko" path="res://resources/bordure.png" id="7_xhuu0"]
+[ext_resource type="PackedScene" uid="uid://b2okijt84uysj" path="res://attrape_reve.tscn" id="11_bq32h"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nqpq4")
@@ -55,11 +55,7 @@ texture = ExtResource("6_rmuhh")
 position = Vector2(164, 0)
 texture = ExtResource("7_xhuu0")
 
-[node name="AttrapeReve" type="Node2D" parent="."]
-
-[node name="AttrapeReveGrand" type="Sprite2D" parent="AttrapeReve"]
-position = Vector2(-161, 0)
-texture = ExtResource("7_rsdye")
+[node name="AttrapeReve" parent="." instance=ExtResource("11_bq32h")]
 
 [node name="card_hand" type="Node2D" parent="." node_paths=PackedStringArray("selected_hand")]
 position = Vector2(0, 111)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2okijt84uysj"]
+
+[ext_resource type="Texture2D" uid="uid://dkrn3j6ll17lp" path="res://resources/attrape_reve_grand.png" id="1_stmlo"]
+
+[node name="AttrapeReve" type="Node2D"]
+
+[node name="AttrapeReveGrand" type="Sprite2D" parent="."]
+position = Vector2(-161, 0)
+texture = ExtResource("1_stmlo")
