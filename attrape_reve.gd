@@ -67,13 +67,13 @@ func ensure_rope(rope):
 func show_rope(rope):
 	ensure_rope(rope)
 
-	var tween = get_tree().create_tween()
+	var tween = create_tween()
 	tween.tween_property(shown_ropes[rope], "modulate", Color(Color.WHITE, 1.0), 0.15)
 
 func hide_rope(rope):
 	ensure_rope(rope)
 
-	var tween = get_tree().create_tween()
+	var tween = create_tween()
 	tween.tween_property(shown_ropes[rope], "modulate", Color(Color.WHITE, 0.0), 0.15)
 
 func set_discovery_step(step):
@@ -92,13 +92,13 @@ func ensure_node(node):
 func show_node(node):
 	ensure_node(node)
 
-	var tween = get_tree().create_tween()
+	var tween = create_tween()
 	tween.tween_property(illuminated_nodes[node], "modulate", Color(Color.WHITE, 1.0), 0.15)
 
 func hide_node(node):
 	ensure_node(node)
 
-	var tween = get_tree().create_tween()
+	var tween = create_tween()
 	tween.tween_property(illuminated_nodes[node], "modulate", Color(Color.WHITE, 0.0), 0.15)
 
 func show_particles(node):
