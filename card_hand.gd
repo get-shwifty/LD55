@@ -1,14 +1,21 @@
 extends Node2D
 class_name CardHand
 
+const CardType = Enums.CardType
 const CARD_SCENE = preload('res://game/carte.tscn');
 
 @export var is_hand: bool = false
 @export var nb = 6
 @export var selected_hand: CardHand
 @export var y_max_offset = 30
-var card_list = []
 
+
+signal card_selected(card_type: CardType)
+signal clear_hand()
+
+
+var card_pool = [CardType.c1, CardType.c2, CardType.c3, CardType.c1, CardType.c2]
+var card_list = []
 
 var card_width = 56
 var min_dist = 15
@@ -35,14 +42,20 @@ func send_back():
 	for card in card_list:
 		card.send_back()
 	card_list.clear()
+	clear_hand.emit()
 
 
 func get_cards():
 	clear()
-	for i in range(randi_range(10,10)):
-		add_card()
+	for c in card_pool:
+		give_card(c)
 	if selected_hand:
 		selected_hand.clear()
+		
+func add_available_card(type: CardType):
+	if not is_hand:
+		return
+	card_pool.append(type)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -71,6 +84,7 @@ func select_card(card):
 	clone.global_position = pos
 	card_list.append(clone)
 	compute_positions()
+	card_selected.emit(card.card_type)
 	
 func trigger_card_selection():
 	if not is_hand:
@@ -81,10 +95,9 @@ func trigger_card_selection():
 			selected_hand.select_card(card)
 
 
-func add_card():
+func give_card(type: CardType):
 	var card = CARD_SCENE.instantiate()
-	card.card_type = randi_range(0,6)
-	#print(card.card_type)
+	card.card_type = type
 	add_child(card)
 	if card_list.size() == 0:
 		card.position = Vector2(0,0)
@@ -103,7 +116,6 @@ func compute_positions():
 		card_dist = min(card_dist + bonus_width / (n-1), max_dist)
 	
 	var final_width = card_width + ((n-1) * card_dist)
-	print(final_width)
 	
 	var offset = final_width / 2.0 - card_width/2
 	
@@ -111,7 +123,6 @@ func compute_positions():
 	y_offsets.resize(n)
 	y_offsets.fill(0)
 	if n > 1:
-		#print('---start---')
 		var ratio_offset = 0
 		for i in range(n):
 			var dist_from_center = abs((n/2.0) - (i+0.5)) / (n/2.0)
@@ -119,9 +130,6 @@ func compute_positions():
 			if i == 0:
 				ratio_offset = ratio
 			y_offsets[i] = (ratio-ratio_offset) * y_max_offset
-		#print('---end---')
-	
-	#print(y_offsets)
 	
 	positions.clear()
 	for i in range(n):
@@ -132,7 +140,3 @@ func compute_positions():
 		var card = card_list[i]
 		if i < card_list.size()-1:
 			card.update_shape(min(card_dist, card.total_width))
-		#else:
-			#card.update_shape(card.total_width)
-		
-	#print(positions[0])
