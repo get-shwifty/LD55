@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2okijt84uysj"]
+[gd_scene load_steps=18 format=3 uid="uid://b2okijt84uysj"]
 
 [ext_resource type="Script" path="res://attrape_reve.gd" id="1_glkju"]
 [ext_resource type="PackedScene" uid="uid://40paodugkcmp" path="res://ropes.tscn" id="2_0q6h1"]
 [ext_resource type="Texture2D" uid="uid://b1secwsnxvt4" path="res://resources/attrape_reve_morceaux.png" id="3_2ykuj"]
 [ext_resource type="PackedScene" uid="uid://ddvr34tntr1se" path="res://illuminated_nodes.tscn" id="4_f6xr4"]
+[ext_resource type="Texture2D" uid="uid://72g15tf2s2l3" path="res://resources/particules.png" id="5_inbn2"]
 
 [sub_resource type="Animation" id="Animation_n8xwf"]
 resource_name = "AttrapeReveGrand"
@@ -136,6 +137,56 @@ _data = {
 "RESET": SubResource("Animation_wqds5")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j8jo"]
+atlas = ExtResource("5_inbn2")
+region = Rect2(0, 0, 17, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfk5j"]
+atlas = ExtResource("5_inbn2")
+region = Rect2(0, 25, 17, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7q4a"]
+atlas = ExtResource("5_inbn2")
+region = Rect2(0, 50, 17, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01anf"]
+atlas = ExtResource("5_inbn2")
+region = Rect2(0, 75, 17, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lii0c"]
+atlas = ExtResource("5_inbn2")
+region = Rect2(0, 100, 17, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxro8"]
+atlas = ExtResource("5_inbn2")
+region = Rect2(0, 125, 17, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tvimf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j8jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfk5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7q4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01anf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lii0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxro8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="AttrapeReve" type="Node2D"]
 script = ExtResource("1_glkju")
 
@@ -143,13 +194,6 @@ script = ExtResource("1_glkju")
 libraries = {
 "": SubResource("AnimationLibrary_3eiow")
 }
-
-[node name="Ropes" parent="." instance=ExtResource("2_0q6h1")]
-visible = false
-
-[node name="IlluminatedNodes" parent="." instance=ExtResource("4_f6xr4")]
-visible = false
-frame = 9
 
 [node name="AttrapeReveGrand" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -159,6 +203,7 @@ hframes = 2
 vframes = 2
 
 [node name="AttrapeReveGrand1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(60, 122)
 texture = ExtResource("3_2ykuj")
 centered = false
@@ -167,6 +212,7 @@ region_rect = Rect2(189, 122, 14, 29)
 
 [node name="AttrapeReveGrand2" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
+position = Vector2(2.08165e-12, 200)
 texture = ExtResource("3_2ykuj")
 centered = false
 hframes = 2
@@ -191,6 +237,70 @@ hframes = 2
 vframes = 2
 frame = 3
 
+[node name="IlluminatedNodes" parent="." instance=ExtResource("4_f6xr4")]
+visible = false
+frame = 7
+
+[node name="Ropes" parent="." instance=ExtResource("2_0q6h1")]
+visible = false
+frame = 18
+
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Particles" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tvimf")
+autoplay = "default"
+frame_progress = 0.555535
+
+[node name="NodesPos" type="Node2D" parent="."]
+position = Vector2(0, -14)
+
+[node name="Marker2D" type="Marker2D" parent="NodesPos"]
+position = Vector2(68, 112)
+
+[node name="Marker2D2" type="Marker2D" parent="NodesPos"]
+position = Vector2(29, 84)
+
+[node name="Marker2D3" type="Marker2D" parent="NodesPos"]
+position = Vector2(42, 37)
+
+[node name="Marker2D4" type="Marker2D" parent="NodesPos"]
+position = Vector2(94, 37)
+
+[node name="Marker2D5" type="Marker2D" parent="NodesPos"]
+position = Vector2(108, 84)
+
+[node name="Marker2D6" type="Marker2D" parent="NodesPos"]
+position = Vector2(67, 144)
+
+[node name="Marker2D7" type="Marker2D" parent="NodesPos"]
+position = Vector2(95, 159)
+
+[node name="Marker2D8" type="Marker2D" parent="NodesPos"]
+position = Vector2(92, 198)
+
+[node name="Marker2D9" type="Marker2D" parent="NodesPos"]
+position = Vector2(67, 209)
+
+[node name="Marker2D10" type="Marker2D" parent="NodesPos"]
+position = Vector2(42, 198)
+
+[node name="Marker2D11" type="Marker2D" parent="NodesPos"]
+position = Vector2(39, 159)
+
+[node name="Marker2D12" type="Marker2D" parent="NodesPos"]
+position = Vector2(67, 239)
+
+[node name="Marker2D13" type="Marker2D" parent="NodesPos"]
+position = Vector2(87, 256)
+
+[node name="Marker2D14" type="Marker2D" parent="NodesPos"]
+position = Vector2(67, 277)
+
+[node name="Marker2D15" type="Marker2D" parent="NodesPos"]
+position = Vector2(47, 257)
+
+[node name="Marker2D16" type="Marker2D" parent="NodesPos"]
+position = Vector2(67, 302)

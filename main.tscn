@@ -78,3 +78,6 @@ y_max_offset = 0
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("14_4ydm0")
+
+[connection signal="card_selected" from="selected_cards" to="GameManager" method="_on_selected_cards_card_selected"]
+[connection signal="clear_hand" from="selected_cards" to="GameManager" method="_on_selected_cards_clear_hand"]

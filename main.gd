@@ -3,9 +3,10 @@ extends Node2D
 @onready var dialogue: DialogeUI = $"Dialogue UI"
 
 func _ready():
-	_ink_player.loaded.connect(_story_loaded)
-	_ink_player.create_story()
-	dialogue.listener = self
+	#_ink_player.loaded.connect(_story_loaded)
+	#_ink_player.create_story()
+	#dialogue.listener = self
+	pass
 
 
 func _story_loaded(successfully: bool):

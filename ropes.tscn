@@ -6,6 +6,6 @@
 texture = ExtResource("1_qr1rf")
 centered = false
 hframes = 6
-vframes = 5
-frame = 10
+vframes = 6
+frame = 13
 region_rect = Rect2(0, 0, 680, 1350)

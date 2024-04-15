@@ -4,9 +4,10 @@ class_name CardHand
 const CardType = Enums.CardType
 const CARD_SCENE = preload('res://game/carte.tscn');
 
+@onready var selected_hand: CardHand = $"../selected_cards"
+
 @export var is_hand: bool = false
 @export var nb = 6
-@export var selected_hand: CardHand
 @export var y_max_offset = 30
 
 
@@ -14,7 +15,19 @@ signal card_selected(card_type: CardType)
 signal clear_hand()
 
 
-var card_pool = [CardType.c1, CardType.c2, CardType.c3, CardType.c1, CardType.c2, CardType.c9]
+var card_pool = [CardType.Clockwise]
+var card_future_list = [
+	CardType.Anticlockwise,
+	CardType.Opposite,
+	CardType.Down,
+	CardType.Transform,
+	CardType.Repeat,
+	CardType.Transform,
+	CardType.Repeat,
+	CardType.Repeat2,
+	CardType.Tri,
+	CardType.FinalTransform,
+]
 var card_list = []
 
 var card_width = 56
@@ -62,7 +75,10 @@ func add_available_card(type: CardType):
 func _process(delta):
 	if is_hand:
 		if Input.is_action_just_pressed("shuffle"):
+			if card_future_list:
+				add_available_card(card_future_list.pop_front())
 			get_cards()
+			clear_hand.emit()
 	else:
 		if Input.is_action_just_pressed("escape"):
 			send_back()
