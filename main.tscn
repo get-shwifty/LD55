@@ -227,10 +227,6 @@ offset_top = -12.0
 offset_right = 238.0
 offset_bottom = 148.0
 
-[node name="selected_cards" type="Node2D" parent="."]
-script = ExtResource("6_q236j")
-y_max_offset = 0
-
 [node name="SpiritSpawn" type="Node2D" parent="."]
 position = Vector2(2.08165e-12, 20)
 script = ExtResource("10_q2soh")
@@ -246,9 +242,15 @@ libraries = {
 speed_scale = 2.0
 
 [node name="card_hand" type="Node2D" parent="."]
-position = Vector2(0, 111)
+position = Vector2(-8, 111)
 script = ExtResource("6_q236j")
 is_hand = true
+
+[node name="selected_cards" type="Node2D" parent="."]
+position = Vector2(1, 2.08165e-12)
+script = ExtResource("6_q236j")
+y_max_offset = 0
+max_width = 230
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("14_4ydm0")

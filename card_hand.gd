@@ -9,7 +9,7 @@ const CARD_SCENE = preload('res://game/carte.tscn');
 @export var is_hand: bool = false
 @export var nb = 6
 @export var y_max_offset = 30
-
+@export var max_width = 250
 
 signal card_selected(card_type: CardType)
 signal clear_hand()
@@ -23,7 +23,6 @@ var card_future_list = [
 	CardType.Transform,
 	CardType.Repeat,
 	CardType.Transform,
-	CardType.Repeat,
 	CardType.Repeat2,
 	CardType.Tri,
 	CardType.FinalTransform,
@@ -33,7 +32,6 @@ var card_list = []
 var card_width = 56
 var min_dist = 15
 var max_dist = card_width -8
-var max_width = 200
 var positions = []
 
 
@@ -82,10 +80,12 @@ func _process(delta):
 			if card_future_list:
 				add_available_card(card_future_list.pop_front())
 			get_cards()
-			clear_hand.emit()
 	else:
 		if Input.is_action_just_pressed("escape"):
 			send_back()
+		if Input.is_action_just_pressed("shuffle"):
+			clear_hand.emit()
+		
 	
 	for i in card_list.size():
 		var card = card_list[i]
