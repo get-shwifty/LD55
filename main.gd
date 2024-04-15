@@ -49,3 +49,12 @@ func _continue_story():
 	else:
 		# This code runs when the story reaches it's end.
 		print("The End")
+
+
+func _on_selected_cards_card_selected(card_type):
+	print('selected')
+	print(card_type)
+
+
+func _on_selected_cards_clear_hand():
+	print('clear hand')

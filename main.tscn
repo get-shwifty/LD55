@@ -71,3 +71,6 @@ selected_hand = NodePath("../selected_cards")
 [node name="selected_cards" type="Node2D" parent="."]
 script = ExtResource("6_q236j")
 y_max_offset = 0
+
+[connection signal="card_selected" from="selected_cards" to="." method="_on_selected_cards_card_selected"]
+[connection signal="clear_hand" from="selected_cards" to="." method="_on_selected_cards_clear_hand"]

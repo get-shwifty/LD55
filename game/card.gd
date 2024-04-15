@@ -1,7 +1,9 @@
 extends Node2D
 class_name Card
 
-@export var card_type: int = 0
+const CardType = Enums.CardType
+
+@export var card_type: CardType = CardType.c1
 
 var total_width = 56
 
@@ -12,10 +14,32 @@ var trigger_select = false
 var original: Card = null
 var speed = 4
 
+
+func type_to_index(type: CardType):
+	if type == CardType.c1:
+		return 0
+	if type == CardType.c2:
+		return 1
+	if type == CardType.c3:
+		return 2
+	if type == CardType.c4:
+		return 3
+	if type == CardType.c5:
+		return 4
+	if type == CardType.c6:
+		return 5
+	if type == CardType.c7:
+		return 6
+	if type == CardType.c8:
+		return 7
+	if type == CardType.c9:
+		return 8
+	
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-	$AnimatedSprite2D.frame = card_type
+	$AnimatedSprite2D.frame = type_to_index(card_type)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
