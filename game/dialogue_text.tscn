@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://r2nhetsfo6na"]
+
+[ext_resource type="Script" path="res://game/dialogue_text.gd" id="1_n3kip"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmv8p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4k4vg"]
+resource_local_to_scene = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="DialogueText" type="PanelContainer"]
+offset_right = 120.0
+offset_bottom = 207.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cmv8p")
+script = ExtResource("1_n3kip")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4k4vg")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(80, 2.08165e-12)
+layout_mode = 2
+fit_content = true
+scroll_active = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

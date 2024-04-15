@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7a8lyrkqm3by"]
+
+[ext_resource type="Script" path="res://game/dialogue_option.gd" id="1_n1eij"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_daiac"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[node name="PanelContainer" type="PanelContainer"]
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_daiac")
+script = ExtResource("1_n1eij")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+text = "option 1
+qui peut etre kdhd jhfje hf ejfh ejfhej hfej fhejfh ejfh ejfh ejfh ejfh ejhf jehf "
+fit_content = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
