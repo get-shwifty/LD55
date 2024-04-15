@@ -47,9 +47,8 @@ func get_cards():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	return
 	if is_hand:
-		if Input.is_action_just_pressed("enter"):
+		if Input.is_action_just_pressed("shuffle"):
 			get_cards()
 	else:
 		if Input.is_action_just_pressed("escape"):
