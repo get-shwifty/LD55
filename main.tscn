@@ -246,7 +246,7 @@ is_hand = true
 position = Vector2(1, 2.08165e-12)
 script = ExtResource("6_q236j")
 y_max_offset = 0
-max_width = 230
+max_width = 200
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("14_4ydm0")
