@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d5244x02n0sf"]
+[gd_scene load_steps=15 format=3 uid="uid://d5244x02n0sf"]
 
 [ext_resource type="Texture2D" uid="uid://c4voxdbf80y6q" path="res://resources/fff.png" id="1_getxg"]
 [ext_resource type="Script" path="res://main.gd" id="1_nqpq4"]
@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://d3hmsw34dnjxl" path="res://resources/center-bottom.png" id="4_r4fbh"]
 [ext_resource type="Texture2D" uid="uid://brosqt712lk3c" path="res://resources/center-top.png" id="5_vv1c2"]
 [ext_resource type="Script" path="res://card_hand.gd" id="6_q236j"]
-[ext_resource type="Texture2D" uid="uid://dyu3qlflj1g73" path="res://resources/fond.png" id="6_rmuhh"]
-[ext_resource type="Texture2D" uid="uid://vqtmbkj2wbko" path="res://resources/bordure.png" id="7_xhuu0"]
+[ext_resource type="Texture2D" uid="uid://cys0qq7oycr04" path="res://resources/cartes_fond_bordure/fond.png" id="9_atcr7"]
+[ext_resource type="PackedScene" uid="uid://bo3yrfdmccwtw" path="res://game/perso_select.tscn" id="10_f6cmx"]
+[ext_resource type="Texture2D" uid="uid://cfs7oyremv4h8" path="res://resources/cartes_fond_bordure/bordure.png" id="10_wdcdb"]
 [ext_resource type="PackedScene" uid="uid://b2okijt84uysj" path="res://attrape_reve.tscn" id="11_bq32h"]
 [ext_resource type="PackedScene" uid="uid://cwdrixjsg0qv0" path="res://game/dialogue_ui.tscn" id="13_lj55m"]
 
@@ -48,12 +49,14 @@ texture = ExtResource("5_vv1c2")
 
 [node name="Fond" type="Node2D" parent="."]
 
-[node name="Background" type="Sprite2D" parent="Fond"]
-texture = ExtResource("6_rmuhh")
+[node name="Fond2" type="Sprite2D" parent="Fond"]
+texture = ExtResource("9_atcr7")
+
+[node name="Perso" parent="Fond" instance=ExtResource("10_f6cmx")]
 
 [node name="Bordure" type="Sprite2D" parent="Fond"]
-position = Vector2(164, 0)
-texture = ExtResource("7_xhuu0")
+position = Vector2(164, 2.08165e-12)
+texture = ExtResource("10_wdcdb")
 
 [node name="AttrapeReve" parent="." instance=ExtResource("11_bq32h")]
 

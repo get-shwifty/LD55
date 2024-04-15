@@ -14,7 +14,7 @@ signal card_selected(card_type: CardType)
 signal clear_hand()
 
 
-var card_pool = [CardType.c1, CardType.c2, CardType.c3, CardType.c1, CardType.c2]
+var card_pool = [CardType.c1, CardType.c2, CardType.c3, CardType.c1, CardType.c2, CardType.c9]
 var card_list = []
 
 var card_width = 56

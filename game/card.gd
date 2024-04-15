@@ -34,12 +34,16 @@ func type_to_index(type: CardType):
 		return 7
 	if type == CardType.c9:
 		return 8
+func type_to_background(type: CardType):
+	if type == CardType.c9:
+		return 1
+	return 0
 	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-	$AnimatedSprite2D.frame = type_to_index(card_type)
+	$Node2D/Background.frame = type_to_background(card_type)
+	$Node2D/Symbol.frame = type_to_index(card_type)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
