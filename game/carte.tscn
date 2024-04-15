@@ -152,6 +152,7 @@ sprite_frames = SubResource("SpriteFrames_2u0k8")
 
 [node name="Symbol" type="AnimatedSprite2D" parent="Node2D/Node2D"]
 sprite_frames = SubResource("SpriteFrames_ar5yy")
+frame = 5
 
 [node name="ContourCarte" type="Sprite2D" parent="Node2D/Node2D"]
 visible = false
