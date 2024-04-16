@@ -24,8 +24,7 @@ var card_future_list = [
 	CardType.Repeat,
 	CardType.Transform,
 	CardType.Repeat2,
-	CardType.Tri,
-	CardType.FinalTransform,
+	CardType.Tri
 ]
 var card_list = []
 
