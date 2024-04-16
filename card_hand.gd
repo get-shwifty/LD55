@@ -128,10 +128,10 @@ func clear_card(card):
 func _process(delta):
 	if is_hand:
 		pass
-		if Input.is_action_just_pressed("shuffle"):
-			if card_future_list:
-				add_available_card(card_future_list.pop_front())
-			get_cards()
+		#if Input.is_action_just_pressed("shuffle"):
+			#if card_future_list:
+				#add_available_card(card_future_list.pop_front())
+			#get_cards()
 	else:
 		if Input.is_action_just_pressed("escape"):
 			if reset_button.visible:
