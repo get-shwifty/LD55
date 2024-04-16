@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3585ko3hip6t"]
+
+[ext_resource type="Script" path="res://game/fade_dialogue_text.gd" id="1_7ch3j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmv8p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="DialogueText" type="PanelContainer"]
+offset_right = 120.0
+offset_bottom = 207.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cmv8p")
+script = ExtResource("1_7ch3j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(80, 2.08165e-12)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

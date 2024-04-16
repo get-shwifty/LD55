@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_nqpq4"]
 [ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="1_x27rs"]
-[ext_resource type="Resource" uid="uid://ds7x7fmsubfhu" path="res://resources/stories/ld55_writing_tests.ink (3).json" id="3_6gt5e"]
+[ext_resource type="Resource" uid="uid://cns1qk1bklk6n" path="res://resources/stories/ld55_writing_tests.ink.json" id="3_oltck"]
 [ext_resource type="Script" path="res://card_hand.gd" id="6_q236j"]
 [ext_resource type="Texture2D" uid="uid://cys0qq7oycr04" path="res://resources/cartes_fond_bordure/fond.png" id="9_atcr7"]
 [ext_resource type="PackedScene" uid="uid://ca2buwgvr3o5m" path="res://spirit_spawn.tscn" id="9_ueqyp"]
@@ -142,7 +142,7 @@ script = ExtResource("1_nqpq4")
 
 [node name="InkPlayer" type="Node" parent="."]
 script = ExtResource("1_x27rs")
-ink_file = ExtResource("3_6gt5e")
+ink_file = ExtResource("3_oltck")
 loads_in_background = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -193,7 +193,6 @@ max_width = 200
 script = ExtResource("14_4ydm0")
 
 [node name="StartBackground" type="Node2D" parent="."]
-visible = false
 
 [node name="Fond2" type="Sprite2D" parent="StartBackground"]
 modulate = Color(0.32549, 0.32549, 0.32549, 1)
