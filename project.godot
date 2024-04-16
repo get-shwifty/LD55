@@ -23,9 +23,9 @@ Sound="*res://game/sound.gd"
 
 [display]
 
-window/size/viewport_width=1440
-window/size/viewport_height=960
-window/stretch/scale=3.0
+window/size/viewport_width=2880
+window/size/viewport_height=1920
+window/stretch/scale=6.0
 window/stretch/scale_mode="integer"
 
 [editor_plugins]
