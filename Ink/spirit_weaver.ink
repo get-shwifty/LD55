@@ -91,8 +91,8 @@ After a few minutes, you hear a knock on the door.
 ->->
 
 = Night_01
-As the sun sets you start to wonder what happened to the old Weaver.
-You suppose ... #night
+As the sun sets you start to wonder what happened to the old Weaver. #night
+You suppose ...
     * ... he died of old age[.] after a fulfilled life helping others.
     -> sleep
     * ... a wild beast killed him.
@@ -716,8 +716,8 @@ One night you wake up in sweat and all you can think about is ...
     My sacrifice.#c
     Where is it ?#c
 -
-* Sacrifice. #clear #night #hide
-- (sacrifice) {|This isn't enough. I need more ! | I need more ! | More ! | Mooooore ! |  More Sacrifice !!!! | I still need one last sacrifice, servant !}#c
+* Sacrifice. #clear #hide
+- (sacrifice) {|This isn't enough. I need more ! | I need more ! | More ! | Mooooore ! |  More Sacrifice !!!! | I still need one last sacrifice, servant !}#c #night
     * [Sacrifice Cilantro.] You sacrifice Cilantro.
     * [Sacrifice Fennel.] You sacrifice Fennel.
     * {sacrifice > 1} [Sacrifice Aponi.] You sacrifice Aponi.
