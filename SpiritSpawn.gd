@@ -3,8 +3,8 @@ extends Node2D
 var current_spirit = null
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	hide_spirit()
+#func _ready():
+	#hide_spirit()
 	#show_spirit("earth")
 
 
@@ -19,7 +19,8 @@ func show_spirit(name: String):
 	
 	$AnimatedSprite2D.frame = id
 	$AnimationPlayer.play("fade_in")
-	current_spirit == name
+	current_spirit = name
+	#print('set_spirit ' + name)
 	Sound.ctx.invocation.play()
 	summon_button.visible = false
 	

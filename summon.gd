@@ -39,3 +39,7 @@ func _on_selected_cards_card_selected(card_type):
 
 func _on_selected_cards_clear_hand():
 	visible = false
+
+
+func _on_selected_cards_update_hand(index):
+	pass # Replace with function body.

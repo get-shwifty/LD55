@@ -153,38 +153,39 @@ loads_in_background = false
 texture = ExtResource("9_atcr7")
 
 [node name="Bordure-sheet" type="Sprite2D" parent="Fond"]
-position = Vector2(165, -1)
+position = Vector2(220, 2.08165e-12)
 texture = ExtResource("11_qjuyx")
 hframes = 2
 
 [node name="Perso" parent="Fond" instance=ExtResource("10_f6cmx")]
-position = Vector2(180, -77)
+position = Vector2(237, -105)
 
 [node name="Bordure" type="Sprite2D" parent="Fond"]
-position = Vector2(164, 2.08165e-12)
+position = Vector2(220, 2.08165e-12)
 texture = ExtResource("11_qjuyx")
 hframes = 2
 frame = 1
 
 [node name="AttrapeReve" parent="." instance=ExtResource("11_bq32h")]
-position = Vector2(-240, -160)
+position = Vector2(-293, -180)
 
 [node name="Dialogue UI" parent="." instance=ExtResource("13_lj55m")]
-custom_minimum_size = Vector2(115, 130)
-offset_left = 123.0
-offset_top = -12.0
-offset_right = 238.0
-offset_bottom = 148.0
+custom_minimum_size = Vector2(145, 140)
+offset_left = 169.0
+offset_top = -16.0
+offset_right = 304.0
+offset_bottom = 164.0
 
 [node name="SpiritSpawn" parent="." instance=ExtResource("9_ueqyp")]
+position = Vector2(-31, 20)
 
 [node name="card_hand" type="Node2D" parent="."]
-position = Vector2(-8, 111)
+position = Vector2(-31, 111)
 script = ExtResource("6_q236j")
 is_hand = true
 
 [node name="selected_cards" type="Node2D" parent="."]
-position = Vector2(1, 2.08165e-12)
+position = Vector2(-31, 2.08165e-12)
 script = ExtResource("6_q236j")
 y_max_offset = 0
 max_width = 200
@@ -279,5 +280,8 @@ script = ExtResource("32_a53ks")
 [connection signal="clear_hand" from="selected_cards" to="Summon" method="_on_selected_cards_clear_hand"]
 [connection signal="clear_hand" from="selected_cards" to="Reset" method="_on_selected_cards_clear_hand"]
 [connection signal="clear_hand" from="selected_cards" to="Wrong" method="_on_selected_cards_clear_hand"]
+[connection signal="update_hand" from="selected_cards" to="GameManager" method="_on_selected_cards_update_hand"]
+[connection signal="update_hand" from="selected_cards" to="Summon" method="_on_selected_cards_update_hand"]
+[connection signal="update_hand" from="selected_cards" to="Reset" method="_on_selected_cards_update_hand"]
 [connection signal="summon" from="Summon" to="." method="_on_summon_summon"]
 [connection signal="reset" from="Reset" to="selected_cards" method="_on_reset_reset"]

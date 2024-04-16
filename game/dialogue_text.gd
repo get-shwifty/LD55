@@ -3,7 +3,7 @@ extends PanelContainer
 var type = 0
 var text = ''
 var text_buffer = ''
-var speed = 2
+var speed = 4
 var listener = null
 var center_all = false
 
@@ -57,6 +57,8 @@ func write_to_text():
 
 func _process(delta):
 	if Input.is_action_just_pressed("enter"):
+		write_all_buffer()
+	elif Input.is_action_just_pressed("right_click"):
 		write_all_buffer()
 		
 func write_all_buffer():

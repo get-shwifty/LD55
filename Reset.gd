@@ -31,3 +31,8 @@ func _on_mouse_exited():
 
 func _on_mouse_entered():
 		$AnimatedSprite2D.frame = 1
+
+
+func _on_selected_cards_update_hand(index):
+	if index == 0:
+		_on_selected_cards_clear_hand()

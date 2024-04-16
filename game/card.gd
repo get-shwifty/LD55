@@ -7,18 +7,20 @@ const CardType = Enums.CardType
 
 var total_width = 56
 
-# 0 available 1 hover 2 selected 3 unselect
+# 0 available 1 hover 2 selected 3 unselect 90 hover select 99 selected top
 var state = 0
 var trigger_select = false
 
+var hand = null
+
 var original: Card = null
 var speed = 4
+var in_pos = false
 
 func type_to_background(type: CardType):
 	if type == CardType.FinalTransform:
 		return 1
 	return 0
-	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,6 +49,9 @@ func update_shape(visible_width: int):
 	shape.shape.size = Vector2(visible_width, shape.shape.size.y)
 	
 func hover():
+	if (state == 99 or state == 90) and in_pos:
+		hand.trigger_hover_selected(self)
+		return
 	if state != 0:
 		return
 	state = 1
@@ -58,6 +63,9 @@ func hover():
 	Sound.ctx.card_hover.play()
 	
 func stop_hover():
+	if state == 90 or state == 99:
+		hand.stop_hover_selected(self)
+		return
 	if state != 1:
 		return
 	state = 0
@@ -75,6 +83,9 @@ func set_available():
 	z_index = 0
 	
 func select():
+	if state == 90:
+		hand.clear_card(self)
+		return
 	if state != 1:
 		return
 	stop_hover()
@@ -84,6 +95,18 @@ func select():
 	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,0.4)
 	#$Node2D/Node2D/ContourCarte.visible = true
 	Sound.set_card()
+	
+func set_selected_hover():
+	if state != 99:
+		return
+	state = 90
+	$Node2D/Node2D/Background.modulate = Color(2,1,1,1)
+	
+func no_selected_hover():
+	if state != 90:
+		return
+	state = 99
+	$Node2D/Node2D/Background.modulate = Color(1,1,1,1)
 	
 func send_back():
 	if not original:

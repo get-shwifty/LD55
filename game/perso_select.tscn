@@ -1,29 +1,45 @@
-[gd_scene load_steps=10 format=3 uid="uid://bo3yrfdmccwtw"]
+[gd_scene load_steps=11 format=3 uid="uid://bo3yrfdmccwtw"]
 
 [ext_resource type="Script" path="res://PersoSelection.gd" id="1_l4wqg"]
-[ext_resource type="Texture2D" uid="uid://c07mv7l3i68f6" path="res://resources/persos_esprits/persos/chasseuse.png" id="2_l6yvc"]
-[ext_resource type="Texture2D" uid="uid://cnecey7y3rxb1" path="res://resources/persos_esprits/persos/fermier.png" id="3_wh1nl"]
-[ext_resource type="Texture2D" uid="uid://cjdolwklif2yp" path="res://resources/persos_esprits/persos/fille.png" id="4_ssx5y"]
-[ext_resource type="Texture2D" uid="uid://bjqwujne3xns3" path="res://resources/persos_esprits/persos/sage.png" id="5_1vuta"]
-[ext_resource type="Texture2D" uid="uid://bwtkycbn41e8f" path="res://resources/persos_esprits/persos/vieille.png" id="6_qdn4g"]
+[ext_resource type="Texture2D" uid="uid://c63itbpfjebgu" path="res://resources/persos_esprits/persos/personnages.png" id="2_yr3r7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxh03"]
+atlas = ExtResource("2_yr3r7")
+region = Rect2(107, 0, 107, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx61c"]
+atlas = ExtResource("2_yr3r7")
+region = Rect2(0, 0, 107, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75o2i"]
+atlas = ExtResource("2_yr3r7")
+region = Rect2(214, 0, 107, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ngnm"]
+atlas = ExtResource("2_yr3r7")
+region = Rect2(321, 0, 107, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mt2e"]
+atlas = ExtResource("2_yr3r7")
+region = Rect2(428, 0, 107, 150)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_difme"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_1vuta")
+"texture": SubResource("AtlasTexture_qxh03")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_l6yvc")
+"texture": SubResource("AtlasTexture_vx61c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ssx5y")
+"texture": SubResource("AtlasTexture_75o2i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_wh1nl")
+"texture": SubResource("AtlasTexture_1ngnm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_qdn4g")
+"texture": SubResource("AtlasTexture_2mt2e")
 }],
 "loop": true,
 "name": &"default",
