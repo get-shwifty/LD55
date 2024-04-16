@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_nqpq4"]
 [ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="1_x27rs"]
-[ext_resource type="Resource" uid="uid://ds7x7fmsubfhu" path="res://resources/stories/ld55_writing_tests.ink (3).json" id="3_6gt5e"]
+[ext_resource type="Resource" uid="uid://cns1qk1bklk6n" path="res://resources/stories/ld55_writing_tests.ink.json" id="3_oltck"]
 [ext_resource type="Script" path="res://card_hand.gd" id="6_q236j"]
 [ext_resource type="Texture2D" uid="uid://cys0qq7oycr04" path="res://resources/cartes_fond_bordure/fond.png" id="9_atcr7"]
 [ext_resource type="PackedScene" uid="uid://ca2buwgvr3o5m" path="res://spirit_spawn.tscn" id="9_ueqyp"]
 [ext_resource type="PackedScene" uid="uid://bo3yrfdmccwtw" path="res://game/perso_select.tscn" id="10_f6cmx"]
 [ext_resource type="PackedScene" uid="uid://b2okijt84uysj" path="res://attrape_reve.tscn" id="11_bq32h"]
 [ext_resource type="Texture2D" uid="uid://dh7own3ns2o4b" path="res://resources/cartes_fond_bordure/bordure-sheet.png" id="11_qjuyx"]
-[ext_resource type="Script" path="res://game/dialogue_ui.gd" id="12_5453e"]
+[ext_resource type="PackedScene" uid="uid://7604dnwglpo7" path="res://game/start_dialogue_ui.tscn" id="12_l6vdn"]
 [ext_resource type="PackedScene" uid="uid://cwdrixjsg0qv0" path="res://game/dialogue_ui.tscn" id="13_lj55m"]
 [ext_resource type="Script" path="res://GameManager.gd" id="14_4ydm0"]
 [ext_resource type="Script" path="res://SoundSystemBoomBoom.gd" id="19_anxbs"]
@@ -25,7 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://clwbkhx71ocel" path="res://resources/sounds/k3.wav" id="27_1nukx"]
 [ext_resource type="Script" path="res://Wrong.gd" id="32_a53ks"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3qcc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pul18"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -37,7 +37,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bejvb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jeydh"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -49,7 +49,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eob6h"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iaoxd"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -61,7 +61,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu6tg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5hr8"]
 content_margin_left = 1.0
 content_margin_top = 0.0
 content_margin_right = 1.0
@@ -73,7 +73,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ot5cn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c2rj"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -94,16 +94,16 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="Theme" id="Theme_ahl2q"]
+[sub_resource type="Theme" id="Theme_dw6xo"]
 resource_local_to_scene = true
 /fonts/size = null
 RichTextLabel/font_sizes/bold_font_size = 20
-RichTextLabel/font_sizes/normal_font_size = 10
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_a3qcc")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_bejvb")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_eob6h")
-VScrollBar/styles/scroll = SubResource("StyleBoxFlat_pu6tg")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_ot5cn")
+RichTextLabel/font_sizes/normal_font_size = 14
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_pul18")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_jeydh")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_iaoxd")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_b5hr8")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_4c2rj")
 
 [sub_resource type="Animation" id="Animation_xuci4"]
 resource_name = "hide"
@@ -142,7 +142,7 @@ script = ExtResource("1_nqpq4")
 
 [node name="InkPlayer" type="Node" parent="."]
 script = ExtResource("1_x27rs")
-ink_file = ExtResource("3_6gt5e")
+ink_file = ExtResource("3_oltck")
 loads_in_background = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -193,27 +193,19 @@ max_width = 200
 script = ExtResource("14_4ydm0")
 
 [node name="StartBackground" type="Node2D" parent="."]
-visible = false
 
 [node name="Fond2" type="Sprite2D" parent="StartBackground"]
 modulate = Color(0.32549, 0.32549, 0.32549, 1)
 texture = ExtResource("9_atcr7")
 
-[node name="Dialogue UI" type="ScrollContainer" parent="StartBackground"]
-custom_minimum_size = Vector2(115, 120)
-offset_left = -150.0
-offset_top = -100.0
-offset_right = 150.0
-offset_bottom = 100.0
-theme = SubResource("Theme_ahl2q")
-horizontal_scroll_mode = 0
+[node name="Dialogue UI" parent="StartBackground" instance=ExtResource("12_l6vdn")]
+offset_left = -220.0
+offset_top = -135.0
+offset_right = 260.0
+offset_bottom = 115.0
+theme = SubResource("Theme_dw6xo")
 vertical_scroll_mode = 3
-script = ExtResource("12_5453e")
 center_all = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="StartBackground/Dialogue UI"]
-custom_minimum_size = Vector2(300, 2.08165e-12)
-layout_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="StartBackground"]
 libraries = {

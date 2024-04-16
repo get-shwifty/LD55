@@ -1,7 +1,7 @@
 extends Node2D
 @onready var _ink_player: InkPlayer = $InkPlayer
 @onready var game_dialogue: DialogeUI = $"Dialogue UI"
-@onready var start_dialogue: DialogeUI = $"StartBackground/Dialogue UI"
+@onready var start_dialogue: StartDialogeUI = $"StartBackground/Dialogue UI"
 @onready var character_selection = $Fond/Perso
 @onready var dialogue = start_dialogue
 @onready var card_hand = $card_hand
@@ -37,8 +37,8 @@ func is_perso(t):
 func _story_loaded(successfully: bool):
 	if !successfully:
 		return
-	#_continue_story()
-	_skip_until_start()
+	_continue_story()
+	#_skip_until_start()
 
 func select_choice(index: int):
 	_ink_player.choose_choice_index(index)
