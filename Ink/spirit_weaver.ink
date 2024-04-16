@@ -9,7 +9,6 @@ VAR petrel_calls_me_by_name = false
 VAR i_am_the_weaver = false
 
 VAR p_karma = 3
--> Chapter_3.end
 
 -> Opening ->
 -> Introduction ->
