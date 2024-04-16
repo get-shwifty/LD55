@@ -19,6 +19,7 @@ const CardType = Enums.CardType
 
 @onready var attrape_reve = $"../AttrapeReve"
 @onready var cards_hand = $"../card_hand"
+@onready var spirit_desc = $"../SpiritDesc"
 
 const OPPOSITE = {
 	2: 3, 3: 2, 1: 4, 4: 1,
@@ -146,8 +147,11 @@ func _on_selected_cards_card_selected(card):
 		attrape_reve.show_node(path_nodes[i])
 
 	if len(path_nodes) >= 2:
+		spirit_desc.show()
+		spirit_desc.set_node(path_nodes[-1])
 		attrape_reve.show_particles(path_nodes[-1])
 	else:
+		spirit_desc.hide()
 		attrape_reve.hide_particles()
 	
 	if len(cards_hand.card_pool) < 10 and len(path_nodes) >= 15:
@@ -167,6 +171,7 @@ func _on_selected_cards_clear_hand():
 	path_nodes = [0]
 	attrape_reve.clear_all()
 	attrape_reve.hide_particles()
+	spirit_desc.hide()
 
 	if len(cards_hand.card_list) >= 5:
 		attrape_reve.set_discovery_step(2)
