@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bp1fnxnij0pj6" path="res://resources/cartes_fond_bordure/contour_carte.png" id="3_vihj8"]
 [ext_resource type="Texture2D" uid="uid://drimmrtcbb8wt" path="res://resources/all_cartes.png" id="4_iemmy"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n701"]
+resource_local_to_scene = true
+size = Vector2(56, 80)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_83n8k"]
 atlas = ExtResource("2_xgdjl")
 region = Rect2(0, 0, 56, 82)
@@ -99,10 +103,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n701"]
-resource_local_to_scene = true
-size = Vector2(56, 80)
-
 [sub_resource type="Animation" id="Animation_g6426"]
 length = 0.001
 tracks/0/type = "value"
@@ -143,6 +143,11 @@ _data = {
 [node name="Node2D" type="Node2D"]
 script = ExtResource("2_5eo2h")
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_5n701")
+
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Node2D" type="Node2D" parent="Node2D"]
@@ -150,19 +155,15 @@ script = ExtResource("2_js5td")
 
 [node name="Background" type="AnimatedSprite2D" parent="Node2D/Node2D"]
 sprite_frames = SubResource("SpriteFrames_2u0k8")
+frame = 1
 
 [node name="Symbol" type="AnimatedSprite2D" parent="Node2D/Node2D"]
 sprite_frames = SubResource("SpriteFrames_ar5yy")
-frame = 5
+frame = 8
 
 [node name="ContourCarte" type="Sprite2D" parent="Node2D/Node2D"]
 visible = false
 texture = ExtResource("3_vihj8")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_5n701")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
