@@ -33,6 +33,14 @@ func _ready():
 func _process(delta):
 	if state == 3:
 		move_back()
+	if card_type == CardType.FinalTransform and state != 2:
+		if state != 2:
+			var now = Time.get_ticks_msec() / 30
+			$Node2D/Node2D.wobble = false
+			$Node2D/Node2D.position.x = 1.0 * sin(now)
+			$Node2D/Node2D.position.y = 0.3 * cos(now)
+		else:
+			$Node2D/Node2D.wobble = true
 	
 func update_shape(visible_width: int):
 	var shape = $Area2D/CollisionShape2D

@@ -1,6 +1,7 @@
 extends Node2D
 
 var amplitude = 1
+var wobble = true
 @onready var counter = randf_range(-100, 100)
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,6 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	counter += delta * 2
-	var y = sin(counter) * amplitude
-	position = Vector2(0, y)
+	if wobble:
+		counter += delta * 2
+		var y = sin(counter) * amplitude
+		position = Vector2(0, y)

@@ -150,7 +150,16 @@ func _on_selected_cards_card_selected(card):
 	else:
 		attrape_reve.hide_particles()
 	
-	# TODO new card if all symbols are enabled
+	if len(cards_hand.card_pool) < 10 and len(path_nodes) >= 15:
+		var visited = {}
+		for node in path_nodes:
+			visited[node] = true
+		var all_visited = len(visited) == 15
+
+		if all_visited:
+			attrape_reve.set_discovery_step(4)
+			cards_hand.add_available_card(CardType.FinalTransform)
+			cards_hand.give_card(CardType.FinalTransform)
 
 
 func _on_selected_cards_clear_hand():
@@ -163,8 +172,6 @@ func _on_selected_cards_clear_hand():
 		attrape_reve.set_discovery_step(2)
 	if len(cards_hand.card_list) >= 7:
 		attrape_reve.set_discovery_step(3)
-	if len(cards_hand.card_list) >= 10:
-		attrape_reve.set_discovery_step(4)
 
 
 
