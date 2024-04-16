@@ -135,6 +135,9 @@ func _process(delta):
 	else:
 		if Input.is_action_just_pressed("escape"):
 			send_back()
+		elif Input.is_action_just_pressed("right_click"):
+			if card_list.size():
+				clear_card(card_list[-1])
 		#if Input.is_action_just_pressed("shuffle"):
 			#clear_hand.emit()
 		

@@ -58,6 +58,8 @@ func write_to_text():
 func _process(delta):
 	if Input.is_action_just_pressed("enter"):
 		write_all_buffer()
+	elif Input.is_action_just_pressed("right_click"):
+		write_all_buffer()
 		
 func write_all_buffer():
 	if text_buffer.length() == 0:
