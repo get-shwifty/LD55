@@ -21,6 +21,11 @@ extends Node2D
 @onready var ropes_sprite = preload("res://ropes.tscn")
 @onready var nodes_sprite = preload("res://illuminated_nodes.tscn")
 
+@onready var attrape1 = $AttrapeReveGrand
+@onready var attrape2 = $AttrapeReveGrand2
+@onready var attrape3 = $AttrapeReveGrand3
+@onready var attrape4 = $AttrapeReveGrand4
+
 var illuminated_nodes = {}
 var shown_ropes = {}
 var discovery_step = 1
@@ -52,8 +57,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _process(_delta):
+	var now = Time.get_ticks_msec()
+	var x = sin(now / 2000.) * 6
+	attrape1.position.x = x * 0.25
+	attrape2.position.x = x * 0.5
+	attrape3.position.x = x * 0.75
+	attrape4.position.x = x
 	
 
 func ensure_rope(rope):
