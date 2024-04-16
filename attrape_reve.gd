@@ -29,6 +29,7 @@ extends Node2D
 var illuminated_nodes = {}
 var shown_ropes = {}
 var discovery_step = 1
+var current_particle = 0
 
 const ROPE_TO_FRAME = {
 	"0 1" = 5, "0 2" = 2, "0 3" = 0, "0 4" = 1,
@@ -64,7 +65,33 @@ func _process(_delta):
 	attrape2.position.x = x * 0.5
 	attrape3.position.x = x * 0.75
 	attrape4.position.x = x
-	
+	for i in illuminated_nodes.keys():
+		if i < 5:
+			illuminated_nodes[i].position.x = attrape1.position.x
+		elif i < 11:
+			illuminated_nodes[i].position.x = attrape2.position.x
+		elif i < 15:
+			illuminated_nodes[i].position.x = attrape3.position.x
+		elif i == 15:
+			illuminated_nodes[i].position.x = attrape4.position.x
+	for rope in shown_ropes.keys():
+		var i = int(rope.split(" ")[1])
+		if i < 5:
+			shown_ropes[rope].position.x = attrape1.position.x
+		elif i < 11:
+			shown_ropes[rope].position.x = attrape2.position.x
+		elif i < 15:
+			shown_ropes[rope].position.x = attrape3.position.x
+		elif i == 15:
+			shown_ropes[rope].position.x = attrape4.position.x
+	if current_particle < 5:
+		particles.offset.x = attrape1.position.x
+	elif current_particle < 11:
+		particles.offset.x = attrape2.position.x
+	elif current_particle < 15:
+		particles.offset.x = attrape3.position.x
+	elif current_particle == 15:
+		particles.offset.x = attrape4.position.x
 
 func ensure_rope(rope):
 	if rope not in shown_ropes:
@@ -114,6 +141,7 @@ func hide_node(node):
 func show_particles(node):
 	particles.show()
 	particles.position = nodes_pos.position + nodes_pos.get_child(node).position
+	current_particle = node
 	
 func hide_particles():
 	particles.hide()
