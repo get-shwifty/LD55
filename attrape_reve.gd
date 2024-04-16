@@ -122,7 +122,7 @@ func set_discovery_step(step):
 func ensure_node(node):
 	if node not in illuminated_nodes:
 		illuminated_nodes[node] = nodes_sprite.instantiate()
-		illuminated_nodes[node].frame = NODE_TO_FRAME[node]
+		illuminated_nodes[node].frame = node
 		illuminated_nodes[node].modulate = Color(Color.WHITE, 0.0)
 		add_child(illuminated_nodes[node])
 
