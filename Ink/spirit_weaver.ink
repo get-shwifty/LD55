@@ -9,6 +9,7 @@ VAR petrel_calls_me_by_name = false
 VAR i_am_the_weaver = false
 
 VAR p_karma = 3
+-> Chapter_3.end
 
 -> Opening ->
 -> Introduction ->
@@ -666,7 +667,7 @@ A few day pass. #night
 * An idea pops into your head.
 ** You try to forget it ...
 *** ... but it keeps comming back.
-**** Has anyone ever tried summoning every spirit at once ?
+**** Has anyone tried to weave the ultimate pattern ?
 ***** It's probably too dangerous.
 ****** But has anybody tried ?
 -Probably not, the more you think about it ...
@@ -684,12 +685,18 @@ You try to change your mind and focus on ...
 *[...]
 -
 One night you wake up in sweat and all you can think about is ...
-*... has anybody tried to summon every spirit at once ?
-*... has anybody tried to summon every spirit at once ?
-*... has anybody tried to summon every spirit at once ?
-- The outline of a rune you've never seen before burns through your mind. #add_rune #epilogue_music
+*... has anybody tried to weave the ultimate pattern ?
+*... has anybody tried to weave the ultimate pattern ?
+*... has anybody tried to weave the ultimate pattern ?
+-
+*... has anybody tried to connect every spirit at once ?
+*... has anybody tried to connect every spirit at once ?
+*... has anybody tried to connect every spirit at once ?
+-
+*The outline of a rune you've never seen before burns through your mind. 
+-#add_rune #epilogue_music
 * You must try. #day
-- I must try to sumoon every spirit at once !
+- You must try to connect every spirit at once !
 ->sprit_choice->
 * [pattern]
 -
@@ -740,8 +747,8 @@ As you utter these words, you start to feel ...
 ******* As darkness eats you, one final though crosses your mind.
 -
 * You hope your sacrifice will quench the Pattern.
-* You wonder if this is what happened to the previous Weaver.
-* You did summon every spirit at once !
+* You wonder if this is what happened to the previous weaver.
+* You did weave the ultimate pattern !
 -
 * The end. #clear
 - Thanks for Playing !
