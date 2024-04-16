@@ -27,6 +27,7 @@ func handle_scrollbar_changed():
 
 var listener = null
 
+var spacing_buffer = "\n"
 		
 func select_option(option):
 	listener.select_choice(option.index)
@@ -39,6 +40,7 @@ func add_dialogue(text, type, tags):
 			type = 0
 		if t == "c":
 			type = 2
+	text = text + spacing_buffer;
 	text_buffer.append([text, type, tags])
 	
 func notify_write_end():

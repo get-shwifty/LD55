@@ -108,7 +108,7 @@ You suppose ... #night
 ->->
 
 = Night_02
-The sky is really pretty tonigh. As the clouds burn a bright orange, you take a moment to think about this new rune Kaya found. You're puzzled because ...#night
+The sky is really pretty tonight. As the clouds burn a bright orange, you take a moment to think about this new rune Kaya found. You're puzzled because ...#night
 * ... you didn't knew there was more than two weaving runes.
 * ... the rune looks like ancient forbidden magic.
 * ... how could a rune end up inside a deer.
