@@ -5,6 +5,7 @@ const CardType = Enums.CardType
 const CARD_SCENE = preload('res://game/carte.tscn');
 
 @onready var selected_hand: CardHand = $"../selected_cards"
+@onready var spirit = $'../SpiritSpawn'
 
 @export var is_hand: bool = false
 @export var nb = 6
@@ -13,6 +14,7 @@ const CARD_SCENE = preload('res://game/carte.tscn');
 
 signal card_selected(card_type: CardType)
 signal clear_hand()
+signal update_hand(index: int)
 
 
 var card_pool = [CardType.Clockwise]
@@ -55,6 +57,32 @@ func clear():
 		selected_hand.clear()
 	if not is_hand:
 		clear_hand.emit()
+		
+func trigger_hover_selected(card):
+	if is_hand:
+		return
+	var index = card_list.find(card)
+	hover_index = index
+	for i in range(card_list.size()):
+		var c = card_list[i]
+		if i < index:
+			c.no_selected_hover()
+		else:
+			c.set_selected_hover()
+
+
+var hover_index = null
+func stop_hover_selected(card):
+	#await get_tree().create_timer(0.1).timeout
+	var i = card_list.find(card)
+	if hover_index != null and i > hover_index:
+		return
+	card.no_selected_hover()
+	if i == hover_index:
+		hover_index = null
+		for l in range(card_list.size()):
+			if l > i:
+				stop_hover_selected(card_list[l])
 	
 func send_back():
 	visible = true
@@ -81,11 +109,24 @@ func add_available_card(type: CardType):
 	
 func get_next_card():
 	add_available_card(card_future_list.pop_front())
+	
+func clear_card(card):
+	if is_hand:
+		return
+	var index = card_list.find(card)
+	for i in range(card_list.size()):
+		var c = card_list[i]
+		if i >= index:
+			c.send_back()
+
+	card_list = card_list.slice(0, index)
+	update_hand.emit(index)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if is_hand:
+		pass
 		if Input.is_action_just_pressed("shuffle"):
 			if card_future_list:
 				add_available_card(card_future_list.pop_front())
@@ -93,13 +134,16 @@ func _process(delta):
 	else:
 		if Input.is_action_just_pressed("escape"):
 			send_back()
-		if Input.is_action_just_pressed("shuffle"):
-			clear_hand.emit()
+		#if Input.is_action_just_pressed("shuffle"):
+			#clear_hand.emit()
 		
 	
 	for i in card_list.size():
 		var card = card_list[i]
-		card.position = card.position.move_toward(positions[i], move_speed)
+		var new_pos = card.position.move_toward(positions[i], move_speed)
+		if new_pos.distance_to(card.position) < 2:
+			card.in_pos = true
+		card.position = new_pos
 		
 	trigger_card_selection()
 
@@ -109,6 +153,7 @@ func select_card(card):
 	clone.card_type = card.card_type
 	clone.state = 99
 	clone.original = card
+	clone.hand = self
 	var pos = card.global_position
 	add_child(clone)
 	clone.global_position = pos
@@ -121,6 +166,10 @@ func trigger_card_selection():
 		return
 	for card in card_list:
 		if card.trigger_select:
+			if spirit.current_spirit != null:
+				card.set_available()
+				card.trigger_select = false
+				continue
 			card.trigger_select = false
 			selected_hand.select_card(card)
 
@@ -174,7 +223,6 @@ func compute_positions():
 func test():
 	var counter = 0
 	while true:
-		print(counter)
 		if counter < 5:
 			#print('size ' + str(card_list.size()))
 			for c in card_list:

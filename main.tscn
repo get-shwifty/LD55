@@ -279,5 +279,8 @@ script = ExtResource("32_a53ks")
 [connection signal="clear_hand" from="selected_cards" to="Summon" method="_on_selected_cards_clear_hand"]
 [connection signal="clear_hand" from="selected_cards" to="Reset" method="_on_selected_cards_clear_hand"]
 [connection signal="clear_hand" from="selected_cards" to="Wrong" method="_on_selected_cards_clear_hand"]
+[connection signal="update_hand" from="selected_cards" to="GameManager" method="_on_selected_cards_update_hand"]
+[connection signal="update_hand" from="selected_cards" to="Summon" method="_on_selected_cards_update_hand"]
+[connection signal="update_hand" from="selected_cards" to="Reset" method="_on_selected_cards_update_hand"]
 [connection signal="summon" from="Summon" to="." method="_on_summon_summon"]
 [connection signal="reset" from="Reset" to="selected_cards" method="_on_reset_reset"]

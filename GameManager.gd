@@ -166,3 +166,10 @@ func _on_selected_cards_clear_hand():
 	if len(cards_hand.card_list) >= 10:
 		attrape_reve.set_discovery_step(4)
 
+
+
+func _on_selected_cards_update_hand(index):
+	var remain = path_cards.slice(0, index)
+	_on_selected_cards_clear_hand()
+	for r in remain:
+		_on_selected_cards_card_selected(r)

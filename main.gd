@@ -37,8 +37,8 @@ func is_perso(t):
 func _story_loaded(successfully: bool):
 	if !successfully:
 		return
-	_continue_story()
-	#_skip_until_start()
+	#_continue_story()
+	_skip_until_start()
 
 func select_choice(index: int):
 	_ink_player.choose_choice_index(index)

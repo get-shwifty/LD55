@@ -20,6 +20,8 @@ func select_perso(perso: String):
 		if has_perso:
 			$AnimationPlayer.play_backwards("fade_in")
 			has_perso = false
+		else:
+			$AnimatedSprite2D.modulate = Color(1,1,1,0)
 	else:
 		has_perso = true
 		$AnimationPlayer.play("fade_in")

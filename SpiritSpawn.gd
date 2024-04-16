@@ -19,11 +19,13 @@ func show_spirit(name: String):
 	
 	$AnimatedSprite2D.frame = id
 	$AnimationPlayer.play("fade_in")
-	current_spirit == name
+	current_spirit = name
+	#print('set_spirit ' + name)
 	Sound.ctx.invocation.play()
 	summon_button.visible = false
 	
 func hide_spirit():
+	#print('hide spirit')
 	if current_spirit == null:
 		$AnimatedSprite2D.modulate = Color(1,1,1,0)
 	else:
