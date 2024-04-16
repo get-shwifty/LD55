@@ -1,7 +1,7 @@
 extends Node2D
 @onready var _ink_player: InkPlayer = $InkPlayer
 @onready var game_dialogue: DialogeUI = $"Dialogue UI"
-@onready var start_dialogue: DialogeUI = $"StartBackground/Dialogue UI"
+@onready var start_dialogue: StartDialogeUI = $"StartBackground/Dialogue UI"
 @onready var character_selection = $Fond/Perso
 @onready var dialogue = start_dialogue
 @onready var card_hand = $card_hand
