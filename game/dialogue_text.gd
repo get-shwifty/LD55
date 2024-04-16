@@ -3,7 +3,7 @@ extends PanelContainer
 var type = 0
 var text = ''
 var text_buffer = ''
-var speed = 2
+var speed = 4
 var listener = null
 var center_all = false
 
