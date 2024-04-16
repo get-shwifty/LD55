@@ -40,7 +40,7 @@ func _ready():
 	_on_selected_cards_clear_hand()
 
 func step(card: CardType):
-	var cur = path_nodes[-1]
+	var cur = path_nodes[-1] if path_nodes else 0
 	var next = -1
 	if card == CardType.Clockwise:
 		if cur < 5:
@@ -65,11 +65,20 @@ func step(card: CardType):
 		if len(path_cards) >= 1:
 			var previous_card = path_cards[-1]
 			var ratio = 1
+			var double = false
 			if previous_card == CardType.Repeat and len(path_cards) >= 2:
 				previous_card = path_cards[-2]
+				double = true
 			if previous_card == CardType.Clockwise or \
 				previous_card == CardType.Anticlockwise:
-				if cur < 11:
+				if not double:
+					step(previous_card)
+				if cur < 15:
+					step(previous_card)
+				if 11 <= cur and cur <= 14:
+					step(previous_card)
+				if previous_card == CardType.Clockwise and 5 <= cur and cur <= 10:
+					step(previous_card)
 					step(previous_card)
 					step(previous_card)
 				if cur < 5:
@@ -133,8 +142,9 @@ func _on_selected_cards_card_selected(card):
 	path_cards.append(card)
 	for i in range(16):
 		attrape_reve.hide_node(i)
-	for i in path_nodes:
-		attrape_reve.show_node(i)
+	for i in range(1, len(path_nodes)):
+		attrape_reve.show_node(path_nodes[i])
+
 	if len(path_nodes) >= 2:
 		attrape_reve.show_particles(path_nodes[-1])
 	else:
@@ -147,7 +157,6 @@ func _on_selected_cards_clear_hand():
 	path_cards = []
 	path_nodes = [0]
 	attrape_reve.clear_all()
-	attrape_reve.show_node(0)
 	attrape_reve.hide_particles()
 
 	if len(cards_hand.card_list) >= 5:

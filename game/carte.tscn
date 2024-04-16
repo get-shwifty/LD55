@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bpjx6agu8yhj1"]
+[gd_scene load_steps=23 format=3 uid="uid://bpjx6agu8yhj1"]
 
 [ext_resource type="Script" path="res://game/card.gd" id="2_5eo2h"]
 [ext_resource type="Script" path="res://game/wobble.gd" id="2_js5td"]
 [ext_resource type="Texture2D" uid="uid://bx0fgs2q40e8y" path="res://resources/cartes_fond_bordure/all_cartes.png" id="2_xgdjl"]
 [ext_resource type="Texture2D" uid="uid://bp1fnxnij0pj6" path="res://resources/cartes_fond_bordure/contour_carte.png" id="3_vihj8"]
+[ext_resource type="Texture2D" uid="uid://drimmrtcbb8wt" path="res://resources/all_cartes.png" id="4_iemmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83n8k"]
 atlas = ExtResource("2_xgdjl")
@@ -27,71 +28,71 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3jbyq"]
-atlas = ExtResource("2_xgdjl")
-region = Rect2(112, 0, 56, 82)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5dnrh"]
-atlas = ExtResource("2_xgdjl")
-region = Rect2(168, 0, 56, 82)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8t65b"]
-atlas = ExtResource("2_xgdjl")
+[sub_resource type="AtlasTexture" id="AtlasTexture_82yng"]
+atlas = ExtResource("4_iemmy")
 region = Rect2(224, 0, 56, 82)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dfbun"]
-atlas = ExtResource("2_xgdjl")
-region = Rect2(280, 0, 56, 82)
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2cxg"]
+atlas = ExtResource("4_iemmy")
+region = Rect2(168, 0, 56, 82)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g68uq"]
-atlas = ExtResource("2_xgdjl")
-region = Rect2(336, 0, 56, 82)
+[sub_resource type="AtlasTexture" id="AtlasTexture_55q11"]
+atlas = ExtResource("4_iemmy")
+region = Rect2(448, 0, 56, 82)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yn8vx"]
-atlas = ExtResource("2_xgdjl")
-region = Rect2(392, 0, 56, 82)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8tg3s"]
-atlas = ExtResource("2_xgdjl")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v4s0"]
+atlas = ExtResource("4_iemmy")
 region = Rect2(504, 0, 56, 82)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b8yof"]
-atlas = ExtResource("2_xgdjl")
-region = Rect2(560, 0, 56, 82)
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa0ns"]
+atlas = ExtResource("4_iemmy")
+region = Rect2(280, 0, 56, 82)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rv08e"]
-atlas = ExtResource("2_xgdjl")
-region = Rect2(448, 0, 56, 82)
+[sub_resource type="AtlasTexture" id="AtlasTexture_144ja"]
+atlas = ExtResource("4_iemmy")
+region = Rect2(336, 0, 56, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8met6"]
+atlas = ExtResource("4_iemmy")
+region = Rect2(392, 0, 56, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed1c4"]
+atlas = ExtResource("4_iemmy")
+region = Rect2(616, 0, 56, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h638d"]
+atlas = ExtResource("4_iemmy")
+region = Rect2(560, 0, 56, 82)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ar5yy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3jbyq")
+"texture": SubResource("AtlasTexture_82yng")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5dnrh")
+"texture": SubResource("AtlasTexture_c2cxg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8t65b")
+"texture": SubResource("AtlasTexture_55q11")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dfbun")
+"texture": SubResource("AtlasTexture_2v4s0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g68uq")
+"texture": SubResource("AtlasTexture_aa0ns")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yn8vx")
+"texture": SubResource("AtlasTexture_144ja")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8tg3s")
+"texture": SubResource("AtlasTexture_8met6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b8yof")
+"texture": SubResource("AtlasTexture_ed1c4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rv08e")
+"texture": SubResource("AtlasTexture_h638d")
 }],
 "loop": true,
 "name": &"default",
