@@ -17,12 +17,10 @@ extends Node2D
 @onready var dream_catcher = $AttrapeReve
 @onready var wrong = $Wrong
 
-var start_window = true
 
-func start_game():
-	start_window = false
-	dialogue = game_dialogue
-	$StartBackground/AnimationPlayer.play("hide")
+#func start_game():
+	#dialogue = game_dialogue
+	#$StartBackground/AnimationPlayer.play("hide")
 
 func _ready():
 	_ink_player.loaded.connect(_story_loaded)
@@ -63,6 +61,16 @@ func _process(delta):
 	#dialogue.clear()
 	#_continue_story()
 	#
+	
+func toggle_day():
+	dialogue.clear()
+	dialogue = game_dialogue
+	$StartBackground/AnimationPlayer.play("hide")
+	
+func toggle_night():
+	dialogue.clear()
+	dialogue = start_dialogue
+	$StartBackground/AnimationPlayer.play_backwards("hide")
 
 func execute_tags(tags):
 	for t in tags:
@@ -78,13 +86,15 @@ func execute_tags(tags):
 		if t == "add_rune":
 			card_hand.get_next_card()
 			pass
-		if t == "start":
-			start_game()
+		if t == "day":
+			toggle_day()
+		#if t == "aponi":
+			#toggle_night()
 		if t == "epilogue_music":
 			$SoundSystemBoomBoom.launch_epilogue()
 		
 func _skip_until_start():
-	start_game()
+	toggle_day()
 	var finished = false
 	while not finished:
 		#print('loop ' + str(_ink_player.can_continue))
@@ -108,6 +118,9 @@ func _continue_story():
 		# Set the text of a Label to this value to display it in your game.
 		var type = 1
 		var tags = _ink_player.current_tags
+		if tags.has('night'):
+			toggle_night()
+			await get_tree().create_timer(1.2).timeout
 		print(text + '  ' + str(tags))
 		dialogue.add_dialogue(text, type, tags)
 
