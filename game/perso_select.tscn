@@ -85,6 +85,7 @@ position = Vector2(180, -72)
 script = ExtResource("1_l4wqg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 sprite_frames = SubResource("SpriteFrames_difme")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
