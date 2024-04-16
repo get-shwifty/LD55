@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://ds7x7fmsubfhu"
+path="res://.godot/imported/ld55_writing_tests.ink (3).json-2385e9fdd7d90fe0543dfde5128035ec.res"
+
+[deps]
+
+source_file="res://resources/stories/ld55_writing_tests.ink (3).json"
+dest_files=["res://.godot/imported/ld55_writing_tests.ink (3).json-2385e9fdd7d90fe0543dfde5128035ec.res"]
+
+[params]
+
+compress=true

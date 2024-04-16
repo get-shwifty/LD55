@@ -19,6 +19,8 @@ func write_to_ui():
 
 func _ready():
 	text_buffer = text
+	if text_buffer.length() == 0:
+		listener.notify_write_end()
 	#$MarginContainer/PanelContainer/MarginContainer/RichTextLabel4.text = text
 
 	var style = $MarginContainer/PanelContainer.get_theme_stylebox("panel", "")

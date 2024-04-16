@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ioxwqb8u7t1m"
-path="res://.godot/imported/air.png-a3564ad8356603641a98220568c834da.ctex"
+uid="uid://b4wardwg42m4f"
+path="res://.godot/imported/all_esprits.png-2e34f7683a7dce6feb1a5250ec4e8a15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/persos_esprits/ESPRITS/air.png"
-dest_files=["res://.godot/imported/air.png-a3564ad8356603641a98220568c834da.ctex"]
+source_file="res://resources/persos_esprits/ESPRITS/all_esprits.png"
+dest_files=["res://.godot/imported/all_esprits.png-2e34f7683a7dce6feb1a5250ec4e8a15.ctex"]
 
 [params]
 

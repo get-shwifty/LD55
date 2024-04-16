@@ -39,6 +39,7 @@ var move_speed = 4
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_next_card()
 	pass
 	#if is_hand:
 		#get_cards()
@@ -50,8 +51,13 @@ func clear():
 		card.queue_free()
 	card_list.clear()
 	positions.clear()
+	if is_hand:
+		selected_hand.clear()
+	if not is_hand:
+		clear_hand.emit()
 	
 func send_back():
+	visible = true
 	if is_hand:
 		return
 	for card in card_list:
@@ -71,6 +77,10 @@ func add_available_card(type: CardType):
 	if not is_hand:
 		return
 	card_pool.append(type)
+	
+	
+func get_next_card():
+	add_available_card(card_future_list.pop_front())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -179,4 +189,5 @@ func test():
 			counter = 0
 		await get_tree().create_timer(0.5).timeout
 
-		
+func _on_reset_reset():
+	send_back()

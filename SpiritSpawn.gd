@@ -1,11 +1,11 @@
 extends Node2D
-
+@onready var summon_button = $'../Summon'
 var current_spirit = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide_spirit()
-	show_spirit("earth")
+	#show_spirit("earth")
 
 
 
@@ -15,21 +15,13 @@ func _process(delta):
 	
 
 func show_spirit(name: String):
-	var id = 0
-	if name == "air":
-		id = 0
-	if name == "water":
-		id = 1
-	if name == "fire":
-		id = 2
-	if name == "earth":
-		id = 3
-	if name == "void":
-		id = 4
-		
+	var id = Enums.spirit_map.find(name)
+	
 	$AnimatedSprite2D.frame = id
 	$AnimationPlayer.play("fade_in")
 	current_spirit == name
+	Sound.ctx.invocation.play()
+	summon_button.visible = false
 	
 func hide_spirit():
 	if current_spirit == null:
@@ -37,3 +29,7 @@ func hide_spirit():
 	else:
 		$AnimationPlayer.play_backwards("fade_in")
 	current_spirit = null
+
+
+func _on_selected_cards_clear_hand():
+	hide_spirit()
