@@ -23,10 +23,11 @@ Sound="*res://game/sound.gd"
 
 [display]
 
-window/size/viewport_width=1440
-window/size/viewport_height=960
-window/stretch/scale=3.0
-window/stretch/scale_mode="integer"
+window/size/viewport_width=1920
+window/size/viewport_height=1280
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale=4.0
 
 [editor_plugins]
 
@@ -59,3 +60,4 @@ shuffle={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+viewport/transparent_background=true
