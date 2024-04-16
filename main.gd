@@ -80,7 +80,9 @@ func execute_tags(tags):
 			pass
 		if t == "start":
 			start_game()
-			
+		if t == "epilogue_music":
+			$SoundSystemBoomBoom.launch_epilogue()
+		
 func _skip_until_start():
 	start_game()
 	var finished = false
