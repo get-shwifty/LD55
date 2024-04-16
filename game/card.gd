@@ -16,6 +16,7 @@ var hand = null
 var original: Card = null
 var speed = 4
 var in_pos = false
+var shake = false
 
 func type_to_background(type: CardType):
 	if type == CardType.FinalTransform:
@@ -33,7 +34,7 @@ func _ready():
 func _process(delta):
 	if state == 3:
 		move_back()
-	if card_type == CardType.FinalTransform and state != 2:
+	if shake:
 		if state != 2:
 			var now = Time.get_ticks_msec() / 30
 			$Node2D/Node2D.wobble = false
