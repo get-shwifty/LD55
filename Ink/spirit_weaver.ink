@@ -740,7 +740,7 @@ As you utter these words, you start to feel ...
 ******* As darkness eats you, one final though crosses your mind.
 -
 * You hope your sacrifice will quench the Pattern.
-* You didn't think the world would end this way.
+* You wonder if this is what happened to the previous Weaver.
 * You did summon every spirit at once !
 -
 * The end. #clear
