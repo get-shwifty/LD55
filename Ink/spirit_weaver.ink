@@ -685,8 +685,8 @@ One night you wake up in sweat and all you can think about is ...
 *... has anybody tried to summon every spirit at once ?
 *... has anybody tried to summon every spirit at once ?
 *... has anybody tried to summon every spirit at once ?
-- The outline of a rune you've never seen before burns through your mind. #add_rune
-* You must try. #day #epilogue_music
+- The outline of a rune you've never seen before burns through your mind. #add_rune #epilogue_music
+* You must try. #day
 - I must try to sumoon every spirit at once !
 ->sprit_choice->
 * [pattern]
