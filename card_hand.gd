@@ -6,6 +6,7 @@ const CARD_SCENE = preload('res://game/carte.tscn');
 
 @onready var selected_hand: CardHand = $"../selected_cards"
 @onready var spirit = $'../SpiritSpawn'
+@onready var reset_button = $'../Reset'
 
 @export var is_hand: bool = false
 @export var nb = 6
@@ -134,7 +135,8 @@ func _process(delta):
 			get_cards()
 	else:
 		if Input.is_action_just_pressed("escape"):
-			send_back()
+			if reset_button.visible:
+				send_back()
 		elif Input.is_action_just_pressed("right_click"):
 			if card_list.size():
 				clear_card(card_list[-1])

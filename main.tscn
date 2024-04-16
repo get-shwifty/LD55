@@ -139,7 +139,6 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nqpq4")
-skip = true
 
 [node name="InkPlayer" type="Node" parent="."]
 script = ExtResource("1_x27rs")
