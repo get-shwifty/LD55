@@ -1,0 +1,160 @@
+[gd_scene load_steps=23 format=3 uid="uid://ca2buwgvr3o5m"]
+
+[ext_resource type="Script" path="res://SpiritSpawn.gd" id="1_sk2p0"]
+[ext_resource type="Texture2D" uid="uid://b4wardwg42m4f" path="res://resources/persos_esprits/ESPRITS/all_esprits.png" id="2_kihye"]
+[ext_resource type="Script" path="res://spirit.gd" id="3_or5qu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1am8"]
+atlas = ExtResource("2_kihye")
+region = Rect2(920, 0, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdv0d"]
+atlas = ExtResource("2_kihye")
+region = Rect2(230, 0, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wucw"]
+atlas = ExtResource("2_kihye")
+region = Rect2(460, 0, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx4kv"]
+atlas = ExtResource("2_kihye")
+region = Rect2(690, 0, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg5it"]
+atlas = ExtResource("2_kihye")
+region = Rect2(0, 0, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bm6k"]
+atlas = ExtResource("2_kihye")
+region = Rect2(460, 310, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpd1h"]
+atlas = ExtResource("2_kihye")
+region = Rect2(230, 620, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcy0d"]
+atlas = ExtResource("2_kihye")
+region = Rect2(690, 310, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inwrw"]
+atlas = ExtResource("2_kihye")
+region = Rect2(0, 620, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu8ej"]
+atlas = ExtResource("2_kihye")
+region = Rect2(920, 310, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb33w"]
+atlas = ExtResource("2_kihye")
+region = Rect2(690, 620, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl7fb"]
+atlas = ExtResource("2_kihye")
+region = Rect2(460, 930, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmdr4"]
+atlas = ExtResource("2_kihye")
+region = Rect2(920, 620, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mqxl"]
+atlas = ExtResource("2_kihye")
+region = Rect2(230, 930, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8a8x"]
+atlas = ExtResource("2_kihye")
+region = Rect2(0, 930, 230, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hru4n"]
+atlas = ExtResource("2_kihye")
+region = Rect2(230, 310, 230, 310)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vcem"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1am8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdv0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wucw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx4kv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg5it")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bm6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpd1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcy0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inwrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu8ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb33w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl7fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmdr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mqxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8a8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hru4n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ysjp0"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkj0x"]
+_data = {
+"fade_in": SubResource("Animation_ysjp0")
+}
+
+[node name="SpiritSpawn" type="Node2D"]
+position = Vector2(2.08165e-12, 20)
+script = ExtResource("1_sk2p0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+sprite_frames = SubResource("SpriteFrames_6vcem")
+script = ExtResource("3_or5qu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jkj0x")
+}
+speed_scale = 2.0

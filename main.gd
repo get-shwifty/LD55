@@ -7,8 +7,10 @@ extends Node2D
 @onready var card_hand = $card_hand
 @onready var spirit_spawn = $SpiritSpawn
 @onready var summon_button = $Summon
+@onready var reset_button = $Reset
 @onready var game_manager = $GameManager
 @onready var dream_catcher = $AttrapeReve
+@onready var wrong = $Wrong
 
 var start_window = true
 
@@ -22,6 +24,9 @@ func _ready():
 	_ink_player.create_story()
 	game_dialogue.listener = self
 	start_dialogue.listener = self
+	reset_button.visible = false
+	wrong.visible = false
+	summon_button.visible = false
 	
 	#start_game()
 	
@@ -45,11 +50,11 @@ func _process(delta):
 	#if Input.is_action_just_pressed("escape"):
 		#reset()
 		
-func reset():
-	_ink_player.reset()
-	dialogue.clear()
-	_continue_story()
-	
+#func reset():
+	#_ink_player.reset()
+	#dialogue.clear()
+	#_continue_story()
+	#
 
 func execute_tags(tags):
 	for t in tags:
@@ -62,7 +67,9 @@ func execute_tags(tags):
 			card_hand.clear()
 			dream_catcher.clear_all()
 			spirit_spawn.hide_spirit()
-			
+		if t == "add_rune":
+			card_hand.get_next_card()
+			pass
 		if t == "start":
 			start_game()
 			
@@ -90,7 +97,7 @@ func _continue_story():
 		# Set the text of a Label to this value to display it in your game.
 		var type = 1
 		var tags = _ink_player.current_tags
-
+		print(text + '  ' + str(tags))
 		dialogue.add_dialogue(text, type, tags)
 
 	if _ink_player.has_choices:
@@ -116,6 +123,7 @@ func _continue_story():
 var possible_spirits = []
 var is_crafting = false
 func start_craft(spirits):
+	wrong.visible = false
 	print(spirits)
 	card_hand.get_cards()
 	is_crafting = true
@@ -129,11 +137,13 @@ func stop_craft():
 	possible_spirits.clear()
 
 func try_summon(spirit):
+	print('try spirit: ' + spirit)
 	if possible_spirits.has(spirit):
 		summon(spirit)
 	else:
-		print('warning cant do')
-		start_craft(possible_spirits)
+		spirit_spawn.show_spirit(spirit)
+		wrong.visible = true
+		card_hand.selected_hand.visible = false
 
 func summon(spirit):
 	spirit_spawn.show_spirit(spirit)
@@ -141,6 +151,7 @@ func summon(spirit):
 	card_hand.selected_hand.clear()
 	var index = possible_spirits.find(spirit)
 	_ink_player.choose_choice_index(index)
+	#_ink_player.continue_story()
 	_continue_story()
 	
 func manage_craft(choices):
@@ -160,7 +171,7 @@ func manage_craft(choices):
 
 func cannot_summon():
 	print('cannot summon')
-	card_hand.get_cards()
+	start_craft(possible_spirits)
 
 func _on_selected_cards_card_selected(card_type):
 	print('selected')
@@ -175,9 +186,5 @@ func _on_summon_summon():
 	if game_manager.path_nodes.size() == 0:
 		cannot_summon()
 	var index = game_manager.path_nodes[-1]
-	var spirit = spirit_map[index]
+	var spirit = Enums.spirit_map[index]
 	try_summon(spirit)
-	
-	
-	
-var spirit_map = ["void", "fire", "water", "earth", "air"]

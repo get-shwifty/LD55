@@ -11,3 +11,5 @@ enum CardType {
 	Tri,
 	FinalTransform
 }
+
+var spirit_map = ["void", "fire", "air", "earth", "water", "eagle", "cerf", "serpent", "owl", 'bear', "wolf", "life", "chaos", "death", "harmony", "pattern"]

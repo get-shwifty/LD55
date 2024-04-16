@@ -1,77 +1,29 @@
-[gd_scene load_steps=42 format=3 uid="uid://d5244x02n0sf"]
+[gd_scene load_steps=33 format=3 uid="uid://d5244x02n0sf"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_nqpq4"]
 [ext_resource type="Script" path="res://addons/inkgd/ink_player.gd" id="1_x27rs"]
-[ext_resource type="Resource" uid="uid://diet4iblkk4nm" path="res://resources/stories/ld55_writing_tests.ink.json" id="3_qt0im"]
+[ext_resource type="Resource" uid="uid://ds7x7fmsubfhu" path="res://resources/stories/ld55_writing_tests.ink (3).json" id="3_6gt5e"]
 [ext_resource type="Script" path="res://card_hand.gd" id="6_q236j"]
 [ext_resource type="Texture2D" uid="uid://cys0qq7oycr04" path="res://resources/cartes_fond_bordure/fond.png" id="9_atcr7"]
+[ext_resource type="PackedScene" uid="uid://ca2buwgvr3o5m" path="res://spirit_spawn.tscn" id="9_ueqyp"]
 [ext_resource type="PackedScene" uid="uid://bo3yrfdmccwtw" path="res://game/perso_select.tscn" id="10_f6cmx"]
-[ext_resource type="Texture2D" uid="uid://ioxwqb8u7t1m" path="res://resources/persos_esprits/ESPRITS/air.png" id="10_mwbf2"]
-[ext_resource type="Script" path="res://SpiritSpawn.gd" id="10_q2soh"]
 [ext_resource type="PackedScene" uid="uid://b2okijt84uysj" path="res://attrape_reve.tscn" id="11_bq32h"]
 [ext_resource type="Texture2D" uid="uid://dh7own3ns2o4b" path="res://resources/cartes_fond_bordure/bordure-sheet.png" id="11_qjuyx"]
-[ext_resource type="Texture2D" uid="uid://bhmwui0ng14ym" path="res://resources/persos_esprits/ESPRITS/EAU.png" id="11_rce0s"]
 [ext_resource type="Script" path="res://game/dialogue_ui.gd" id="12_5453e"]
-[ext_resource type="Texture2D" uid="uid://cfoff7e03mhcp" path="res://resources/persos_esprits/ESPRITS/feu.png" id="12_67026"]
 [ext_resource type="PackedScene" uid="uid://cwdrixjsg0qv0" path="res://game/dialogue_ui.tscn" id="13_lj55m"]
-[ext_resource type="Texture2D" uid="uid://by31lajk2koy0" path="res://resources/persos_esprits/ESPRITS/terre.png" id="13_ot34v"]
 [ext_resource type="Script" path="res://GameManager.gd" id="14_4ydm0"]
-[ext_resource type="Texture2D" uid="uid://dlaeorhi5lj8r" path="res://resources/persos_esprits/ESPRITS/vide.png" id="14_mxhn3"]
-[ext_resource type="Script" path="res://spirit.gd" id="15_ypb3q"]
 [ext_resource type="Script" path="res://SoundSystemBoomBoom.gd" id="19_anxbs"]
 [ext_resource type="AudioStream" uid="uid://cxagwjwg042y" path="res://resources/sounds/Sorcerers spirit.ogg" id="19_cc1h0"]
 [ext_resource type="AudioStream" uid="uid://bgyk4ltd65ldv" path="res://resources/sounds/pouf.ogg" id="21_u5xha"]
 [ext_resource type="AudioStream" uid="uid://bgqdskubae34n" path="res://resources/sounds/card_look.wav" id="22_aepnc"]
 [ext_resource type="AudioStream" uid="uid://cpbq2dypacoc0" path="res://resources/sounds/tac2.wav" id="23_ups7b"]
 [ext_resource type="AudioStream" uid="uid://co5mx2mvyhn67" path="res://resources/sounds/tac1.wav" id="24_hiwcq"]
+[ext_resource type="PackedScene" uid="uid://dmahi2s4aae03" path="res://summon.tscn" id="24_rhulq"]
 [ext_resource type="AudioStream" uid="uid://btaxtg8axx6aj" path="res://resources/sounds/k1.wav" id="25_r7g4a"]
+[ext_resource type="PackedScene" uid="uid://oxipgim03l8i" path="res://reset.tscn" id="26_6mhft"]
 [ext_resource type="AudioStream" uid="uid://bp4f4vlj55yj5" path="res://resources/sounds/k2.wav" id="26_orqhn"]
 [ext_resource type="AudioStream" uid="uid://clwbkhx71ocel" path="res://resources/sounds/k3.wav" id="27_1nukx"]
-[ext_resource type="Texture2D" uid="uid://dm6slubuov3u7" path="res://icon.svg" id="28_7uf8o"]
-[ext_resource type="Script" path="res://summon.gd" id="28_y5wel"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6vcem"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_mwbf2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_rce0s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_67026")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_ot34v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_mxhn3")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Animation" id="Animation_ysjp0"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkj0x"]
-_data = {
-"fade_in": SubResource("Animation_ysjp0")
-}
+[ext_resource type="Script" path="res://Wrong.gd" id="32_a53ks"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3qcc"]
 content_margin_left = 4.0
@@ -185,15 +137,12 @@ _data = {
 "hide": SubResource("Animation_xuci4")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlm3"]
-size = Vector2(24, 24)
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nqpq4")
 
 [node name="InkPlayer" type="Node" parent="."]
 script = ExtResource("1_x27rs")
-ink_file = ExtResource("3_qt0im")
+ink_file = ExtResource("3_6gt5e")
 loads_in_background = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -227,19 +176,7 @@ offset_top = -12.0
 offset_right = 238.0
 offset_bottom = 148.0
 
-[node name="SpiritSpawn" type="Node2D" parent="."]
-position = Vector2(2.08165e-12, 20)
-script = ExtResource("10_q2soh")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpiritSpawn"]
-sprite_frames = SubResource("SpriteFrames_6vcem")
-script = ExtResource("15_ypb3q")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SpiritSpawn"]
-libraries = {
-"": SubResource("AnimationLibrary_jkj0x")
-}
-speed_scale = 2.0
+[node name="SpiritSpawn" parent="." instance=ExtResource("9_ueqyp")]
 
 [node name="card_hand" type="Node2D" parent="."]
 position = Vector2(-8, 111)
@@ -290,8 +227,9 @@ script = ExtResource("19_anxbs")
 stream = ExtResource("19_cc1h0")
 autoplay = true
 
-[node name="Invocation" type="AudioStreamPlayer3D" parent="SoundSystemBoomBoom"]
+[node name="Invocation" type="AudioStreamPlayer2D" parent="SoundSystemBoomBoom"]
 stream = ExtResource("21_u5xha")
+volume_db = 10.146
 
 [node name="CardHover" type="AudioStreamPlayer2D" parent="SoundSystemBoomBoom"]
 stream = ExtResource("22_aepnc")
@@ -321,20 +259,29 @@ volume_db = -21.815
 stream = ExtResource("27_1nukx")
 volume_db = -16.741
 
-[node name="Summon" type="Area2D" parent="."]
-visible = false
-position = Vector2(0, -119)
-script = ExtResource("28_y5wel")
+[node name="Summon" parent="." instance=ExtResource("24_rhulq")]
 
-[node name="Icon" type="Sprite2D" parent="Summon"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("28_7uf8o")
+[node name="Reset" parent="." instance=ExtResource("26_6mhft")]
+position = Vector2(0, -93)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Summon"]
-shape = SubResource("RectangleShape2D_0rlm3")
+[node name="Wrong" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+offset_left = -84.0
+offset_top = -74.0
+offset_right = 116.0
+offset_bottom = -28.0
+theme_override_font_sizes/normal_font_size = 10
+text = "It doesnt seem to be the right spirit..."
+fit_content = true
+script = ExtResource("32_a53ks")
 
 [connection signal="card_selected" from="selected_cards" to="GameManager" method="_on_selected_cards_card_selected"]
+[connection signal="card_selected" from="selected_cards" to="Summon" method="_on_selected_cards_card_selected"]
+[connection signal="card_selected" from="selected_cards" to="Reset" method="_on_selected_cards_card_selected"]
+[connection signal="clear_hand" from="selected_cards" to="SpiritSpawn" method="_on_selected_cards_clear_hand"]
 [connection signal="clear_hand" from="selected_cards" to="GameManager" method="_on_selected_cards_clear_hand"]
-[connection signal="input_event" from="Summon" to="Summon" method="_on_input_event"]
+[connection signal="clear_hand" from="selected_cards" to="Summon" method="_on_selected_cards_clear_hand"]
+[connection signal="clear_hand" from="selected_cards" to="Reset" method="_on_selected_cards_clear_hand"]
+[connection signal="clear_hand" from="selected_cards" to="Wrong" method="_on_selected_cards_clear_hand"]
 [connection signal="summon" from="Summon" to="." method="_on_summon_summon"]
+[connection signal="reset" from="Reset" to="selected_cards" method="_on_reset_reset"]

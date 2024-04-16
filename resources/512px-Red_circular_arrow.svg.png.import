@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by31lajk2koy0"
-path="res://.godot/imported/terre.png-00b5b55715b897707e163f0f95fef030.ctex"
+uid="uid://bw1qwk5sq2ky7"
+path="res://.godot/imported/512px-Red_circular_arrow.svg.png-23d562b52e6d86d432076c70a7113fc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/persos_esprits/ESPRITS/terre.png"
-dest_files=["res://.godot/imported/terre.png-00b5b55715b897707e163f0f95fef030.ctex"]
+source_file="res://resources/512px-Red_circular_arrow.svg.png"
+dest_files=["res://.godot/imported/512px-Red_circular_arrow.svg.png-23d562b52e6d86d432076c70a7113fc6.ctex"]
 
 [params]
 
