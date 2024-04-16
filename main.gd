@@ -1,4 +1,9 @@
 extends Node2D
+
+@export var skip = false
+@export var skip_to: String = ""
+
+
 @onready var _ink_player: InkPlayer = $InkPlayer
 @onready var game_dialogue: DialogeUI = $"Dialogue UI"
 @onready var start_dialogue: StartDialogeUI = $"StartBackground/Dialogue UI"
@@ -37,8 +42,11 @@ func is_perso(t):
 func _story_loaded(successfully: bool):
 	if !successfully:
 		return
-	#_continue_story()
-	_skip_until_start()
+
+	if skip:
+		_skip_until_start()
+	else:
+		_continue_story()
 
 func select_choice(index: int):
 	_ink_player.choose_choice_index(index)
@@ -91,6 +99,7 @@ func _skip_until_start():
 
 func _continue_story():
 	while _ink_player.can_continue:
+		print('path: ' + _ink_player.get_current_path())
 		var text = _ink_player.continue_story()
 
 		# This text is a line of text from the ink story.
@@ -139,6 +148,8 @@ func stop_craft():
 func try_summon(spirit):
 	print('try spirit: ' + spirit)
 	if possible_spirits.has(spirit):
+		reset_button.visible = false
+		card_hand.selected_hand.visible = false
 		summon(spirit)
 	else:
 		spirit_spawn.show_spirit(spirit)
@@ -148,7 +159,8 @@ func try_summon(spirit):
 func summon(spirit):
 	spirit_spawn.show_spirit(spirit)
 	summon_button.visible = false
-	card_hand.selected_hand.clear()
+	#card_hand.selected_hand.clear()
+	
 	var index = possible_spirits.find(spirit)
 	_ink_player.choose_choice_index(index)
 	#_ink_player.continue_story()

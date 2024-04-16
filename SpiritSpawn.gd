@@ -3,8 +3,8 @@ extends Node2D
 var current_spirit = null
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	hide_spirit()
+#func _ready():
+	#hide_spirit()
 	#show_spirit("earth")
 
 
@@ -25,7 +25,6 @@ func show_spirit(name: String):
 	summon_button.visible = false
 	
 func hide_spirit():
-	#print('hide spirit')
 	if current_spirit == null:
 		$AnimatedSprite2D.modulate = Color(1,1,1,0)
 	else:

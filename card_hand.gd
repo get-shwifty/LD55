@@ -56,6 +56,7 @@ func clear():
 	if is_hand:
 		selected_hand.clear()
 	if not is_hand:
+		visible = true
 		clear_hand.emit()
 		
 func trigger_hover_selected(card):
