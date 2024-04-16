@@ -138,7 +138,10 @@ func _process(delta):
 				send_back()
 		elif Input.is_action_just_pressed("right_click"):
 			if card_list.size():
-				clear_card(card_list[-1])
+				if spirit.current_spirit == null:
+					clear_card(card_list[-1])
+				elif reset_button.visible:
+					send_back()
 		#if Input.is_action_just_pressed("shuffle"):
 			#clear_hand.emit()
 		
