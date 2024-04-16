@@ -4,16 +4,18 @@ var has_perso = false
 
 func name_to_id(name: String):
 	if name == "hototo":
-		return 0
+		return 3
 	if name == "kaya":
 		return 1
 	if name == "aponi":
-		return 2
-	if name == "petrel":
-		return 3
-	if name == "hyij":
 		return 4
-	return 0
+	if name == "petrel":
+		return 5
+	if name == "hyij":
+		return 6
+	if name == "pattern":
+		return 0
+	return 2
 
 func select_perso(perso: String):
 	if perso == "" or perso == "nobody":

@@ -56,7 +56,10 @@ func hover():
 	if state != 0:
 		return
 	state = 1
-	$Node2D/Node2D/Background.modulate = Color(0,1,1,1)
+	if card_type == CardType.FinalTransform:
+		$Node2D/Node2D/Background.modulate = Color(0.282,0,1,1)
+	else:
+		$Node2D/Node2D/Background.modulate = Color(0,1,1,1)
 	#$Node2D/Node2D/Symbol.modulate = Color(0,1,1,1)
 	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 99
@@ -92,8 +95,12 @@ func select():
 	stop_hover()
 	state = 2
 	trigger_select = true
-	$Node2D/Node2D/Background.modulate = Color(2,2,2,1)
-	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,0.4)
+	if card_type == CardType.FinalTransform:
+		$Node2D/Node2D/Background.modulate = Color(0.5,0.5,2,1)
+		$Node2D/Node2D/Symbol.modulate = Color(1,1,1,0.4)
+	else:
+		$Node2D/Node2D/Background.modulate = Color(2,2,2,1)
+		$Node2D/Node2D/Symbol.modulate = Color(1,1,1,0.4)
 	#$Node2D/Node2D/ContourCarte.visible = true
 	Sound.set_card()
 	
@@ -131,4 +138,6 @@ func _on_area_2d_mouse_exited():
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event.is_pressed():
+		if event.button_index != 1:
+			return
 		select()
