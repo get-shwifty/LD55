@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://cns1qk1bklk6n" path="res://resources/stories/ld55_writing_tests.ink.json" id="3_oltck"]
 [ext_resource type="Script" path="res://card_hand.gd" id="6_q236j"]
 [ext_resource type="Texture2D" uid="uid://cys0qq7oycr04" path="res://resources/cartes_fond_bordure/fond.png" id="9_atcr7"]
-[ext_resource type="PackedScene" path="res://spirit_spawn.tscn" id="9_ueqyp"]
+[ext_resource type="PackedScene" uid="uid://ca2buwgvr3o5m" path="res://spirit_spawn.tscn" id="9_ueqyp"]
 [ext_resource type="PackedScene" uid="uid://bo3yrfdmccwtw" path="res://game/perso_select.tscn" id="10_f6cmx"]
 [ext_resource type="PackedScene" uid="uid://b2okijt84uysj" path="res://attrape_reve.tscn" id="11_bq32h"]
 [ext_resource type="Texture2D" uid="uid://dh7own3ns2o4b" path="res://resources/cartes_fond_bordure/bordure-sheet.png" id="11_qjuyx"]
@@ -22,122 +22,10 @@
 [ext_resource type="Script" path="res://SpiritDesc.gd" id="25_0lxjb"]
 [ext_resource type="Texture2D" uid="uid://djnfo8xpeebal" path="res://resources/tooltips.png" id="25_ekiel"]
 [ext_resource type="AudioStream" uid="uid://btaxtg8axx6aj" path="res://resources/sounds/k1.wav" id="25_r7g4a"]
-[ext_resource type="PackedScene" path="res://reset.tscn" id="26_6mhft"]
+[ext_resource type="PackedScene" uid="uid://oxipgim03l8i" path="res://reset.tscn" id="26_6mhft"]
 [ext_resource type="AudioStream" uid="uid://bp4f4vlj55yj5" path="res://resources/sounds/k2.wav" id="26_orqhn"]
 [ext_resource type="AudioStream" uid="uid://clwbkhx71ocel" path="res://resources/sounds/k3.wav" id="27_1nukx"]
 [ext_resource type="Script" path="res://Wrong.gd" id="32_a53ks"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pul18"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.4)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jeydh"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iaoxd"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.75, 0.75, 0.75, 0.75)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5hr8"]
-content_margin_left = 1.0
-content_margin_top = 0.0
-content_margin_right = 1.0
-content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c2rj"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
-[sub_resource type="Theme" id="Theme_dw6xo"]
-resource_local_to_scene = true
-/fonts/size = null
-RichTextLabel/font_sizes/bold_font_size = 20
-RichTextLabel/font_sizes/normal_font_size = 14
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_pul18")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_jeydh")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_iaoxd")
-VScrollBar/styles/scroll = SubResource("StyleBoxFlat_b5hr8")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_4c2rj")
-
-[sub_resource type="Animation" id="Animation_xuci4"]
-resource_name = "hide"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4c8f"]
-_data = {
-"hide": SubResource("Animation_xuci4")
-}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_od2tp"]
 atlas = ExtResource("25_ekiel")
@@ -259,6 +147,118 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pul18"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jeydh"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iaoxd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.75, 0.75, 0.75, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5hr8"]
+content_margin_left = 1.0
+content_margin_top = 0.0
+content_margin_right = 1.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c2rj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_dw6xo"]
+resource_local_to_scene = true
+/fonts/size = null
+RichTextLabel/font_sizes/bold_font_size = 20
+RichTextLabel/font_sizes/normal_font_size = 14
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_pul18")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_jeydh")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_iaoxd")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_b5hr8")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_4c2rj")
+
+[sub_resource type="Animation" id="Animation_xuci4"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4c8f"]
+_data = {
+"hide": SubResource("Animation_xuci4")
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nqpq4")
 
@@ -314,27 +314,6 @@ y_max_offset = 0
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("14_4ydm0")
-
-[node name="StartBackground" type="Node2D" parent="."]
-visible = false
-
-[node name="Fond2" type="Sprite2D" parent="StartBackground"]
-modulate = Color(0.32549, 0.32549, 0.32549, 1)
-texture = ExtResource("9_atcr7")
-
-[node name="Dialogue UI" parent="StartBackground" instance=ExtResource("12_l6vdn")]
-offset_left = -220.0
-offset_top = -135.0
-offset_right = 260.0
-offset_bottom = 115.0
-theme = SubResource("Theme_dw6xo")
-vertical_scroll_mode = 3
-center_all = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="StartBackground"]
-libraries = {
-"": SubResource("AnimationLibrary_b4c8f")
-}
 
 [node name="SoundSystemBoomBoom" type="Node" parent="."]
 script = ExtResource("19_anxbs")
@@ -430,6 +409,26 @@ bbcode_enabled = true
 text = "[center]Essence of Discordance, 
 Entropy.[/center]"
 scroll_active = false
+
+[node name="StartBackground" type="Node2D" parent="."]
+
+[node name="Fond2" type="Sprite2D" parent="StartBackground"]
+modulate = Color(0.32549, 0.32549, 0.32549, 1)
+texture = ExtResource("9_atcr7")
+
+[node name="Dialogue UI" parent="StartBackground" instance=ExtResource("12_l6vdn")]
+offset_left = -220.0
+offset_top = -135.0
+offset_right = 260.0
+offset_bottom = 115.0
+theme = SubResource("Theme_dw6xo")
+vertical_scroll_mode = 3
+center_all = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StartBackground"]
+libraries = {
+"": SubResource("AnimationLibrary_b4c8f")
+}
 
 [connection signal="card_selected" from="selected_cards" to="GameManager" method="_on_selected_cards_card_selected"]
 [connection signal="card_selected" from="selected_cards" to="Summon" method="_on_selected_cards_card_selected"]
