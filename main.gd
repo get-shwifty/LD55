@@ -34,7 +34,7 @@ func _ready():
 	#start_game()
 	
 func is_perso(t):
-	return ['hototo', 'kaya', 'aponi', 'petrel', 'hyij'].has(t)
+	return ['hototo', 'kaya', 'aponi', 'petrel', 'hyij', 'pattern'].has(t)
 
 
 func _story_loaded(successfully: bool):
@@ -42,7 +42,11 @@ func _story_loaded(successfully: bool):
 		return
 
 	if skip:
-		_skip_until_start()
+		#_skip_until_start()
+		toggle_day()
+		_ink_player.choose_path(skip_to)
+		_ink_player.continue_story()
+		_continue_story()
 	else:
 		_continue_story()
 
