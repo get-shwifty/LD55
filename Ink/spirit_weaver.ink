@@ -29,7 +29,7 @@ The Weaver from the remote hamlet ...
 * ... you asked them.
 * ... you are expandable.
 
-- Before leaving you once more took an oath to ...
+- Before leaving, you once more took an oath to ...
 * ... serve everyone to the best of your ability.
 * ... use your weaving gift responsibly.
 * ... serve the one and true magic.
@@ -111,7 +111,7 @@ You suppose ...
 The sky is really pretty tonight.#night
 As the clouds burn a bright orange, you take a moment to think about this new rune Kaya found.
 You're puzzled because ...
-* ... you didn't knew there was more than two weaving runes.
+* ... you didn't know there were more than two weaving runes.
 * ... the rune looks like ancient forbidden magic.
 * ... how could a rune end up inside a deer.
 -
@@ -235,7 +235,7 @@ Before you see him, you hear the dragging step of the elder.
 How is everything going so far ? #c
     * So far, so good#p[.] Thank you for your welcome.
     He smiles with proudness.
-    * Well, #p[some people behaves weirdly.] I suppose I must get used to the behaviour of some locals.#p
+    * Well, #p[some people behave weirdly.] I suppose I must get used to the behaviour of some locals.#p
     Ah ... right ... yes. Well, they are honest, hardworking people, all of them. You'll come to understand, maybe even like them in the end.#c
     * It's none of you concern.#p
     The old man seems taken a back. You can see a hint of fright in the corner of his eyes. But he quickly recomposes himself.
@@ -436,7 +436,7 @@ I found it the ashes of the forge anyway. #c
 - I can't find him.#c
 I've looked everywhere.#c
 Can you help me pretty please ?#c
-I've even tried to howl like he likes.#c
+I've even tried howling like he likes.#c
     * Oh poor thing ... don't worry I will help you #p[!]find Cilantro !
     * {Chapter_1.dogs_are_the_worst} It's just a stupid dog#p[.], why do you care about it ?
     Please.#c
@@ -724,8 +724,9 @@ One night you wake up in sweat and all you can think about is ...
     My sacrifice.#c
     Where is it ?#c
 -
-* Sacrifice. #clear #hide
-- (sacrifice) {|This isn't enough. I need more ! | I need more ! | More ! | Mooooore ! |  More Sacrifice !!!! | I still need one last sacrifice, servant !}#c #night
+* Your sacrifice ? #c #clear #hide
+- #night
+- (sacrifice) {|This isn't enough. I need more ! | I need more ! | More ! | Mooooore ! |  More Sacrifice !!!! | I still need one last sacrifice, servant !}#c 
     * [Sacrifice Cilantro.] You sacrifice Cilantro.
     * [Sacrifice Fennel.] You sacrifice Fennel.
     * {sacrifice > 1} [Sacrifice Aponi.] You sacrifice Aponi.
