@@ -55,11 +55,12 @@ After a few cordial pleasanteries, the elder shows you to your hut and leaves yo
     + [Look around]
     {The hut is small but very tidy. | The walls feel very bland but with a few tweaks here and there you'll soon feel at home.} -> house_warming
     * (unpack) [Unpack your things]
-    You drop you heavy pack on the floor. It's been a long way.
-    You start arranging your belonging on the various shelves. Colored ropes, wood scents, shiny pearls, weaving runes. Everything needed for your craft in its dedicated place.
+    You drop your heavy pack on the floor. It's been a long way.
+    You start arranging your belongings on the various shelves. Colored ropes, wood scents, shiny pearls and weaving runes. 
+    Everything needed for your craft in its dedicated place.
     -> house_warming
     * {unpack} [Go to sleep ]
-    - You slide under you heavy blankets and sleep instantly. Tommorow will be a big day.
+    - You slide under your heavy blanket and sleep instantly. Tomorrow will be a big day.
     * [... #start #day]
 ->->
 
@@ -237,7 +238,7 @@ How is everything going so far ? #c
     He smiles with proudness.
     * Well, #p[some people behave weirdly.] I suppose I must get used to the behaviour of some locals.#p
     Ah ... right ... yes. Well, they are honest, hardworking people, all of them. You'll come to understand, maybe even like them in the end.#c
-    * It's none of you concern.#p
+    * It's none of your concern.#p
     The old man seems taken a back. You can see a hint of fright in the corner of his eyes. But he quickly recomposes himself.
 - He clears his throat.
 I ... didn't want to bother you with an old man nightmares ... but since I'm here.#c
