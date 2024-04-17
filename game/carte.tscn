@@ -117,6 +117,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Node2D/ToolTip:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 2.08165e-12)]
+}
 
 [sub_resource type="Animation" id="Animation_kprn4"]
 resource_name = "up"
@@ -132,6 +144,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(2.08165e-12, -10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Node2D/ToolTip:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2.08165e-12, 19)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_trowp"]
@@ -152,6 +176,27 @@ shape = SubResource("RectangleShape2D_5n701")
 
 [node name="Node2D" type="Node2D" parent="Node2D"]
 script = ExtResource("2_js5td")
+
+[node name="ToolTip" type="Node2D" parent="Node2D/Node2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="Background2" type="AnimatedSprite2D" parent="Node2D/Node2D/ToolTip"]
+sprite_frames = SubResource("SpriteFrames_2u0k8")
+
+[node name="CenterContainer" type="CenterContainer" parent="Node2D/Node2D/ToolTip"]
+offset_left = -24.0
+offset_top = 22.0
+offset_right = 24.0
+offset_bottom = 38.0
+
+[node name="Label" type="RichTextLabel" parent="Node2D/Node2D/ToolTip/CenterContainer"]
+custom_minimum_size = Vector2(48, 2.08165e-12)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 5
+bbcode_enabled = true
+text = "[center]test[/center]"
+fit_content = true
+scroll_active = false
 
 [node name="Background" type="AnimatedSprite2D" parent="Node2D/Node2D"]
 sprite_frames = SubResource("SpriteFrames_2u0k8")

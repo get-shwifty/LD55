@@ -23,10 +23,24 @@ func type_to_background(type: CardType):
 		return 1
 	return 0
 
+const LABELS = [
+	"Clockwise",
+	"Counter-clockwise twice",
+	"Repeat",
+	"Repeat infinitely",
+	"Mirror left/right",
+	"Cross the bridge",
+	"Drop to bottom",
+	"Fill a circle from top",
+	"Cross the final bridge",
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Node2D/Node2D/Background.frame = type_to_background(card_type)
 	$Node2D/Node2D/Symbol.frame = card_type
+	$Node2D/Node2D/ToolTip/Background2.frame = $Node2D/Node2D/Background.frame
+	$Node2D/Node2D/ToolTip/CenterContainer/Label.text = "[center]" + LABELS[card_type] + "[/center]"
 
 
 
@@ -58,8 +72,10 @@ func hover():
 	state = 1
 	if card_type == CardType.FinalTransform:
 		$Node2D/Node2D/Background.modulate = Color(0.282,0,1,1)
+		$Node2D/Node2D/ToolTip/Background2.modulate = Color(0.282,0,1,1)
 	else:
 		$Node2D/Node2D/Background.modulate = Color(0,1,1,1)
+		$Node2D/Node2D/ToolTip/Background2.modulate = Color(0,1,1,1)
 	#$Node2D/Node2D/Symbol.modulate = Color(0,1,1,1)
 	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 99
@@ -74,6 +90,7 @@ func stop_hover():
 		return
 	state = 0
 	$Node2D/Node2D/Background.modulate = Color(1,1,1,1)
+	$Node2D/Node2D/ToolTip/Background2.modulate = Color(1,1,1,1)
 	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,1)
 	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 0
@@ -82,6 +99,7 @@ func stop_hover():
 func set_available():
 	state = 0
 	$Node2D/Node2D/Background.modulate = Color(1,1,1,1)
+	$Node2D/Node2D/ToolTip/Background2.modulate = Color(1,1,1,1)
 	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,1)
 	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 0
