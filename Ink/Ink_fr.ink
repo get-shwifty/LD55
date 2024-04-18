@@ -236,20 +236,20 @@ Vous entendez le pas trainant de l'ancien s'approcher bien avant de le voir.
 Comment se passent les choses jusqu'ici? #c
     * Pour l'instant tout va bien #p[.] Merci pour votre accueil.
     Il sourit fièrement.
-    * Et bien, #p[certaines personnes ont un comportement un  peu étrange.] J'imagine que je dois m'habituer .#p
-    Ah ... right ... yes. Well, they are honest, hardworking people, all of them. You'll come to understand, maybe even like them in the end.#c
-    * It's none of you concern.#p
-    The old man seems taken a back. You can see a hint of fright in the corner of his eyes. But he quickly recomposes himself.
-- He clears his throat.
-I ... didn't want to bother you with an old man nightmares ... but since I'm here.#c
-Since a few weeks now I dream of a dark shadow strangling me. #c
-I wake up in sweat and can hardly breathe. #c
-Would you be able to help me ? #c
-* Sure !
+    * Et bien, #p[certaines personnes ont un comportement un  peu étrange.] J'imagine que je dois m'habituer aux coutumes locales.#p
+    Hum ... oui ... en effet. Mais vous savez, ce sont des gens honnêtes, de bons travailleurs, tous autant qu'ils sont. Vous finirez par le comprendre, peut être même par les apprécier.#c
+    * Ça ne vous regarde pas.#p
+    Le vieil homme recule d'un pas. Vous pouvez déceler un éclair de peur dans le coin de ses yeux. Mais il se reprend rapidement.
+- Il se racle la gorge.
+Au fait, je...je ne voulais pas vous déranger avec les cauchermars d'un vieil homme... mais puisque je suis ici. #c
+Cela fait plusieurs semaines que je rêve d'une ombre sombre qui m'étouffe. #c
+Je peux à peine respirer et je me réveille en sueur. #c
+Pourriez vous m'aider ? #c
+* Bien sûr !
 -> sprit_choice ->
 ** [air]
--Thank you very much my child. This seems very promising. #c
-- He leaves your hut with the sound of his cane following his footsteps. #hide
+-Merci beaucoup mon enfant, cela m'a l'air vraiment prometteur. #c
+- Il quitte la hutte, ses pas suivis de près par le son de sa canne sur le sol. #hide
 * [... #clear]
 ->->
 
@@ -437,7 +437,7 @@ I found it the ashes of the forge anyway. #c
 - I can't find him.#c
 I've looked everywhere.#c
 Can you help me pretty please ?#c
-I've even tried to howl like he likes.#c
+I've even tried howling like he likes.#c
     * Oh poor thing ... don't worry I will help you #p[!]find Cilantro !
     * {Chapter_1.dogs_are_the_worst} It's just a stupid dog#p[.], why do you care about it ?
     Please.#c
@@ -667,7 +667,7 @@ A few day pass. #night
 * An idea pops into your head.
 ** You try to forget it ...
 *** ... but it keeps comming back.
-**** Has anyone ever tried summoning every spirit at once ?
+**** Has anyone tried to weave the ultimate pattern ?
 ***** It's probably too dangerous.
 ****** But has anybody tried ?
 -Probably not, the more you think about it ...
@@ -685,12 +685,18 @@ You try to change your mind and focus on ...
 *[...]
 -
 One night you wake up in sweat and all you can think about is ...
-*... has anybody tried to summon every spirit at once ?
-*... has anybody tried to summon every spirit at once ?
-*... has anybody tried to summon every spirit at once ?
-- The outline of a rune you've never seen before burns through your mind. #add_rune #epilogue_music
+*... has anybody tried to weave the ultimate pattern ?
+*... has anybody tried to weave the ultimate pattern ?
+*... has anybody tried to weave the ultimate pattern ?
+-
+*... has anybody tried to connect every spirit at once ?
+*... has anybody tried to connect every spirit at once ?
+*... has anybody tried to connect every spirit at once ?
+-
+*The outline of a rune you've never seen before burns through your mind. 
+-#add_rune #epilogue_music
 * You must try. #day
-- I must try to sumoon every spirit at once !
+- You must try to connect every spirit at once !
 ->sprit_choice->
 * [pattern]
 -
@@ -719,8 +725,9 @@ One night you wake up in sweat and all you can think about is ...
     My sacrifice.#c
     Where is it ?#c
 -
-* Sacrifice. #clear #hide
-- (sacrifice) {|This isn't enough. I need more ! | I need more ! | More ! | Mooooore ! |  More Sacrifice !!!! | I still need one last sacrifice, servant !}#c #night
+* Your sacrifice ? #c #clear #hide
+- #night
+- (sacrifice) {|This isn't enough. I need more ! | I need more ! | More ! | Mooooore ! |  More Sacrifice !!!! | I still need one last sacrifice, servant !}#c 
     * [Sacrifice Cilantro.] You sacrifice Cilantro.
     * [Sacrifice Fennel.] You sacrifice Fennel.
     * {sacrifice > 1} [Sacrifice Aponi.] You sacrifice Aponi.
@@ -741,11 +748,11 @@ As you utter these words, you start to feel ...
 ******* As darkness eats you, one final though crosses your mind.
 -
 * You hope your sacrifice will quench the Pattern.
-* You wonder if this is what happened to the previous Weaver.
-* You did summon every spirit at once !
+* You wonder if this is what happened to the previous weaver.
+* You did weave the ultimate pattern !
 -
-* Fin. #clear
-- Merci d'avoir joué !
+* The end. #clear
+- Thanks for Playing !
 ->->
 
 == function my_name ==
@@ -766,7 +773,7 @@ As you utter these words, you start to feel ...
 {not petrel_calls_me_by_name: Reverred Weaver| {p_name}}
 
 == sprit_choice ==
-+ Choisissez un esprit : {known_spirits} #spirit_choice
++ Choose a spirit : {known_spirits} #spirit_choice
 -
 ->->
  
