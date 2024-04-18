@@ -141,6 +141,26 @@ func rope_hide(previous, last_to_remove):
 func _on_selected_cards_card_selected(card):
 	step(card)
 	path_cards.append(card)
+	
+	check_all_visited()
+	update_display()
+
+func check_all_visited():
+	if path_nodes:
+		var visited = {}
+		for node in path_nodes:
+			visited[node] = true
+		var all_visited = len(visited) == 15
+
+		if all_visited and len(cards_hand.card_pool) < 10 and len(path_nodes) >= 14:
+			attrape_reve.set_discovery_step(4)
+			cards_hand.add_available_card(CardType.FinalTransform)
+			cards_hand.give_card(CardType.FinalTransform)
+		
+		cards_hand.card_list[-1].shake = len(cards_hand.card_pool) == 10 and path_nodes[-1] == 13
+	
+
+func update_display():
 	for i in range(16):
 		attrape_reve.hide_node(i)
 	for i in range(1, len(path_nodes)):
@@ -153,18 +173,6 @@ func _on_selected_cards_card_selected(card):
 	else:
 		spirit_desc.hide()
 		attrape_reve.hide_particles()
-	
-	if len(cards_hand.card_pool) < 10 and len(path_nodes) >= 15:
-		var visited = {}
-		for node in path_nodes:
-			visited[node] = true
-		var all_visited = len(visited) == 15
-
-		if all_visited:
-			attrape_reve.set_discovery_step(4)
-			cards_hand.add_available_card(CardType.FinalTransform)
-			cards_hand.give_card(CardType.FinalTransform)
-
 
 func _on_selected_cards_clear_hand():
 	path_cards = []

@@ -261,6 +261,8 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nqpq4")
+skip = true
+skip_to = "Epilogue"
 
 [node name="InkPlayer" type="Node" parent="."]
 script = ExtResource("1_x27rs")
@@ -299,7 +301,7 @@ offset_right = 304.0
 offset_bottom = 164.0
 
 [node name="SpiritSpawn" parent="." instance=ExtResource("9_ueqyp")]
-position = Vector2(3, 0)
+position = Vector2(38, -17)
 
 [node name="card_hand" type="Node2D" parent="."]
 position = Vector2(-8, 111)
@@ -358,18 +360,12 @@ volume_db = -21.815
 stream = ExtResource("27_1nukx")
 volume_db = -16.741
 
-[node name="Summon" parent="." instance=ExtResource("24_rhulq")]
-position = Vector2(80, -133)
-
-[node name="Reset" parent="." instance=ExtResource("26_6mhft")]
-position = Vector2(80, -107)
-
 [node name="Wrong" type="Node2D" parent="."]
-position = Vector2(-84, -54)
+position = Vector2(-94, -64)
 script = ExtResource("32_a53ks")
 
 [node name="Wrong" type="Sprite2D" parent="Wrong"]
-position = Vector2(-2, -41)
+position = Vector2(-2, -43)
 texture = ExtResource("25_ekiel")
 hframes = 5
 vframes = 4
@@ -387,8 +383,14 @@ fit_content = true
 scroll_active = false
 metadata/_edit_use_anchors_ = true
 
+[node name="Summon" parent="." instance=ExtResource("24_rhulq")]
+position = Vector2(-96, -92)
+
+[node name="Reset" parent="." instance=ExtResource("26_6mhft")]
+position = Vector2(-96, -67)
+
 [node name="SpiritDesc" type="Node2D" parent="."]
-position = Vector2(-86, -120)
+position = Vector2(-96, -130)
 script = ExtResource("25_0lxjb")
 
 [node name="background" type="Sprite2D" parent="SpiritDesc"]
@@ -435,9 +437,9 @@ libraries = {
 [connection signal="card_selected" from="selected_cards" to="Reset" method="_on_selected_cards_card_selected"]
 [connection signal="clear_hand" from="selected_cards" to="SpiritSpawn" method="_on_selected_cards_clear_hand"]
 [connection signal="clear_hand" from="selected_cards" to="GameManager" method="_on_selected_cards_clear_hand"]
+[connection signal="clear_hand" from="selected_cards" to="Wrong" method="_on_selected_cards_clear_hand"]
 [connection signal="clear_hand" from="selected_cards" to="Summon" method="_on_selected_cards_clear_hand"]
 [connection signal="clear_hand" from="selected_cards" to="Reset" method="_on_selected_cards_clear_hand"]
-[connection signal="clear_hand" from="selected_cards" to="Wrong" method="_on_selected_cards_clear_hand"]
 [connection signal="update_hand" from="selected_cards" to="GameManager" method="_on_selected_cards_update_hand"]
 [connection signal="update_hand" from="selected_cards" to="Summon" method="_on_selected_cards_update_hand"]
 [connection signal="update_hand" from="selected_cards" to="Reset" method="_on_selected_cards_update_hand"]

@@ -16,16 +16,31 @@ var hand = null
 var original: Card = null
 var speed = 4
 var in_pos = false
+var shake = false
 
 func type_to_background(type: CardType):
 	if type == CardType.FinalTransform:
 		return 1
 	return 0
 
+const LABELS = [
+	"Clockwise",
+	"Counter-clockwise twice",
+	"Repeat",
+	"Repeat infinitely",
+	"Mirror left/right",
+	"Cross the bridge",
+	"Drop to bottom",
+	"Fill a circle from top",
+	"Cross the final bridge",
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Node2D/Node2D/Background.frame = type_to_background(card_type)
 	$Node2D/Node2D/Symbol.frame = card_type
+	$Node2D/Node2D/ToolTip/Background2.frame = $Node2D/Node2D/Background.frame
+	$Node2D/Node2D/ToolTip/CenterContainer/Label.text = "[center]" + LABELS[card_type] + "[/center]"
 
 
 
@@ -33,7 +48,7 @@ func _ready():
 func _process(delta):
 	if state == 3:
 		move_back()
-	if card_type == CardType.FinalTransform and state != 2:
+	if shake:
 		if state != 2:
 			var now = Time.get_ticks_msec() / 30
 			$Node2D/Node2D.wobble = false
@@ -55,7 +70,12 @@ func hover():
 	if state != 0:
 		return
 	state = 1
-	$Node2D/Node2D/Background.modulate = Color(0,1,1,1)
+	if card_type == CardType.FinalTransform:
+		$Node2D/Node2D/Background.modulate = Color(0.282,0,1,1)
+		$Node2D/Node2D/ToolTip/Background2.modulate = Color(0.282,0,1,1)
+	else:
+		$Node2D/Node2D/Background.modulate = Color(0,1,1,1)
+		$Node2D/Node2D/ToolTip/Background2.modulate = Color(0,1,1,1)
 	#$Node2D/Node2D/Symbol.modulate = Color(0,1,1,1)
 	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 99
@@ -70,6 +90,7 @@ func stop_hover():
 		return
 	state = 0
 	$Node2D/Node2D/Background.modulate = Color(1,1,1,1)
+	$Node2D/Node2D/ToolTip/Background2.modulate = Color(1,1,1,1)
 	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,1)
 	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 0
@@ -78,6 +99,7 @@ func stop_hover():
 func set_available():
 	state = 0
 	$Node2D/Node2D/Background.modulate = Color(1,1,1,1)
+	$Node2D/Node2D/ToolTip/Background2.modulate = Color(1,1,1,1)
 	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,1)
 	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 0
@@ -91,8 +113,12 @@ func select():
 	stop_hover()
 	state = 2
 	trigger_select = true
-	$Node2D/Node2D/Background.modulate = Color(2,2,2,1)
-	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,0.4)
+	if card_type == CardType.FinalTransform:
+		$Node2D/Node2D/Background.modulate = Color(0.5,0.5,2,1)
+		$Node2D/Node2D/Symbol.modulate = Color(1,1,1,0.4)
+	else:
+		$Node2D/Node2D/Background.modulate = Color(2,2,2,1)
+		$Node2D/Node2D/Symbol.modulate = Color(1,1,1,0.4)
 	#$Node2D/Node2D/ContourCarte.visible = true
 	Sound.set_card()
 	
@@ -130,4 +156,6 @@ func _on_area_2d_mouse_exited():
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event.is_pressed():
+		if event.button_index != 1:
+			return
 		select()

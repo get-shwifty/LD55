@@ -29,7 +29,7 @@ The Weaver from the remote hamlet ...
 * ... you asked them.
 * ... you are expandable.
 
-- Before leaving you once more took an oath to ...
+- Before leaving, you once more took an oath to ...
 * ... serve everyone to the best of your ability.
 * ... use your weaving gift responsibly.
 * ... serve the one and true magic.
@@ -55,11 +55,12 @@ After a few cordial pleasanteries, the elder shows you to your hut and leaves yo
     + [Look around]
     {The hut is small but very tidy. | The walls feel very bland but with a few tweaks here and there you'll soon feel at home.} -> house_warming
     * (unpack) [Unpack your things]
-    You drop you heavy pack on the floor. It's been a long way.
-    You start arranging your belonging on the various shelves. Colored ropes, wood scents, shiny pearls, weaving runes. Everything needed for your craft in its dedicated place.
+    You drop your heavy pack on the floor. It's been a long way.
+    You start arranging your belongings on the various shelves. Colored ropes, wood scents, shiny pearls and weaving runes. 
+    Everything needed for your craft in its dedicated place.
     -> house_warming
     * {unpack} [Go to sleep ]
-    - You slide under you heavy blankets and sleep instantly. Tommorow will be a big day.
+    - You slide under your heavy blanket and sleep instantly. Tomorrow will be a big day.
     * [... #start #day]
 ->->
 
@@ -111,7 +112,7 @@ You suppose ...
 The sky is really pretty tonight.#night
 As the clouds burn a bright orange, you take a moment to think about this new rune Kaya found.
 You're puzzled because ...
-* ... you didn't knew there was more than two weaving runes.
+* ... you didn't know there were more than two weaving runes.
 * ... the rune looks like ancient forbidden magic.
 * ... how could a rune end up inside a deer.
 -
@@ -237,7 +238,7 @@ How is everything going so far ? #c
     He smiles with proudness.
     * Well, #p[some people behave weirdly.] I suppose I must get used to the behaviour of some locals.#p
     Ah ... right ... yes. Well, they are honest, hardworking people, all of them. You'll come to understand, maybe even like them in the end.#c
-    * It's none of you concern.#p
+    * It's none of your concern.#p
     The old man seems taken a back. You can see a hint of fright in the corner of his eyes. But he quickly recomposes himself.
 - He clears his throat.
 I ... didn't want to bother you with an old man nightmares ... but since I'm here.#c
@@ -436,7 +437,7 @@ I found it the ashes of the forge anyway. #c
 - I can't find him.#c
 I've looked everywhere.#c
 Can you help me pretty please ?#c
-I've even tried to howl like he likes.#c
+I've even tried howling like he likes.#c
     * Oh poor thing ... don't worry I will help you #p[!]find Cilantro !
     * {Chapter_1.dogs_are_the_worst} It's just a stupid dog#p[.], why do you care about it ?
     Please.#c
@@ -666,7 +667,7 @@ A few day pass. #night
 * An idea pops into your head.
 ** You try to forget it ...
 *** ... but it keeps comming back.
-**** Has anyone ever tried summoning every spirit at once ?
+**** Has anyone tried to weave the ultimate pattern ?
 ***** It's probably too dangerous.
 ****** But has anybody tried ?
 -Probably not, the more you think about it ...
@@ -684,12 +685,18 @@ You try to change your mind and focus on ...
 *[...]
 -
 One night you wake up in sweat and all you can think about is ...
-*... has anybody tried to summon every spirit at once ?
-*... has anybody tried to summon every spirit at once ?
-*... has anybody tried to summon every spirit at once ?
-- The outline of a rune you've never seen before burns through your mind. #add_rune #epilogue_music
+*... has anybody tried to weave the ultimate pattern ?
+*... has anybody tried to weave the ultimate pattern ?
+*... has anybody tried to weave the ultimate pattern ?
+-
+*... has anybody tried to connect every spirit at once ?
+*... has anybody tried to connect every spirit at once ?
+*... has anybody tried to connect every spirit at once ?
+-
+*The outline of a rune you've never seen before burns through your mind. 
+-#add_rune #epilogue_music
 * You must try. #day
-- I must try to sumoon every spirit at once !
+- You must try to connect every spirit at once !
 ->sprit_choice->
 * [pattern]
 -
@@ -718,8 +725,9 @@ One night you wake up in sweat and all you can think about is ...
     My sacrifice.#c
     Where is it ?#c
 -
-* Sacrifice. #clear #hide
-- (sacrifice) {|This isn't enough. I need more ! | I need more ! | More ! | Mooooore ! |  More Sacrifice !!!! | I still need one last sacrifice, servant !}#c #night
+* Your sacrifice ? #c #clear #hide
+- #night
+- (sacrifice) {|This isn't enough. I need more ! | I need more ! | More ! | Mooooore ! |  More Sacrifice !!!! | I still need one last sacrifice, servant !}#c 
     * [Sacrifice Cilantro.] You sacrifice Cilantro.
     * [Sacrifice Fennel.] You sacrifice Fennel.
     * {sacrifice > 1} [Sacrifice Aponi.] You sacrifice Aponi.
@@ -740,8 +748,8 @@ As you utter these words, you start to feel ...
 ******* As darkness eats you, one final though crosses your mind.
 -
 * You hope your sacrifice will quench the Pattern.
-* You wonder if this is what happened to the previous Weaver.
-* You did summon every spirit at once !
+* You wonder if this is what happened to the previous weaver.
+* You did weave the ultimate pattern !
 -
 * The end. #clear
 - Thanks for Playing !
