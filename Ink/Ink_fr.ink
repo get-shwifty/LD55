@@ -19,47 +19,47 @@ VAR p_karma = 3
 -> END
 
 == Opening ==
-The Weaver from the remote hamlet ...
-* ... has disappeared.
-* ... has vanished.
-* ... is gone.
+Le Tisse-Esprit du hameau lointain ...
+* ... a disparu.
+* ... s'est évaporé.
+* ... est parti.
 
-- The guild chose you to replace him because ...
-* ... you were the only one available.
-* ... you asked them.
-* ... you are expandable.
+- La guilde vous a choisi pour le remplacer car ...
+* ... vous étiez la seule personne disponible.
+* ... vous leur avez demandé.
+* ... vous êtes dispensable.
 
-- Before leaving you once more took an oath to ...
-* ... serve everyone to the best of your ability.
-* ... use your weaving gift responsibly.
-* ... serve the one and true magic.
+- Avant de partir vous avez renouvelé votre voeu de ...
+* ... servir la communauté de votre mieux.
+* ... utiliser votre don de tissage de façon responsable.
+* ... d'être au service de la seule et unique magie.
 - 
-* [Get on your way ... #clear]
+* [Se mettre en chemin ... #clear]
 ->->
 
 == Introduction ==
 
-The road was long but you can finally see a small hamlet up ahead.
-    * [Rest a minute]
-    You take a minute to sit on a moldy tree stump before going on.
-    * [Keep on]
-- After just a few more minutes of walk your arrive at the village where Hototo the elder is waiting for you
-    * [Shake his hand]
-    You shake his old parched hand and he smiles back.
-    * [Nod curtly]
-    You nod curtly, keeping your distance.
-- The elders seems very pleased you're finally here.
-After a few cordial pleasanteries, the elder shows you to your hut and leaves you to your business.
+La route fut longue mais vous pouvez finalement voir un petit hameau devant vous.
+    * [Vous reposer une minute]
+    Vous vous arrêtez une minute en vous arrêtant sur une vieille souche pourissante.
+    * [Continuer]
+- Après quelques minutes de marche vous arrivez au village où Hototo l'ancien vous attendait. 
+    * [Lui serrer la main]
+    Vous serrez sa vieille main parcheminée et il vous sourit en retour.
+    * [Hocher la tête respectueusement]
+    Vous restez à distance, et inclinez respectueusement la tête.
+- L'ancien a l'air heureux de vous voir.
+Après quelques plaisanteries cordiales, l'ancien vous montre votre hutte et vous laisse à vos affaires.
 
 - (house_warming)
-    + [Look around]
-    {The hut is small but very tidy. | The walls feel very bland but with a few tweaks here and there you'll soon feel at home.} -> house_warming
-    * (unpack) [Unpack your things]
-    You drop you heavy pack on the floor. It's been a long way.
-    You start arranging your belonging on the various shelves. Colored ropes, wood scents, shiny pearls, weaving runes. Everything needed for your craft in its dedicated place.
+    + [Regarder autour de vous]
+    {La hutte est simple, mais très bien rangée. | Les murs ont l'air fades mais avec quelques améliorations vous vous sentirez très bientôt à la maison} -> house_warming
+    * (unpack) [Décharger vos affaires]
+    Vous déposez votre lourd paquetage sur le sol. La route fut longue.
+    Vous commencez à organiser vos affaires sur les différentes étagères. Cordes colorées, branches odorantes, perles brillantes, runes de tissage. Tout est en ordre pour votre Art.
     -> house_warming
-    * {unpack} [Go to sleep ]
-    - You slide under you heavy blankets and sleep instantly. Tommorow will be a big day.
+    * {unpack} [Aller vous coucher ]
+    - Vous vous glissez sous les lourdes couvertures et tombez instantanément dans un profond sommeil. Demain sera une longue journée.
     * [... #start #day]
 ->->
 
@@ -86,121 +86,122 @@ After a few cordial pleasanteries, the elder shows you to your hut and leaves yo
 
 
 = Intro
-You wake up to the sound of distant ducks quacking happily.
-After a few minutes, you hear a knock on the door.
+Vous vous réveillez au son de lointain canards caquettant joyeusement.
+Au bout de quelques minutes, vous entendez frapper à la porte.
 ->->
 
 = Night_01
-As the sun sets you start to wonder what happened to the old Weaver. #night
-You suppose ...
-    * ... he died of old age[.] after a fulfilled life helping others.
+Alors que le soleil se couche, vous commencez à vous demander ce qui a pu arriver à l'ancien Tisse-Esprit. #nuit
+Vous supposez ...
+    * ... qu'il est mort de vieillesse après une vie accomplie à aider les autres.
+    -> dormir
+    * ... qu'une bête sauvage l'a tué.
+    -> tragic_death
+    * ... qu'une magie incontrôlée a provoqué sa disparition.
+    -> tragic_death
+    * ... que cela n'a pas vraiment d'importance.
+    Vous êtes ici pour tisser et c'est ce que vous ferez.
     -> sleep
-    * ... a wild beast killed him.
-    -> tragic_death
-    * ... unconstrained magic caused his demise.
-    -> tragic_death
-    * ... it doesn't really matter.
-    You're here to weave and that's what you'll do.
-    ->sleep
-- (tragic_death) A shiver runs down your spine. You don't like to think about these kind of things before going to bed.
+- (tragic_death) Un frisson vous parcourt l'échine. Vous n'aimez pas penser à ce genre de choses avant de vous coucher.
 - (sleep)
-    * [Go to sleep ... #clear #day]
+    * [Aller dormir ... #clear #day]
 ->->
 
 = Night_02
-The sky is really pretty tonight.#night
-As the clouds burn a bright orange, you take a moment to think about this new rune Kaya found.
-You're puzzled because ...
-* ... you didn't knew there was more than two weaving runes.
-* ... the rune looks like ancient forbidden magic.
-* ... how could a rune end up inside a deer.
+Le ciel est vraiment beau ce soir. #nuit
+Alors que les nuages brûlent d'un orange vif, vous prenez un moment pour réfléchir à cette nouvelle rune que Kaya a trouvée.
+Vous êtes perplexe parce que ...
+* ... vous ne saviez pas qu'il y avait plus de deux runes de tissage.
+* ... la rune ressemble étrangement à une ancienne magie interdite.
+* ... comment une rune a-t-elle pu se retrouver à l'intérieur d'un cerf ?
 -
-But it's getting late, you'll have more time tommorow to investigate the power of this rune.
+Mais il se fait tard, vous aurez plus de temps demain pour enquêter sur le pouvoir de cette rune.
 - 
-* [Go to sleep ... #clear #day]
+* [Dormir ... #clear #day]
 ->->
 
 = Night_03
-Tonight is as good a night as ever to wonder ...#night
-* ... why nobody ever mentions the old weaver.
-* ... why there is a resident weaver in such a small hamlet.
-* ... if you'll ever go home.
+C'est une bonne nuit pour se demander ... #nuit
+* ... pourquoi personne ne mentionne jamais l'ancien Tisse-Esprit.
+* ... pourquoi il y a un Tisse-Esprit permanent dans un si petit hameau.
+* ... si vous rentrerez un jour chez vous.
 -
-* [Go to sleep ... #clear #day]
+* [Dormir ... #clear #day]
 ->->
 
 = Aponi_01
-    * [Open the door]
-- On your porch, you can see a little girl. #aponi
-    * [Wave her in]
-    You wave her in and she enters eagerly. You can see she seem very curious.
-- Hello, I'm Aponi ! What's your name ? #c
-    * Hello, I'm Panthu. #p
+    * [Ouvrir la porte]
+- Sur votre porche, vous pouvez voir une petite fille. #aponi
+    * [Lui faire signe d'entrer]
+    Vous lui faites signe d'approcher et elle entre avec empressement. Vous pouvez voir qu'elle semble très curieuse.
+- Bonjour, je m'appelle Aponi ! Comment tu t'appelles ? #c
+    * Bonjour, je m'appelle Panthu. #p
     ~ p_name = "Panthu"
-    * Hello, I'm Juil. #p
+    * Bonjour, je m'appelle Juil. #p
     ~ p_name = "Juil"
-    * Hello, I'm Gytle. #p
+    * Bonjour, je m'appelle Gytle. #p
     ~ p_name = "Gytle"
-    * Hello. #p
-- Nice to meet you {p_name}, welcome to the village !#c
-Do you like dogs ? #c
-    * Absolutely ! [] Do you have one ? #p
-    Yes ! Cilantro is my best friend ! #c
-    * Sorry child, cats are way better. #p
-    * (dogs_are_the_worst) Dogs are the worst ! They killed Frederik ... my parrot.#p
-    Oh ... sorry. #c
-- Far away you hear a loud voicing calling "Aponiiii"
-I must go, see you next time ! #c
-She smiles at you before running outside. #hide
+    * Bonjour. #p
+- Enchantée {p_name}, bienvenue dans le village ! #c
+Tu aimes les chiens ? #c
+    * Absolument ! [] Tu en as un ? #p
+    Oui ! Cilantro est mon meilleur ami ! #c
+    * Pardon mon enfant, mais les chats sont bien meilleurs. #p
+    * (dogs_are_the_worst) Non je les déteste ! Ils ont tué Frederik ... mon perroquet. #p
+    Oh ... désolé. #c
+- Au loin, vous entendez une voix forte appeler "Aponiiii".
+Je dois y aller, à la prochaine ! #c
+Elle vous sourit avant de courir dehors. #hide
 * [... #clear]
 ->->
 
 = Kaya_01
-Later in the day, you hear a lood knock.
-    * [Open the door]
-- You must be the new Weaver. I need your help with something. #kaya #c
-    * Huu ... Hello. #p
-    Yes, hello. Like I said I need your help fast. #c
-    * What can I help you with ? #p
-- The wood I have is all wet but I need to light a fire right now. Can't let that deer go to waste.#c
+Plus tard dans la journée, vous entendez frapper fort.
+    * [Ouvrir la porte]
+- Vous là, Tisse-Esprit. J'ai besoin de votre aide pour quelque chose. #kaya #c
+    * Huu ... Bonjour. #p
+    Oui, bonjour. Comme je l'ai dit, j'ai besoin de votre aide rapidement. #c
+    * En quoi puis-je vous aider ? #p
+- Le bois que j'ai est trempé mais j'ai besoin d'allumer un feu tout de suite. Je ne peux pas laisser ce cerf se perdre. #c
 - (choice)
-    * (ask_kaya_too_much) Why do you need the fire for ? #p
-    To smoke it. Why else would I need a fire for a deer ? Now can I have it ? Please ? #c
+    * (ask_kaya_too_much) Pourquoi avez-vous besoin du feu ? #p
+    Pour le fumer. Pourquoi d'autre aurais-je besoin d'un feu pour un cerf ? Maintenant, puis-je l'avoir ? S'il vous plaît ? #c
     -> choice
-    * Give me a minute, I'll see what I can do. #p
+    * Donnez-moi une minute, je vais voir ce que je peux faire. #p
         -> sprit_choice ->
         ** [fire]
-        She nods briefly <>
-- and leaves your hut without looking back. #hide
+        Elle hoche la tête brièvement <>
+- et quitte votre cabane sans se retourner. #hide
 * [... #clear]
 ->->
 
 = Petrel_01
-Early in the morning, just as the rooster sings, you find a sturdy man waiting on your doorstep.
-    * [Waive him in]
-- Hello revered weaver. #c #petrel
-I'm sorry to disturb you in such a peaceful morning but I had no other choice. #c
+Tôt le matin, juste au moment où le coq chante, vous trouvez un homme robuste vous attendant sur le pas de votre porte.
+    * [Le faire entrer]
+- Bonjour honorable Tisse-Esprit. #c #petrel
+Je suis désolé de vous déranger en une telle matinée paisible mais je n'avais pas d'autre choix. #c
 -
-    * (call_me_by_my_name) {p_name} Please, call me {p_name}. #p
+    * (call_me_by_my_name) {p_name} S'il vous plaît, appelez-moi {p_name}. #p
     ~ petrel_calls_me_by_name = true
-    Yes revered wea... sorry. Yes {p_name}. #c
-    * And you are ? #p
-    Sorry reverred weaver. #c
-    * How can I help you ? #p
-- My name is Petrel, I'm but a simple farmer here. I keep on praying the spirits but it hasn't rained in days. I'm afraid my crop won't survive another one without water.#c
-Please {call_me_by_my_name: Reverred Wea ... {p_name} | Reverred Weaver} I'm begging for your help.#c
+    Oui honorable tisser... pardon. Oui {p_name}. #c
+    * Et vous êtes ? #p
+    Désolé honorable Tisse-Esprit. #c
+    * Comment puis-je vous aider ? #p
+- Je m'appelle Petrel, je ne suis qu'un simple fermier ici. Je continue de prier les esprits mais il n'a pas plu depuis des semaines. J'ai peur que ma récolte ne survive pas sans eau. #c
+S'il vous plaît {call_me_by_my_name: Honorable Tisse-Esprit ... {p_name} | Honorable Tisse-Esprit} Je vous en supplie.#c
+
 - (ask_for_help)
-    * (help_him) {ask_for_help > 1} Fine ... #p
+    * (help_him) {ask_for_help > 1} D'accord ... #p
     -> sprit_choice ->
         ** [water]
-        You can almost smell his relief as you hand him the dream catcher.
-        Thank you so much {not call_me_by_my_name: reverred weaver} ! #c
-    * {ask_for_help == 1}No need to beg[.], I'll gladly do my best. #p
+        Son soulagement est presque palpable lorsque vous lui tendez l'attrape rêve.
+        Merci mille fois {not call_me_by_my_name: Honorable Tisse-Esprit} ! #c
+    * {ask_for_help == 1}Pas besoin de supplier[.], je vous aiderai avec plaisir. #p
     -> help_him
-    * Beg and pray all you want, it's not how rain works. #p
+    * Suppliez et priez tout votre soûl, ça n'est pas comme ça que fonctionne la pluie. #p
     #c
-    {not call_me_by_my_name: Yes Reverred Weaver. You are right.} But I thought maybe ... ->ask_for_help
-- As he leaves your hut, you wonder what kind of crop they grow in the region. #hide
+    {not call_me_by_my_name: Oui Honorable Tisse-Esprit, vous avez raison, bien sûr.} Mais j'ai pensé que peut être ... ->ask_for_help
+- Alors qu'il quitte la hutte vous vous demandez le genre de plantes qui sont cultivées dans la région. #hide
 * [... #clear]
 ->->
  
@@ -209,12 +210,12 @@ Please {call_me_by_my_name: Reverred Wea ... {p_name} | Reverred Weaver} I'm beg
     
 
 = Kaya_02
-A few moments later, the door opens sundenly.
-The fire was good. #c #kaya
-The deer not so much. #c
-I found a strange rune inside it.#c
-Though it may be of some use to you.#c #add_rune
-* Thank you Kaya #p
+Quelques instants plus tard, la porte s'ouvre avec fracas.
+C'était un bon feu. #c #kaya
+Mais c'était un mauvais cerf. #c
+J'ai trouvé une rune étrange à l'intérieur.#c
+Me suis dit que cela pouvait vous être utile.#c #add_rune
+* Merci Kaya #p
 ~ runes_retrieved += 1
 ~ known_spirits += (air, earth)
 -
@@ -224,18 +225,18 @@ She nods a little bit longer than last time.
 - else:
 Don't sweat it. #c
 }
-Before you can add anything else, she leaves. #hide
+Elle part avant que vous puissiez ajouter quoi que se soit. #hide
 * [... #clear]
 ->->
 
 = Hototo_01
-Before you see him, you hear the dragging step of the elder.
-* [Help him inside]
-- That's very kind of you my child. #c #hototo
-How is everything going so far ? #c
-    * So far, so good#p[.] Thank you for your welcome.
-    He smiles with proudness.
-    * Well, #p[some people behave weirdly.] I suppose I must get used to the behaviour of some locals.#p
+Vous entendez le pas trainant de l'ancien s'approcher bien avant de le voir.
+* [L'aider à rentrer]
+- C'est très aimable à vous mon enfant. #c #hototo
+Comment se passent les choses jusqu'ici? #c
+    * Pour l'instant tout va bien #p[.] Merci pour votre accueil.
+    Il sourit fièrement.
+    * Et bien, #p[certaines personnes ont un comportement un  peu étrange.] J'imagine que je dois m'habituer .#p
     Ah ... right ... yes. Well, they are honest, hardworking people, all of them. You'll come to understand, maybe even like them in the end.#c
     * It's none of you concern.#p
     The old man seems taken a back. You can see a hint of fright in the corner of his eyes. But he quickly recomposes himself.
@@ -743,8 +744,8 @@ As you utter these words, you start to feel ...
 * You wonder if this is what happened to the previous Weaver.
 * You did summon every spirit at once !
 -
-* The end. #clear
-- Thanks for Playing !
+* Fin. #clear
+- Merci d'avoir joué !
 ->->
 
 == function my_name ==
@@ -765,7 +766,7 @@ As you utter these words, you start to feel ...
 {not petrel_calls_me_by_name: Reverred Weaver| {p_name}}
 
 == sprit_choice ==
-+ Choose a spirit : {known_spirits} #spirit_choice
++ Choisissez un esprit : {known_spirits} #spirit_choice
 -
 ->->
  
