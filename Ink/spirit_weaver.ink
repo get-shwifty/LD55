@@ -280,7 +280,7 @@ Sorry to bother you so late.#c
     -> saw_a_sign
     * {crop_circle} Okay, can I see it ? #p
 - Yes{light_name_by_petrel()}. Here's the Sign.#c
-He give you a paper with a small drawing on it, bows to the ground, then leaves. #add_rune #hide
+He gives you a paper with a small drawing on it, bows to the ground, then leaves. #add_rune #hide
 ~ runes_retrieved += 1
 ~ known_spirits += (void)
 * [... #clear]
@@ -400,7 +400,7 @@ She wave you goodbye as she leaves the hut. #hide
 
 = Night_04
 The night fell sooner than you'd expected.#night
-Are the day getting shorter ?
+Are the days getting shorter ?
 Maybe ...
 * ... time flies when you work hard.
 * ... it's just a weather thing.
@@ -658,7 +658,7 @@ And I wanted to thank you one more time for all your help. Especially these last
 -> sprit_choice ->
 * [death]
 -You finish to weave the dream catcher and give it to him.
-For the lasty time, you watch him leave in the direction of his home, Hyij by his side. #hide
+For the last time, you watch him leave in the direction of his home, Hyij by his side. #hide
 *[... #clear]
 ->->
 
