@@ -19,48 +19,47 @@ VAR p_karma = 3
 -> END
 
 == Opening ==
-The Weaver from the remote hamlet ...
-* ... has disappeared.
-* ... has vanished.
-* ... is gone.
+Le Tisse-Esprit du hameau lointain ...
+* ... a disparu.
+* ... s'est évaporé.
+* ... est parti.
 
-- The guild chose you to replace him because ...
-* ... you were the only one available.
-* ... you asked them.
-* ... you are expandable.
+- La guilde vous a choisi pour le remplacer car ...
+* ... vous étiez la seule personne disponible.
+* ... vous leur avez demandé.
+* ... vous êtes dispensable.
 
-- Before leaving, you once more took an oath to ...
-* ... serve everyone to the best of your ability.
-* ... use your weaving gift responsibly.
-* ... serve the one and true magic.
+- Avant de partir vous avez renouvelé votre voeu de ...
+* ... servir la communauté de votre mieux.
+* ... utiliser votre don de tissage de façon responsable.
+* ... d'être au service de la seule et unique magie.
 - 
-* [Get on your way ... #clear]
+* [Se mettre en chemin ... #clear]
 ->->
 
 == Introduction ==
 
-The road was long but you can finally see a small hamlet up ahead.
-    * [Rest a minute]
-    You take a minute to sit on a moldy tree stump before going on.
-    * [Keep on]
-- After just a few more minutes of walk your arrive at the village where Hototo the elder is waiting for you
-    * [Shake his hand]
-    You shake his old parched hand and he smiles back.
-    * [Nod curtly]
-    You nod curtly, keeping your distance.
-- The elders seems very pleased you're finally here.
-After a few cordial pleasanteries, the elder shows you to your hut and leaves you to your business.
+La route fut longue mais vous pouvez finalement voir un petit hameau devant vous.
+    * [Vous reposer une minute]
+    Vous vous arrêtez une minute en vous arrêtant sur une vieille souche pourissante.
+    * [Continuer]
+- Après quelques minutes de marche vous arrivez au village où Hototo l'ancien vous attendait. 
+    * [Lui serrer la main]
+    Vous serrez sa vieille main parcheminée et il vous sourit en retour.
+    * [Hocher la tête respectueusement]
+    Vous restez à distance, et inclinez respectueusement la tête.
+- L'ancien a l'air heureux de vous voir.
+Après quelques plaisanteries cordiales, l'ancien vous montre votre hutte et vous laisse à vos affaires.
 
 - (house_warming)
-    + [Look around]
-    {The hut is small but very tidy. | The walls feel very bland but with a few tweaks here and there you'll soon feel at home.} -> house_warming
-    * (unpack) [Unpack your things]
-    You drop your heavy pack on the floor. It's been a long way.
-    You start arranging your belongings on the various shelves. Colored ropes, wood scents, shiny pearls and weaving runes. 
-    Everything needed for your craft in its dedicated place.
+    + [Regarder autour de vous]
+    {La hutte est simple, mais très bien rangée. | Les murs ont l'air fades mais avec quelques améliorations vous vous sentirez très bientôt à la maison} -> house_warming
+    * (unpack) [Décharger vos affaires]
+    Vous déposez votre lourd paquetage sur le sol. La route fut longue.
+    Vous commencez à organiser vos affaires sur les différentes étagères. Cordes colorées, branches odorantes, perles brillantes, runes de tissage. Tout est en ordre pour votre Art.
     -> house_warming
-    * {unpack} [Go to sleep ]
-    - You slide under your heavy blanket and sleep instantly. Tomorrow will be a big day.
+    * {unpack} [Aller vous coucher ]
+    - Vous vous glissez sous les lourdes couvertures et tombez instantanément dans un profond sommeil. Demain sera une longue journée.
     * [... #start #day]
 ->->
 
@@ -87,121 +86,122 @@ After a few cordial pleasanteries, the elder shows you to your hut and leaves yo
 
 
 = Intro
-You wake up to the sound of distant ducks quacking happily.
-After a few minutes, you hear a knock on the door.
+Vous vous réveillez au son de lointain canards caquettant joyeusement.
+Au bout de quelques minutes, vous entendez frapper à la porte.
 ->->
 
 = Night_01
-As the sun sets you start to wonder what happened to the old Weaver. #night
-You suppose ...
-    * ... he died of old age[.] after a fulfilled life helping others.
+Alors que le soleil se couche, vous commencez à vous demander ce qui a pu arriver à l'ancien Tisse-Esprit. #nuit
+Vous supposez ...
+    * ... qu'il est mort de vieillesse après une vie accomplie à aider les autres.
     -> sleep
-    * ... a wild beast killed him.
+    * ... qu'une bête sauvage l'a tué.
     -> tragic_death
-    * ... unconstrained magic caused his demise.
+    * ... qu'une magie incontrôlée a provoqué sa disparition.
     -> tragic_death
-    * ... it doesn't really matter.
-    You're here to weave and that's what you'll do.
-    ->sleep
-- (tragic_death) A shiver runs down your spine. You don't like to think about these kind of things before going to bed.
+    * ... que cela n'a pas vraiment d'importance.
+    Vous êtes ici pour tisser et c'est ce que vous ferez.
+    -> sleep
+- (tragic_death) Un frisson vous parcourt l'échine. Vous n'aimez pas penser à ce genre de choses avant de vous coucher.
 - (sleep)
-    * [Go to sleep ... #clear #day]
+    * [Aller dormir ... #clear #day]
 ->->
 
 = Night_02
-The sky is really pretty tonight.#night
-As the clouds burn a bright orange, you take a moment to think about this new rune Kaya found.
-You're puzzled because ...
-* ... you didn't know there were more than two weaving runes.
-* ... the rune looks like ancient forbidden magic.
-* ... how could a rune end up inside a deer.
+Le ciel est vraiment beau ce soir. #nuit
+Alors que les nuages brûlent d'un orange vif, vous prenez un moment pour réfléchir à cette nouvelle rune que Kaya a trouvée.
+Vous êtes perplexe parce que ...
+* ... vous ne saviez pas qu'il y avait plus de deux runes de tissage.
+* ... la rune ressemble étrangement à une ancienne magie interdite.
+* ... comment une rune a-t-elle pu se retrouver à l'intérieur d'un cerf ?
 -
-But it's getting late, you'll have more time tommorow to investigate the power of this rune.
+Mais il se fait tard, vous aurez plus de temps demain pour enquêter sur le pouvoir de cette rune.
 - 
-* [Go to sleep ... #clear #day]
+* [Dormir ... #clear #day]
 ->->
 
 = Night_03
-Tonight is as good a night as ever to wonder ...#night
-* ... why nobody ever mentions the old weaver.
-* ... why there is a resident weaver in such a small hamlet.
-* ... if you'll ever go home.
+C'est une bonne nuit pour se demander ... #nuit
+* ... pourquoi personne ne mentionne jamais l'ancien Tisse-Esprit.
+* ... pourquoi il y a un Tisse-Esprit permanent dans un si petit hameau.
+* ... si vous rentrerez un jour chez vous.
 -
-* [Go to sleep ... #clear #day]
+* [Dormir ... #clear #day]
 ->->
 
 = Aponi_01
-    * [Open the door]
-- On your porch, you can see a little girl. #aponi
-    * [Wave her in]
-    You wave her in and she enters eagerly. You can see she seem very curious.
-- Hello, I'm Aponi ! What's your name ? #c
-    * Hello, I'm Panthu. #p
+    * [Ouvrir la porte]
+- Sur votre porche, vous pouvez voir une petite fille. #aponi
+    * [Lui faire signe d'entrer]
+    Vous lui faites signe d'approcher et elle entre avec empressement. Vous pouvez voir qu'elle semble très curieuse.
+- Bonjour, je m'appelle Aponi ! Comment tu t'appelles ? #c
+    * Bonjour, je m'appelle Panthu. #p
     ~ p_name = "Panthu"
-    * Hello, I'm Juil. #p
+    * Bonjour, je m'appelle Juil. #p
     ~ p_name = "Juil"
-    * Hello, I'm Gytle. #p
+    * Bonjour, je m'appelle Gytle. #p
     ~ p_name = "Gytle"
-    * Hello. #p
-- Nice to meet you {p_name}, welcome to the village !#c
-Do you like dogs ? #c
-    * Absolutely ! [] Do you have one ? #p
-    Yes ! Cilantro is my best friend ! #c
-    * Sorry child, cats are way better. #p
-    * (dogs_are_the_worst) Dogs are the worst ! They killed Frederik ... my parrot.#p
-    Oh ... sorry. #c
-- Far away you hear a loud voicing calling "Aponiiii"
-I must go, see you next time ! #c
-She smiles at you before running outside. #hide
+    * Bonjour. #p
+- Enchantée {p_name}, bienvenue dans le village ! #c
+Tu aimes les chiens ? #c
+    * Absolument ! [] Tu en as un ? #p
+    Oui ! Cilantro est mon meilleur ami ! #c
+    * Pardon mon enfant, mais les chats sont bien meilleurs. #p
+    * (dogs_are_the_worst) Non je les déteste ! Ils ont tué Frederik ... mon perroquet. #p
+    Oh ... désolé. #c
+- Au loin, vous entendez une voix forte appeler "Aponiiii".
+Je dois y aller, à la prochaine ! #c
+Elle vous sourit avant de courir dehors. #hide
 * [... #clear]
 ->->
 
 = Kaya_01
-Later in the day, you hear a lood knock.
-    * [Open the door]
-- You must be the new Weaver. I need your help with something. #kaya #c
-    * Huu ... Hello. #p
-    Yes, hello. Like I said I need your help fast. #c
-    * What can I help you with ? #p
-- The wood I have is all wet but I need to light a fire right now. Can't let that deer go to waste.#c
+Plus tard dans la journée, vous entendez frapper fort.
+    * [Ouvrir la porte]
+- Vous là, Tisse-Esprit. J'ai besoin de votre aide pour quelque chose. #kaya #c
+    * Huu ... Bonjour. #p
+    Oui, bonjour. Comme je l'ai dit, j'ai besoin de votre aide rapidement. #c
+    * En quoi puis-je vous aider ? #p
+- Le bois que j'ai est trempé mais j'ai besoin d'allumer un feu tout de suite. Je ne peux pas laisser ce cerf se perdre. #c
 - (choice)
-    * (ask_kaya_too_much) Why do you need the fire for ? #p
-    To smoke it. Why else would I need a fire for a deer ? Now can I have it ? Please ? #c
+    * (ask_kaya_too_much) Pourquoi avez-vous besoin du feu ? #p
+    Pour le fumer. Pourquoi d'autre aurais-je besoin d'un feu pour un cerf ? Maintenant, puis-je l'avoir ? S'il vous plaît ? #c
     -> choice
-    * Give me a minute, I'll see what I can do. #p
+    * Donnez-moi une minute, je vais voir ce que je peux faire. #p
         -> sprit_choice ->
         ** [fire]
-        She nods briefly <>
-- and leaves your hut without looking back. #hide
+        Elle hoche la tête brièvement <>
+- et quitte votre cabane sans se retourner. #hide
 * [... #clear]
 ->->
 
 = Petrel_01
-Early in the morning, just as the rooster sings, you find a sturdy man waiting on your doorstep.
-    * [Waive him in]
-- Hello revered weaver. #c #petrel
-I'm sorry to disturb you in such a peaceful morning but I had no other choice. #c
+Tôt le matin, juste au moment où le coq chante, vous trouvez un homme robuste vous attendant sur le pas de votre porte.
+    * [Le faire entrer]
+- Bonjour honorable Tisse-Esprit. #c #petrel
+Je suis désolé de vous déranger en une telle matinée paisible mais je n'avais pas d'autre choix. #c
 -
-    * (call_me_by_my_name) {p_name} Please, call me {p_name}. #p
+    * (call_me_by_my_name) {p_name} S'il vous plaît, appelez-moi {p_name}. #p
     ~ petrel_calls_me_by_name = true
-    Yes revered wea... sorry. Yes {p_name}. #c
-    * And you are ? #p
-    Sorry reverred weaver. #c
-    * How can I help you ? #p
-- My name is Petrel, I'm but a simple farmer here. I keep on praying the spirits but it hasn't rained in days. I'm afraid my crop won't survive another one without water.#c
-Please {call_me_by_my_name: Reverred Wea ... {p_name} | Reverred Weaver} I'm begging for your help.#c
+    Oui honorable tisser... pardon. Oui {p_name}. #c
+    * Et vous êtes ? #p
+    Désolé honorable Tisse-Esprit. #c
+    * Comment puis-je vous aider ? #p
+- Je m'appelle Petrel, je ne suis qu'un simple fermier ici. Je continue de prier les esprits mais il n'a pas plu depuis des semaines. J'ai peur que ma récolte ne survive pas sans eau. #c
+S'il vous plaît {call_me_by_my_name: Honorable Tisse-Esprit ... {p_name} | Honorable Tisse-Esprit} Je vous en supplie.#c
+
 - (ask_for_help)
-    * (help_him) {ask_for_help > 1} Fine ... #p
+    * (help_him) {ask_for_help > 1} D'accord ... #p
     -> sprit_choice ->
         ** [water]
-        You can almost smell his relief as you hand him the dream catcher.
-        Thank you so much {not call_me_by_my_name: reverred weaver} ! #c
-    * {ask_for_help == 1}No need to beg[.], I'll gladly do my best. #p
+        Son soulagement est presque palpable lorsque vous lui tendez l'attrape rêve.
+        Merci mille fois {not call_me_by_my_name: Honorable Tisse-Esprit} ! #c
+    * {ask_for_help == 1}Pas besoin de supplier[.], je vous aiderai avec plaisir. #p
     -> help_him
-    * Beg and pray all you want, it's not how rain works. #p
+    * Suppliez et priez tout votre soûl, ça n'est pas comme ça que fonctionne la pluie. #p
     #c
-    {not call_me_by_my_name: Yes Reverred Weaver. You are right.} But I thought maybe ... ->ask_for_help
-- As he leaves your hut, you wonder what kind of crop they grow in the region. #hide
+    {not call_me_by_my_name: Oui Honorable Tisse-Esprit, vous avez raison, bien sûr.} Mais j'ai pensé que peut être ... ->ask_for_help
+- Alors qu'il quitte la hutte vous vous demandez le genre de plantes qui sont cultivées dans la région. #hide
 * [... #clear]
 ->->
  
@@ -210,12 +210,12 @@ Please {call_me_by_my_name: Reverred Wea ... {p_name} | Reverred Weaver} I'm beg
     
 
 = Kaya_02
-A few moments later, the door opens sundenly.
-The fire was good. #c #kaya
-The deer not so much. #c
-I found a strange rune inside it.#c
-Though it may be of some use to you.#c #add_rune
-* Thank you Kaya #p
+Quelques instants plus tard, la porte s'ouvre avec fracas.
+C'était un bon feu. #c #kaya
+Mais c'était un mauvais cerf. #c
+J'ai trouvé une rune étrange à l'intérieur.#c
+Me suis dit que cela pouvait vous être utile.#c #add_rune
+* Merci Kaya #p
 ~ runes_retrieved += 1
 ~ known_spirits += (air, earth)
 -
@@ -225,102 +225,104 @@ She nods a little bit longer than last time.
 - else:
 Don't sweat it. #c
 }
-Before you can add anything else, she leaves. #hide
+Elle part avant que vous puissiez ajouter quoi que se soit. #hide
 * [... #clear]
 ->->
 
 = Hototo_01
-Before you see him, you hear the dragging step of the elder.
-* [Help him inside]
-- That's very kind of you my child. #c #hototo
-How is everything going so far ? #c
-    * So far, so good#p[.] Thank you for your welcome.
-    He smiles with proudness.
-    * Well, #p[some people behave weirdly.] I suppose I must get used to the behaviour of some locals.#p
-    Ah ... right ... yes. Well, they are honest, hardworking people, all of them. You'll come to understand, maybe even like them in the end.#c
-    * It's none of your concern.#p
-    The old man seems taken a back. You can see a hint of fright in the corner of his eyes. But he quickly recomposes himself.
-- He clears his throat.
-I ... didn't want to bother you with an old man nightmares ... but since I'm here.#c
-Since a few weeks now I dream of a dark shadow strangling me. #c
-I wake up in sweat and can hardly breathe. #c
-Would you be able to help me ? #c
-* Sure !
+Vous entendez le pas trainant de l'ancien s'approcher bien avant de le voir.
+* [L'aider à rentrer]
+- C'est très aimable à vous mon enfant. #c #hototo
+Comment se passent les choses jusqu'ici? #c
+    * Pour l'instant tout va bien #p[.] Merci pour votre accueil.
+    Il sourit fièrement.
+    * Et bien, #p[certaines personnes ont un comportement un  peu étrange.] J'imagine que je dois m'habituer aux coutumes locales.#p
+    Hum ... oui ... en effet. Mais vous savez, ce sont des gens honnêtes, de bons travailleurs, tous autant qu'ils sont. Vous finirez par le comprendre, peut être même par les apprécier.#c
+    * Ça ne vous regarde pas.#p
+    Le vieil homme recule d'un pas. Vous pouvez déceler un éclair de peur dans le coin de ses yeux. Mais il se reprend rapidement.
+- Il se racle la gorge.
+Au fait, je...je ne voulais pas vous déranger avec les cauchermars d'un vieil homme... mais puisque je suis ici. #c
+Cela fait plusieurs semaines que je rêve d'une ombre sombre qui m'étouffe. #c
+Je peux à peine respirer et je me réveille en sueur. #c
+Pourriez vous m'aider ? #c
+* Bien sûr !
 -> sprit_choice ->
 ** [air]
--Thank you very much my child. This seems very promising. #c
-- He leaves your hut with the sound of his cane following his footsteps. #hide
+-Merci beaucoup mon enfant, cela m'a l'air vraiment prometteur. #c
+- Il quitte la hutte, ses pas suivis de près par le son de sa canne sur le sol. #hide
 * [... #clear]
 ->->
 
 = Petrel_02
-Just before the last rays of the sun disappear below the horizon, you see Petrel approaching.
-* [wave him in]
-- Hello {name_by_petrel()}. #c #petrel
-Sorry to bother you so late.#c
-    * You never bother me Petrel.#p
-    * Yes, you better be quick.#p
-- I saw a sign of the holy pattern today !#c
+Juste avant que les derniers rayons du soleil ne disparaissent à l'horizon, vous voyez Petrel approcher.
+* [lui faire signe d'entrer]
+- Bonsoir {name_by_petrel()}. #c #petrel
+Navré de vous déranger aussi tard.#c
+    * Vous ne me dérangez jamais Petrel.#p
+    * J'espère que ça sera bref.#p
+- J'ai vu un signe du Grand Motif !#c
 - (saw_a_sign)
-    * What kind of sign ?#p
+    * Quel genre de signe ?#p
     A divine sign{light_name_by_petrel()}. Just like the ones you use to weave.#c
     -> saw_a_sign
     * (crop_circle) Where did you see this sign ?#p
-    In my field{light_name_by_petrel()}.#c
+    Dans mon champ{light_name_by_petrel()}.#c
+    Grâce à votre aide, toute la récolte a poussé presque entièrement dans la nuit. A part dans certains endroits où le sol est resté vierge.#c
     Thanks to your help, the crop grew almost overnight. Except in some places where the ground remained barren.#c
-    I had to climb to the top of the barn to get a better view.#c
-    That's when I saw it was in fact a divine sign {light_name_by_petrel()}.#c
+    Je suis monté sur le toit de la grange pour avoir une meilleure vue et...#c
+    C'est là que j'ai vu que c'était en réalité un signe divin! #c
     -> saw_a_sign
-    * The holy pattern ... ?#p
-    Yes, the one thing behind everything. Guiding my hand when I plow my field. Guiding yours as you weave. I'm honored the Holy Pattern chose me to deliver its divine message.#c
+    * Le Grand Motif... ?#p
+    Oui! Le motif derrière toute chose. Celui guidant ma main lorsque je laboure mon champ. Qui guide la votre lorsque vous tissez. Je suis profondément reconnaissant qu'Il m'ait choisi pour transmettre son message sacré.
     -> saw_a_sign
-    * {crop_circle} I don't care much for your crop circles#p[.], Petrel. Maybe some aliens wanted to mess with you and so what.
-    A terror take hold of his face when you mention aliens.
-    But aliens are a corruption of the Holy Pattern, surely you must be joking.#c
+    * {crop_circle} Je me fiche de vos cercles de culture #p[.], Petrel. C'est sans doute des aliens qui vous jouent un tour.
+    La terreur s'empare de son visage lorsque vous mentionnez des aliens.
+    Mais...les aliens sont une corruption du Grand Motif...vous plaisantez ?#c
     -> saw_a_sign
-    * {crop_circle} Okay, can I see it ? #p
-- Yes{light_name_by_petrel()}. Here's the Sign.#c
-He gives you a paper with a small drawing on it, bows to the ground, then leaves. #add_rune #hide
+    * {crop_circle} D'accord, puis-je le voir ? #p
+- Biens sûr {light_name_by_petrel()}. Voici le Signe.#c
+Il vous tend un bout de papier avec un petit dessin dessus, s'incline jusqu'au sol, puis s'en va. #add_rune #hide
 ~ runes_retrieved += 1
 ~ known_spirits += (void)
 * [... #clear]
 ->->
 
 = Hototo_02
-You can hear the slowest footstep of the village approaching.
-* [Open the door]
-- Thank you for your help child. I can now breathe easily again. #c #hototo
-But I still have nightmares ... or should I call them visions ?#c
-They are now coming to me in the middle of the day.#c
-Please child, i'm once again asking for your help. You must have something to clear and soothe the mind of an old man.#c
-    * I'm [sorry, I'll see what I can do.] very sorry to hear that. Give me a minute I'll craft you a remedy. #p
+Vous entendez les pas les plus lents du village s'approcher.
+* [Ouvrir la porte]
+- Merci pour votre aide mon enfant. Je peux à nouveau respirer aisément. #c #hototo
+Mais je fais toujours des cauchemars...ou sont-ce plutôt des visions ?#c
+Elle m'apparaissent maintenant même en plein milieu du jour.#c
+S'il vous plait mon enfant, je fais appel à votre aide une fois de plus. Vous devez sûrement avoir quelque chose pour appaiser les pensées d'un vieil homme.#c
+    * Mes soins n'ont donc pas suffit[...], donnez moi une minute je vais tenter de créer autre chose.  #p
     -> sprit_choice ->
         ** [void]
+        Merci beaucoup à vous mon enfant. Je sens déjà mon angoisse disparaître.
         Thank you very much my dear child. I can already feel some of my anxiety receding.#c
-        But I still have a bad feeling.#c
-- Dark and forgotten powers are at stakes, I can feel it !#c
-In my last vision I saw some kind of rune. Here, I've drawn it for you.#c
-*[Take the drawing]
-- You're so fixated on the drawing that you don't even notice the old man leaving. #hide #add_rune
+        Mais j'ai toujours un mauvais pressentiment.#c
+- De sombres et obscurs pouvoirs sont en oeuvre ici, je le sens. !#c
+Dans ma dernière vision, j'ai vu une sorte de symbole étrange. Je l'ai dessiné pour vous. #c
+*[Prendre le dessin]
+- Le dessins vous absorbe à tel point que vous n'entendez même pas le vieil homme partie. #hide #add_rune
 ~ runes_retrieved += 1
 ~ known_spirits += (eagle, bear, snake)
-* [Study the rune ... #clear]
+* [Inspecter la rune ... #clear]
 ->->
 
 = end
-At first something eludes you ...#night
-*[... but you keep on studying the rune.]
--Day after day.
-*Night after night. 
--It must be a week now.
-*But today you had a breakthrough.
--This new sign will let you acces a whole new level of weaving.
-You wonder if that was what the old man was warning you about.
-You feel like you must ...
+Tout ne semble pas clair au premier abord... #night
+*[... Mais vous continuez à inspecter la rune.]
+-Jour après jour.
+*Nuit après nuit. 
+- Cela fait des jours à présent. Peut être une semaine?
+*Aujourd'hui vous avez enfin une révélation.
+- Ce nouveau signe vous donne accès à un tout nouveau niveau de tissage.
+Vous vous demandez si c'est contre cela que le vieil homme vous a mis en garde.
+Vous sentez que vous devez ...
 - (end_choice)
-* ... proceed with caution[.] and ... -> end_choice
-* ... explore these new powers[.] and ... -> end_choice
-* ... get a well deserved rest.
+* ... procéder avec prudence[.] et ... -> end_choice
+* ... explorer ces nouveaux pouvoirs[.] et ... -> end_choice
+* ... profiter d'un repos bien mérité.
 - 
 * [... #clear #day]
 ->->
@@ -338,173 +340,175 @@ You feel like you must ...
 -> end
 
 = Kaya_03
-The dawn breaks with a familiar face on your doorstep.
+
+La quiétude de l'aube naissante est interrompue par un visage familier sur le pas de votre porte.
 Shhh #c #kaya
-She put a finger to her mouth and point behind her.
-Can you hear anything ? #c
-    * Hear what ?#p
-    Exactly !#c
-    * Huuu ... no ?#p
-    * I didn't hear you say hello, that's for sure.#p
-    She stares at you for a hard long minute. 
-- At this hour, the wood should be teeming with life but I can barely hear a thing.#c
-    * Okay ...#p
-    * Doesn't look like it's my problem, does it ?#p
-- How can I hunt if there's nothing to hunt.#c
-Each day I must go further into the wood, only to find meagre game.#c
+Elle place un doigt sur ses lèvres et pointe la forêt derrière elle
+Est ce que vous entendez ? #c
+    * Entendez quoi ?#p
+    Exactement !#c
+    * Huuum non ?#p
+    * Je ne vous ai pas entendu dir bonjour ça c'est sûr.#p
+    Elle vous fixe pendant une interminable minute. 
+- A cette heure ci le bois devrait grouiller de vie mais je peine entendre le moindre son.#c
+    * D'accord ...#p
+    * Ça n'a pas l'air d'être mon problème si ?#p
+- Comment puis-je chasser s'il n'y a rien à chasser?#c
+Chaque jour je dois m'enfoncer plus loin, tout ça pour du maigre gibier. #c
 - (choice)
-    * (helped_kaya_hunt) Okay, let me see what I can do.#p
+    * (helped_kaya_hunt) D'accord je vais voir ce que je peux faire. #p
     -> sprit_choice ->
         ** [eagle]
-        She pauses a minute to give you the faintest smile.
-    * And how is that my problem ?#p
-    Maybe because all this meat you've eaten since you're here won't get in your plate by itself ?#c
-    Just guessing ...#c
+        Elle s'arrête une minute pour vous adresser l'ombre d'un sourire.
+    * Et en quoi est-ce mon problème ?#p
+    Peut être parceque toute la viande que vous avez mangé jusqu'ici n'est pas venu gentiment toute seule dans votre assiette ?#c
+    Mais ce n'est qu'une supposition...#c
     -> choice
-- Without a noise, she's gone. #hide
+- Sans un bruit, la voilà partie. #hide
 * [... #clear]
 ->->
 
 = Hyij_01
-It's been ... 
-* ... what, one week already ?
-** You still have new faces to discover though.
-*** Just like the one in front of you.
-- Hello{my_name()}. #c #hyij
-We haven't had the pleasure to meet yet. #c
-I'm Hyij, the blacksmith.#c
-    * Nice to meet you Hyij !#p
-    * Hello Hyij, the blacksmith.[] I'm {p_name} the Weaver.#p
+Cela fait ... 
+* ... quoi, plus d'une semaine déjà ?
+** Il vous reste de nouveaux visages à découvrir cependant.
+*** Celle devant vous par exemple.
+- Bonjour {my_name()}. #c #hyij
+Nous n'avons pas eu le plaisir de nous rencontrer jusqu'ici. #c
+Je suis Hyij, forgeronne.#c
+    * Bievenue Hyij !#p
+    * Bonjour Hyij, forgeronne.[] Je suis {p_name}, Tisse-Esprit.#p
     ~ i_am_the_weaver = true
--I hope you're all settled. When I have the time I also do a few metal sculptures.#c
-I'd be happy to gift you one if you'd like to decorate those bland walls in your hut.#c
-    * (accept_Hyij_gift) With great pleasure[ !], thank you Hyij !#p
-    Alright, I'll bring you one next time I'm around.#c
-    * No, thank you[.] I like my wall blands.#p
-    Okay, as you wish#c
-- She looks like she wants to add something but seem uncertain.
-    * Please, what can I help you with Hyij ?#p
-    That's very nice of you to ask.#c
+- J'espère que vous l'installation s'est bien passée. #c
+- Elle regarde d'un air navré les murs vides vous entourant.
+- Je fais également des sculptures en métal sur mon temps libre. Je serai ravie de vous en offrir une pour ajouter un peu de décoration à votre hutte. #c
+    * (accept_Hyij_gift) Avec plaisir[ !], merci Hyij !#p
+    Très bien. Je vous en amènerai une la prochaine fois que je serai dans les environs. #c
+    * Non, merci[.] Je préfère garder ma hutte sobre.#p
+    D'accord, comme vous voudrez #c
+- Elle a l'air de vouloir ajouter quelque chose mais a l'air hésitante.
+    * En quoi puis-je vous aider Hyij?#p
+    C'est bien aimable à vous de demander.#c
     * [...]
-- It's quite weird but I feel more and more tired these days.#c
-Sometimes I hardly have the strengh to lift my hammer anymore.#c
-Would you be able to help ?#c
-    * Yes, absolutely ![] Give me a minute and you'll feel strong as a bear.#p
+- C'est assez étrange mais je me sens de plus en plus épuisée ces jours-ci. #c
+Parfois je me sens à peine la force de soulever mon marteau. #c
+Seriez vous en mesure d'aider ?#c
+    * Oui, bien sûr ![] Donnez moi une minute et vous vous sentirez la force d'un ours.#p
     -> sprit_choice ->
         ** bear
-        Thank you very much, this should be a huge help !#c
-- {i_am_the_weaver: See you around {p_name: {p_name} the weaver | Weaver}.}#c
-She wave you goodbye as she leaves the hut. #hide
+        Merci beaucoup! Cela sera d'une grande aide0 !#c
+- {i_am_the_weaver: A bientôt {p_name: {p_name} Tisse-Esprit | Tisse-Esprit}.}#c
+Elle vous salue alors qu'elle quitte la hutte. #hide
 * [... #clear]
 ->->
 
 = Night_04
-The night fell sooner than you'd expected.#night
-Are the days getting shorter ?
-Maybe ...
-* ... time flies when you work hard.
-* ... it's just a weather thing.
-* ... the end of the world is near.
+La nuit est tombée plus tôt que ce que vous pensiez. #night
+Est ce que les jours raccourcissent ?
+Peut être que ...
+* ... le temps file lorsque vous travaillez assidûment.
+* ... c'est juste un ressenti de la météo.
+* ... la fin du monde est proche.
 -
 * [... #clear #day]
 ->->
 
 = Aponi_03
-Noon is around the corner and you hear someone running jauntily toward the hut.
-It must be ...
+Le soleil approche de son zenith lorsque vous entendez quelqu'un sautiller en direction de la hutte.
+C'est sûrement ...
     * ... Aponi ?
     * ... Hototo ?
     * ... Kaya ?
-- Look what I found{my_name()} ! #c #aponi
-It looks just like your magic cards ! #c
-    * Because it is a magic card Aponi. #p
-    * It's called a weaving rune Aponi. #p
+- Regarde ce que j'ai trouvé ! {my_name()} ! #c #aponi
+On dirait l'une de tes cartes magiques ! #c
+    * Parceque c'est une carte magique, Aponi. #p
+    * On appelle ça une rune de tissage Aponi. #p
 - Oooh#c
-It's so pretty !#c
-    * Yes, but it's also very dangerous#p[.] You should give it to me.
-    But it just look like a dumb rock.#c
-    She looks at the rune a moment.
-    * Yes, now give it to me.#p
-    * Can I have it please ?#p
-- Here take it.#c #add_rune
+Elle est si belle !#c
+    * Oui, mais elle est aussi très dangereuse#p[.] Tu devrais me la donner.
+    Mais on dirait un simple caillou brillant !#c
+    Elle regarde la rune un moment0.
+    * Oui, maintenant donne la moi.#p
+    * Est ce que je peux l'avoir s'il te plait ?#p
+- Tiens prends là.#c #add_rune
 ~ runes_retrieved +=1
 ~ known_spirits += (deer, owl, wolf)
-I found it the ashes of the forge anyway. #c
-    * Kids shouldn't play around a forge#p[.], it's very dangerous !
-    But I was looking for Cilantro !#c
-    * And why were you playing with the ashes #p[?]in the first place ?
-    I was looking for Cilantro.#c
-- I can't find him.#c
-I've looked everywhere.#c
-Can you help me pretty please ?#c
-I've even tried howling like he likes.#c
-    * Oh poor thing ... don't worry I will help you #p[!]find Cilantro !
-    * {Chapter_1.dogs_are_the_worst} It's just a stupid dog#p[.], why do you care about it ?
-    Please.#c
-    Please, please, please.#c
-    He's my best friend.#c
-        **Okay ... give me a moment.#p
+Je l'ai trouvée dans les cendres de la forge. #c
+    * Les enfants ne devraient pas jouer près d'une forge#p[.], c'est très dangereux!
+    Mais je cherchais juste Cilantro !#c
+    * And pourquoi jouais tu près des cendres #p[?] d'abord ? 
+    Je cherchais Cilantro.#c
+- Je n'arrive pas à le trouer.#c
+J'ai cherché partout pourtant#c
+Est ce que tu peux m'aider s'il te plait s'il te plait ?#c
+J'ai même essayé de l'appelé en hurlant comme il aime.#c
+    * Oh le pauvre ... ne t'en fais pas, je vais t'aider #p[!] à trouver Cicero!
+    * {Chapter_1.dogs_are_the_worst} C'est juste un vulgaire chien#p[.], pourquoi tu t'inquiètes autant ?
+    S'il te plait.#c
+    S'il te plait, s'il te plait, s'il te plait.#c
+    C'est mon meilleur ami.#c
+        **D'accord d'accord...juste laisse moi un instant#p
 -
 -> sprit_choice ->
 * [wolf]
-Thank you !#c
-Thank you, thank you, thank you !#c
+Oh merci !!#c
+Merci, Merci, Merci !#c
 Cilantrooooo !#c
-She runs outside and starts howling in every direction. #hide
+Elle se précipite au dehors and se met à hurler dans toutes les directions. #hide
 -
 * [... #clear]
 ->->
 
 = Hototo_03
-You're still hearing a few howls in the distance when a weak knock sound against your door.
+Vous entendez encore quelques hurlement dans le lointain lorsqu'un faible coup résonne contre votre porte.
 * [Open the door]
-- Hello my child. #c #hototo
-    * How are you Hototo ? #p
-    It could be better. #c
+- Bonjour mon enfant. #c #hototo
+    * Comment allez vous Hototo ? #p
+    Je pourrais aller mieux... #c
     #c
-    I mean, the visions disappeared, thank you ! But <>
-    * Have the visions disappeared ?#p
+    Enfin, les visions ont bien disparu, merci pour ça! Mais <>
+    * Est ce que les vision ont disparu ?#p
     #c
-    Yes they have, thank you ! But <>
-    * Do you have more runes for me ?#p
-    No, that's not why I'm here today.#c
-- I can't escape this feeling that the end is near.#c
-My end at least.#c
-    * Don't worry, it's just a bad day.#p
-    No it's not.#c
+    Oui oui, merci! <>
+    * Avez vous d'autres runes pour moi ?#p
+    Non ça n'est pas la raison de ma visite.#c
+- Je n'arrive pas à échapper à ce sentiment que la fin se rapproche.#c
+La mienne tout du moins.#c
+    * Ne vous en faites pas, c'est juste une mauvaise journée.#p
+    Non non ce n'est pas ça.#c
     * [...]
-- I can feel it in my bones.#c
-It's funny you know. At my age, I should be waiting eagerly for the long night.#c
-Just like the owl.#c
-There's always a path for those able to see.#c
-    * I'm so sorry to hear that. #p
-        ** I may be able to ease your way. #p
+- Je peux le sentir profondément. Dans mes os et ma chair.#c
+C'est amusant vous savez. A mon grand âge je devrais au contraire attendre impatiemment la venue de la longue nuit.#c
+Tout comme la chouette.#c
+Il existe toujours un chemin pour ceux capables de voir.#c
+    * Cela me fend le coeur d'entendre cela. #p
+        ** Je dois pouvoir trouver un moyen de vous aider. #p
 - -> sprit_choice ->
 * [owl]
--He smiles with melancoly, bows a little and then leaves. #hide
+- Il sourit avec mélancolie, le regard dans le lointain, mais plus serein. Il s'incline légèrement et s'en va. #hide
 * [... #clear]
 ->->
 
 = end
-It's already dark when you see Aponi, happy like never before. #aponi
-At her side and happily panting, you see Cilantro.
-She hugs you for a long moment.
+Il fait déjà bien sombre lorsque vous voyez Aponi, heureuse comme jamais. #aponi
+A ses côtés et haletant joyeusement, vous voyez son chien Cilantro.
+Elle vous serre contre elle un long moment.
 * [...]
-- Look what we found in the forest ! #c #add_rune
-She gives you yet another rune before running off with her trusty friend. #hide
+- Regarde ce que j'ai trouvé dans la forêt ! #c #add_rune
+Elle vous donne de nouveau une rune inconnue avant de repartir avec son loyal compagnon. #hide
 ~ runes_retrieved += 1
-She's already almost disappeared when you hear screaming back : "goodnight !"
+Elle a déjà presque disparu lorsque vous l'entendez crier "Bonne nuit!!"
 * [... #clear]
-- Once alone you start to ponder the meaning of all of this. #night
-Where do these runes come from ?
-Why do they seem to call eachother ?
-You dearly hope ...
-* ... you'll get to the bottom of this.
-* ... you'll keep everyone safe.
-* ... it's not the end of the world.
+- Une fois votre solitude retrouvée vous commencez à méditer à la signification de tout ceci. #night
+D'où viennent toutes ces runes ?
+Pourquoi semblent-elles s'appeler? S'entrainant les unes les autres? 
+Vous espérez sincèrement que...
+* ... vous découvrirez la vérité.
+* ... vous protégerez tout le monde.
+* ... ce n'est pas la fin du monde.
 - 
 * [Go to sleep]
-As you go to bed, you can hear an owl sing, lonely in the dark night.
+Alors que vous vous couchez, vous entendez une chouette hululer, seule dans la nuit profonde.
 ** [... #clear #day]
 ->->
 
@@ -522,181 +526,181 @@ As you go to bed, you can hear an owl sing, lonely in the dark night.
 -> end
 
 = Petrel_03
-Loud bangs wake you up.
+De lourds coups sur votre porte vous réveillent.
 *[Get up]
--Your hut is really dark, except the tinyest sliver of light.
-It couldn't be much past dawn.
+-Votre hutte est encore très sombre, à part un lointain mince éclat de lumière.
+L'aube ne doit pas être encore levée.
 {name_by_petrel()} ! #c
 *[Open the door]
 -{name_by_petrel()} ! #c #petrel
-I implore your omnipotent help {name_by_petrel()}.#c
-Kaya greatly wounded Fennel.#c
-She'll die if we don't do something fast !#c
+J'implore votre aide toute puissante {name_by_petrel()}.#c
+Kaya a grièvement blessé Fennel.#c
+Elle va mourir si rien n'est fait!#c
 ~ temp fennel_is_a_cow = false
 - (fennel_in_danger)
-    * {fennel_is_a_cow} Kaya did what ???#p
-    She shot Fennel with her bow.#c
-    Why would someone do that ?#c
-    That she was lost in the forest isn't a reason to shoot on a cow !#c
+    * {fennel_is_a_cow} Kaya a fait quoi ???#p
+    Elle a tiré sur Fennel avec son arc.#c
+    Pourquoi a-t-elle fait une chose pareille ?#c
+    Qu'elle ait été perdue dans la forêt n'est quand même pas une raison pour tirer sur une vache !#c
     ~ fennel_is_a_cow = true
     -> fennel_in_danger
-    * {not fennel_is_a_cow} Who's Fennel ???#p
-    She's a proud servant of the Holy Pattern !#c
-    And one of my favorite cows !#c
+    * {not fennel_is_a_cow} Qui est Fennel ???#p
+    C'est une fière servante du Grand Motif !#c
+    Et l'une de mes meilleures vaches !#c
     ~ fennel_is_a_cow = true
     -> fennel_in_danger
-    * {fennel_is_a_cow} Why would Kaya shoot your cow ???#p
-    She misstook it for some vulgar game in the forest !#c
+    * {fennel_is_a_cow} Mais pourquoi Kaya tirerait elle sur votre vache ???#p
+    Elle l'a confondue avec du vulgaire gibier dans la forêt !#c
     -> fennel_in_danger
-    * (weaving) There's {fennel_in_danger < 2:no time to loose !| hope.}#p[] I'll weave something !
+    * (weaving) Il {fennel_in_danger < 2:n'y a pas de temps à perdre !| de l'espoir.}#p[] Je vais tisser ce qu'il faut !
     -> sprit_choice ->
         ** [life]
-- Thank the Holy Pattern !#c
-Thank you {name_by_petrel()} !#c
-With that my cow must be saved !#c
-As soon as you give him the dream catcher, he runs in the direction of the forest. #hide
+- Le Grand Motif soit loué !#c
+Merci {name_by_petrel()} !#c
+Avec ça ma vache sera sauvée !#c
+Dès que vous lui remettez l'attrape-rêve il se met à courir en direction de la forêt #hide
 - 
 *[... #clear]
 ->->
 
 = Aponi_04
-You're about to close the door but you notice a small drawing on the floor just outside.
+Vous vous apprêtez à fermer la porte mais je remarquez un petit dessin sur le sol juste devant chez vous.
 *[Pick it up]
-- It's a child's drawing.
-In the bottom right corner you spot ...
+- C'est un dessin d'enfant.
+Dans le coin en bas à droite vous voyez ...
 -(drawing_1){drawing_1 > 2:. -> drawing_2}{drawing_1 > 1: and ...}
-* ... a small stick figure[ ?]->drawing_1
-* ... what looks like a dog[ ?]->drawing_1
--(drawing_2) Between the two of them floats a little heart.
-In the middle of the drawing you clearly see ...
-* ... a cow[.] ...
-** ... healthy.
-But on the ground ... #add_rune
-*** ... the trampled grass draws ...
-**** ... a rune !
+* ... un bonhomme baton[ ?]->drawing_1
+* ... ce qui ressemble à un ... chien [ ?]->drawing_1
+-(drawing_2) Entre les deux flotte un petit coeur.
+Au milieu du dessin vous voyez très clairement ...
+* ... une vache[.] ...
+** ... debout en pleine forme.
+Mais sur le sol où elle reposait avant ... #add_rune
+*** ... l'herbe couchée forme le motif ...
+**** ... d'une rune !
 ~ runes_retrieved += 1
 -
 *[... #clear]
 ->->
 
 = Hyij_03
-Later in the day, you hear Hyij knocking on your door.
-* Come on in ! #p
-- Hello{name_by_hyij()} ! #c #hyij
-What you did for Fennel truly is impressive.#c
-    * Thank you !#p
-    No, thank you !#c
-    * Oh, it wasn't much ...#p
-    It's still greatly appreciated.#c
-- However since this incident it's getting tense between Petrel and Kaya.#c
-I'm affraid the little harmony we have here will shatter if we let the conflict fester.#c
-You wouldn't have something to help, would you ?#c
-* Indeed, I have.#p
-* If I can control Life, surely I can invoke Harmony !#p
+Plus tard dans la journée, vous entendez Hyij toquer à votre porte.
+* Entrez ! #p
+- Bonjour {name_by_hyij()} ! #c #hyij
+Ce que vous avez réussi pour Fennel est vraiment impressionnant.#c
+    * Merci !#p
+    Non, merci à vous !#c
+    * Oh, ça n'était pas grand chose ...#p
+    C'est tout de même d'une aide inestimable.#c
+- Cependant depuis l'incident les choses sont devenues...tendues entre Petrel et Kaya.#c
+Je crains que la petite paix tranquille de notre communauté n'en souffre grandement si nous laissons le conflit s'envenimer.#c
+Vous n'auriez pas quelque chose pour aider par hasard ?#c
+* En effet, je pense avoir quelque chose.#p
+* Si j'ai vu invoquer la Vie, je peux sûrement faire de même avec l'Harmonie !#p
 - ->sprit_choice->
 * [harmony]
-- Thank you{my_name()} !#c
-Some days, I wonder what we would do without you.#c
-    * So do I#p[.], so do I.
-    * I'm just doing my best.#p
-    And for that we are deeply grateful.#c
+- Merci beaucoup {my_name()} !#c
+Il y a des jours où je me demande ce que nous ferions sans vous.#c
+    * Moi aussi#p[.], moi aussi...
+    * J'essaie juste de faire de mon mieux.#p
+    Et nous vous en sommes extrêmement reconnaissants.#c
 -{not Chapter_2.accept_Hyij_gift: ->goodbye}
-I almost forgot!#c
-Like I promised, here's a small trinket I made for you.#c
-    * Oh ! Hyij, it's beautiful !#p
-    * Thank you ! The perfect complement to my bland walls !#p
-- What can I say, all those dream catchers you craft inspired me.#c
+Oh j'ai presque oublié!#c
+Comme promis, voilà un petit bibelot que j'ai fait pour vous#c
+    * Oh ! Hyij, c'est magnifique!#p
+    * Merci ! La décoration parfaite pour mes murs fades !#p
+- Que voulez vous, c'est l'art de vos attrapes-rêves qui m'inspire.#c
 -(goodbye)
-Anyway, I'll leave you to your things now. #c
-She waves goodbye and closes the door softly behind her. #hide
+Enfin bon, je vous laisse à vos affaires maintenant. #c
+Elle vous salue et referme la porte doucement derrière elle. #hide
 *[... #clear]
 ->->
 
 
 = Night_05
-Today was great. #night
-You're especially fulfilled by ...
-* ... your ability to help others.
-* ... the trust the hamlet puts in you.
-* ... the amount of power you have garnered.
+Aujourd'hui était une belle journée. #night
+Vous vous sentez particulièrement bien grâce à ...
+* ... votre capacité à aider les autres.
+* ... la confiance que le hameau place en vous.
+* ... la quantité de pouvois que vous amassé.
 - 
 *[Go to sleep]
-** You try to sleep ...
-*** ...but something keeps nagging at you.
-**** Why does the air feels so thick in here ?
-***** What is that sinister pounding inside your head ?
-- Dizzy with worries and a dark hunch, you finally drift to sleep.
+** Vous tentez de dormir ...
+*** ...mais quelque chose vous tourmente.
+**** Pourquoi l'air semble si lourd ici ?
+***** Quel est ce battement sinistre à l'intérieur de votre crâne ?
+- Les soucis et de sombres pressentiment vous angoissent longtemps, mais vous finissez par dériver vers un sommeil agité.
 *[... #clear #day]
 ->->
 
 
 = Hototo_04
-You wake up feeling better.
-You always feel better ...
-* ... feeling the sun on your face.
-* ... hearing birds chirping.
+Vous vous réveillez en bien meilleure forme.
+Vous vous sentez toujours mieux ...
+* ... en sentant le soleil sur votre visage.
+* ... en entendant les chants des oiseaux.
 -
 *[...]
-- In the beggining of the afternoon, you see Hototo slowly approaching with Hyij.
-Hello my dear child. #c #hototo
-Today is a big day.#c
+- Au début de l'après-midi, vous voyez Hototo s'approcher lentement avec Hyij.
+Bonjour mon enfant. #c #hototo
+Aujourd'hui est un grand jour.#c
 *[...]
--Today I'll finally rejoin my ancestors.#c
+-Aujourd'hui est le jour où les étoiles et les ancêtres m'appellent à les rejoindre.#c
 *[...]
--I've had and long and happy life.#c
+-J'ai eu une longue et heureuse vie.#c
 *[...]
--I have absolute faith in Hyij, she'll be a fine elder.#c
+-J'ai une confiance totale en Hyij, elle sera une bonne ancienne.#c
 *[...]
--I'm glad I had the chance to meet you.#c
-And I wanted to thank you one more time for all your help. Especially these last few days.#c
+-Je suis reconnaissant que la vie m'ait permis de vous rencontrer.#c
+Et je voulais vous remercier encore une fois de toute votre aide. Particulièrement lors de ces derniers jours.#c
 *[...]
--He looks at your for a long time.
+-Il vous regarde pendant un long moment.
 *[...]
--Now, you know what must be done.#c
-*[Prepare for the ceremony]
+-Maintenant, vous savez ce qui doit être fait.#c
+*[Vous préparez à la cérémonie]
 -
 -> sprit_choice ->
 * [death]
--You finish to weave the dream catcher and give it to him.
-For the last time, you watch him leave in the direction of his home, Hyij by his side. #hide
+-Vous achevez l'attrape-rêve et vous lui tendez d'une main hésitante.
+Pour la dernière fois, vous voyez sa frêle silhouette s'éloigner en directiond de sa hutte, Hyij a ses côtés. #hide
 *[... #clear]
 ->->
 
 = end
-A few days pass. #night
-* An idea pops into your head.
-** You try to forget it ...
-*** ... but it keeps comming back.
-**** Has anyone tried to weave the ultimate pattern ?
-***** It's probably too dangerous.
-****** But has anybody tried ?
--Probably not, the more you think about it ...
+Quelques jours passent. #night
+* Une idée gagne votre esprit.
+** Vous essayez de l'ignorer ...
+*** ... mais elle ne cesse de revenir.
+**** Quelqu'un a-t-il déjà essayé de tisser le motif ultime ?
+***** C'est sûrement trop dangereux...
+****** Mais est ce que quelqu'un a essayé ?
+- Porbablement pas. Plus vous y pensez ...
 -(thinking){thinking > 2:. -> thinking_2}{thinking > 1: and ...}
-* ... the more dangerous it feels[.]->thinking
-* ... the less plausible it seems[.]->thinking
+* ... plus celà semble dangereux[.]->thinking
+* ... moins cela semble possible[.]->thinking
 - (thinking_2)
-You do not even know what rune could allow that.
-You try to change your mind and focus on ...
-* ... lending a hand to Petrel in the fields.
-* ... helping Hyij at the forge.
-* ... learning to hunt with Kaya.
-* ... playing with Aponi and Cilantro.
+Vous ne savez même pas quelle genre de rune pourrait permettre cela.
+Vous essayez de vous changer les idées en ...
+* ... donnant un coup de main à Petrel dans les champs.
+* ... aidant Hyij à la forge.
+* ... apprenant à chasser aux côtés de Kaya.
+* ... jouant gaiement avec Aponi et Cilantro.
 -
 *[...]
 -
-One night you wake up in sweat and all you can think about is ...
-*... has anybody tried to weave the ultimate pattern ?
-*... has anybody tried to weave the ultimate pattern ?
-*... has anybody tried to weave the ultimate pattern ?
+Une nuit vous vous réveillez en sueur et la seule chose à laquelle vous pouvez penser est ...
+*... est ce que quelqu'un a déjà essayé de tisser le motif ultime ?
+*... est ce que quelqu'un a déjà essayé de tisser le motif ultime ?
+*... est ce que quelqu'un a déjà essayé de tisser le motif ultime ?
 -
-*... has anybody tried to connect every spirit at once ?
-*... has anybody tried to connect every spirit at once ?
-*... has anybody tried to connect every spirit at once ?
+*... est ce que quelqu'un a essayé de connecter tous les esprits en même temps ?
+*... est ce que quelqu'un a essayé de connecter tous les esprits en même temps ?
+*... est ce que quelqu'un a essayé de connecter tous les esprits en même temps ?
 -
-*The outline of a rune you've never seen before burns through your mind. 
+*Les contours d'une rune que vous n'avez encore jamais vue s'impose, brûlante, dans votre esprit. 
 -#add_rune #epilogue_music
-* You must try. #day
-- You must try to connect every spirit at once !
+* Vous vous devez d'essayer. #day
+- Vous devez essayer de connecter tous les esprits à la fois !
 ->sprit_choice->
 * [pattern]
 -
@@ -705,54 +709,54 @@ One night you wake up in sweat and all you can think about is ...
 
 
 == Epilogue ==
-* A deep, dark, growl comes from all around you.
-** The ground shakes like you've never felt it shake.
-*** Every light disappear ...
-**** ... absorbed by ...
-***** ... a terrifiant cloud of darkness.
-***** ... a hole in the fabric of reality.
-***** ... a screaming vision of power.
-- Finally ! #c #pattern
-- (where_sacrifice) Where's my sacrifice, servant ? #c
+* Un sombre et profond grondement s'élève tout autour de vous.
+** Le sol se met à trembler comme il n'a jamais tremblé.
+*** Toutes les lumières disparaissent ...
+**** ... absorbées par ...
+***** ... un terrifiant nuage de noirceur.
+***** ... une déchirure dans la trame de la réalité.
+***** ... une vision hurlante de pouvoir.
+- ENFIN ! #c #pattern
+- (where_sacrifice) OÙ EST MON TRIBUT ESCLAVE ? #c
     * {where_sacrifice < 2} [...] -> where_sacrifice
-    * Who ... what ... are ... you ? #p
-    I'm nothing. #c
-    I'm everything. #c
-    I'm the pattern. #c
-    Where's my sacrifice ? #c
-    * Your ... sacrifice ? #p
-    Yes.#c
-    My sacrifice.#c
-    Where is it ?#c
+    * Qui ... Que ... qu'êtes ... vous ? #p
+    JE NE SUIS RIEN. #c
+    JE SUIS TOUT. #c
+    JE SUIS LE MOTIF. #c
+    OÙ EST MON TRIBUT ? #c
+    * Votre ... tribut ? #p
+    OUI.#c
+    MON TRIBUT. MON SACRIFICE.#c
+    OÙ EST IL ?#c
 -
-* Your sacrifice ? #c #clear #hide
+* Votre sacrifice ? #c #clear #hide
 - #night
-- (sacrifice) {|This isn't enough. I need more ! | I need more ! | More ! | Mooooore ! |  More Sacrifice !!!! | I still need one last sacrifice, servant !}#c 
-    * [Sacrifice Cilantro.] You sacrifice Cilantro.
-    * [Sacrifice Fennel.] You sacrifice Fennel.
-    * {sacrifice > 1} [Sacrifice Aponi.] You sacrifice Aponi.
-    * {sacrifice > 1} [Sacrifice Kaya.] You sacrifice Kaya.
-    * {sacrifice > 1} [Sacrifice Petrel.] You sacrifice Petrel.
-    * {sacrifice > 1} [Sacrifice Hyij.] You sacrifice Hyij.
+- (sacrifice) {|ÇA N'EST PAS ASSEZ. J'AI BESOIN DE PLUS ! | J'AI BESOIN DE PLUS ! | PLUS ! | ENCORE ! |  PLUS DE SACRIFICE !!!! | IL ME FAUT ENCORE UN DERNIER SACRIFICE, ESCLAVE !}#c 
+    * [Sacrifice Cilantro.] Vous offrez Cilantro.
+    * [Sacrifice Fennel.] Vous offrez Fennel.
+    * {sacrifice > 1} [Sacrifice Aponi.] Vous offrez Aponi.
+    * {sacrifice > 1} [Sacrifice Kaya.] Vous offrez Kaya.
+    * {sacrifice > 1} [Sacrifice Petrel.] Vous offrez Petrel.
+    * {sacrifice > 1} [Sacrifice Hyij.] Vous offrez Hyij.
     * [Sacrifice yourself. #clear]-> self_sacrifice
 - ->sacrifice
 
--(self_sacrifice) I am yours.#p
-As you utter these words, you start to feel ...
-* ... an intense pain.
-** You try to scream.
-*** No sound comes out.
-**** Your vision starts to fade.
-***** You see your runes flying around in all directions.
-****** They break through the walls of your small hut and fly away.
-******* As darkness eats you, one final though crosses your mind.
+-(self_sacrifice) Très bien, je suis vôtre.#p
+Alors que vous balbultiez ces mots vous commencez à sentir ...
+* ... une douleur intense.
+** Vous tentez de crier.
+*** Mais aucun son ne sort.
+**** Votre vision commence à flancher.
+***** Vous voyez des runes voler dans toutes les directions.
+****** Elles fracassent les murs de votre hutte et s'envolent.
+******* Alors que l'obscurité vous engloutit, une dernière pensée vous traverse.
 -
-* You hope your sacrifice will quench the Pattern.
-* You wonder if this is what happened to the previous weaver.
-* You did weave the ultimate pattern !
+* Vous espérez que votre sacrifice apaisera le Motif.
+* Vous vous demandez si c'est ce qu'il est arrivé à votre prédécesseur.
+* Yay, vous avez réussi à tisser le motif ultime !
 -
-* The end. #clear
-- Thanks for Playing !
+* FIN. #clear
+- Merci d'avoir joué !
 ->->
 
 == function my_name ==
@@ -761,19 +765,19 @@ As you utter these words, you start to feel ...
 == function name_by_hyij
 {
 -i_am_the_weaver: 
-{p_name: {p_name} the weaver | Weaver}
+{p_name: {p_name} Tisse-Esprit | Tisse-Esprit}
 -else:
 {p_name: {p_name}}
 }
 
 == function light_name_by_petrel ==
-{not petrel_calls_me_by_name: Reverred Weaver}
+{not petrel_calls_me_by_name: Tisse-Esprit}
 
 == function name_by_petrel ==
-{not petrel_calls_me_by_name: Reverred Weaver| {p_name}}
+{not petrel_calls_me_by_name: Tisse-Esprit| {p_name}}
 
 == sprit_choice ==
 + Choose a spirit : {known_spirits} #spirit_choice
--
+-   
 ->->
  
