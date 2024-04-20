@@ -2,7 +2,7 @@ extends Node2D
 
 @export var skip = false
 @export var skip_to: String = ""
-
+@export var language: String = "English"
 
 @onready var _ink_player: InkPlayer = $InkPlayer
 @onready var french_file = load('res://Ink/spirit_weaver_fr.ink.json')
@@ -74,6 +74,7 @@ func _story_loaded(successfully: bool):
 		_continue_story()
 
 func select_language(language_selected):
+	language = language_selected.text
 	print("language (" + language_selected.text + ") selected")
 	init_story(language_selected.tags[0])
 

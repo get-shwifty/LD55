@@ -23,7 +23,7 @@ func type_to_background(type: CardType):
 		return 1
 	return 0
 
-const LABELS = [
+const LABELS_EN = [
 	"Clockwise",
 	"Counter-clockwise twice",
 	"Repeat",
@@ -35,8 +35,21 @@ const LABELS = [
 	"Cross the final bridge",
 ]
 
+const LABELS_FR = [
+	"Horaire",
+	"Antihoraire, deux fois",
+	"Répétition",
+	"Repétition infinie",
+	"Symétrie gauche/droite",
+	"Traverser le pont",
+	"Chutter en bas",
+	"Remplir un cercle depuis le haut",
+	"Traverser le dernier pont",
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var LABELS = LABELS_FR if get_parent().get_parent().language == "Francais" else LABELS_EN
 	$Node2D/Node2D/Background.frame = type_to_background(card_type)
 	$Node2D/Node2D/Symbol.frame = card_type
 	$Node2D/Node2D/ToolTip/Background2.frame = $Node2D/Node2D/Background.frame
