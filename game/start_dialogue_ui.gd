@@ -11,6 +11,7 @@ var option_buffer = []
 var is_writing = false
 var tag_buffer = []
 
+var select_language_mode = true
 var first = true
 
 func _ready(): 
@@ -30,6 +31,10 @@ var listener = null
 var spacing_buffer = "\n"
 		
 func select_option(option):
+	if select_language_mode:
+		listener.select_language(option)
+		return
+	
 	listener.select_choice(option.index)
 	if option.tags:
 		listener.execute_tags(option.tags)
@@ -70,7 +75,7 @@ func write_text_from_buffer():
 	dial.center = center_all
 	tag_buffer = text_req[2]
 	
-	if first:
+	if !select_language_mode && first:
 		dial.bigger = true
 		first = false
 	
