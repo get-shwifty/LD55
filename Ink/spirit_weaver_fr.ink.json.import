@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://du1basiwqfj5y"
+path="res://.godot/imported/spirit_weaver_fr.ink.json-28f739b17e4c0db662d847d71cdca9f2.res"
+
+[deps]
+
+source_file="res://Ink/spirit_weaver_fr.ink.json"
+dest_files=["res://.godot/imported/spirit_weaver_fr.ink.json-28f739b17e4c0db662d847d71cdca9f2.res"]
+
+[params]
+
+compress=true
