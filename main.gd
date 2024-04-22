@@ -2,9 +2,11 @@ extends Node2D
 
 @export var skip = false
 @export var skip_to: String = ""
-
+@export var language: String = "English"
 
 @onready var _ink_player: InkPlayer = $InkPlayer
+@onready var french_file = load('res://Ink/spirit_weaver_fr.ink.json')
+@onready var english_file = load('res://Ink/spirit_weaver_en.ink.json')
 @onready var game_dialogue: DialogeUI = $"Dialogue UI"
 @onready var start_dialogue: StartDialogeUI = $"StartBackground/Dialogue UI"
 @onready var character_selection = $Fond/Perso
@@ -17,20 +19,41 @@ extends Node2D
 @onready var dream_catcher = $AttrapeReve
 @onready var wrong = $Wrong
 
-
 #func start_game():
 	#dialogue = game_dialogue
 	#$StartBackground/AnimationPlayer.play("hide")
 
-func _ready():
+func init_language_choice():
+	var lang_choices = [
+		{
+			text = "English",
+			tags = [english_file]
+		},
+		{
+			text = "Francais",
+			tags = [french_file]
+		},
+	]
+	
+	dialogue.select_language_mode = true;
+	var ugly_hack_centering_buffer = "\n\n\n";
+	dialogue.add_dialogue(ugly_hack_centering_buffer, null, [])
+	dialogue.add_choices(lang_choices)
+
+func init_story(story_file):
+	dialogue.select_language_mode = false;
+	dialogue.clear()
+	_ink_player.ink_file = story_file
 	_ink_player.loaded.connect(_story_loaded)
 	_ink_player.create_story()
+
+func _ready():
 	game_dialogue.listener = self
 	start_dialogue.listener = self
 	reset_button.visible = false
 	wrong.visible = false
 	summon_button.visible = false
-	
+	init_language_choice()
 	#start_game()
 	
 func is_perso(t):
@@ -49,6 +72,11 @@ func _story_loaded(successfully: bool):
 		_continue_story()
 	else:
 		_continue_story()
+
+func select_language(language_selected):
+	language = language_selected.text
+	print("language (" + language_selected.text + ") selected")
+	init_story(language_selected.tags[0])
 
 func select_choice(index: int):
 	_ink_player.choose_choice_index(index)

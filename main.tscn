@@ -261,7 +261,8 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nqpq4")
-skip_to = "Epilogue"
+skip = true
+skip_to = "Chapter_1.Kaya_01"
 
 [node name="InkPlayer" type="Node" parent="."]
 script = ExtResource("1_x27rs")

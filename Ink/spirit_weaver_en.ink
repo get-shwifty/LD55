@@ -56,7 +56,7 @@ After a few cordial pleasanteries, the elder shows you to your hut and leaves yo
     {The hut is small but very tidy. | The walls feel very bland but with a few tweaks here and there you'll soon feel at home.} -> house_warming
     * (unpack) [Unpack your things]
     You drop your heavy pack on the floor. It's been a long way.
-    You start arranging your belongings on the various shelves. Colored ropes, wood scents, shiny pearls and weaving runes. 
+    You start arranging your belongings on the various shelves. Colored ropes, wood essences, shiny pearls and weaving runes. 
     Everything needed for your craft in its dedicated place.
     -> house_warming
     * {unpack} [Go to sleep ]
@@ -188,7 +188,7 @@ I'm sorry to disturb you in such a peaceful morning but I had no other choice. #
     * And you are ? #p
     Sorry reverred weaver. #c
     * How can I help you ? #p
-- My name is Petrel, I'm but a simple farmer here. I keep on praying the spirits but it hasn't rained in days. I'm afraid my crop won't survive another one without water.#c
+- My name is Petrel, I'm but a simple farmer here. I keep on praying the Pattern but it hasn't rained in days. I'm afraid my crop won't survive another one without water.#c
 Please {call_me_by_my_name: Reverred Wea ... {p_name} | Reverred Weaver} I'm begging for your help.#c
 - (ask_for_help)
     * (help_him) {ask_for_help > 1} Fine ... #p
@@ -280,7 +280,7 @@ Sorry to bother you so late.#c
     -> saw_a_sign
     * {crop_circle} Okay, can I see it ? #p
 - Yes{light_name_by_petrel()}. Here's the Sign.#c
-He give you a paper with a small drawing on it, bows to the ground, then leaves. #add_rune #hide
+He gives you a paper with a small drawing on it, bows to the ground, then leaves. #add_rune #hide
 ~ runes_retrieved += 1
 ~ known_spirits += (void)
 * [... #clear]
@@ -400,7 +400,7 @@ She wave you goodbye as she leaves the hut. #hide
 
 = Night_04
 The night fell sooner than you'd expected.#night
-Are the day getting shorter ?
+Are the days getting shorter ?
 Maybe ...
 * ... time flies when you work hard.
 * ... it's just a weather thing.
@@ -658,7 +658,7 @@ And I wanted to thank you one more time for all your help. Especially these last
 -> sprit_choice ->
 * [death]
 -You finish to weave the dream catcher and give it to him.
-For the lasty time, you watch him leave in the direction of his home, Hyij by his side. #hide
+For the last time, you watch him leave in the direction of his home, Hyij by his side. #hide
 *[... #clear]
 ->->
 
