@@ -89,6 +89,9 @@ func hover():
 	else:
 		$Node2D/Node2D/Background.modulate = Color(0,1,1,1)
 		$Node2D/Node2D/ToolTip/Background2.modulate = Color(0,1,1,1)
+	if card_type == CardType.Clockwise:
+		$Node2D/Node2D/Hover.show()
+		$Node2D/Node2D/Hover.play('01')
 	#$Node2D/Node2D/Symbol.modulate = Color(0,1,1,1)
 	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 99
@@ -104,6 +107,7 @@ func stop_hover():
 	state = 0
 	$Node2D/Node2D/Background.modulate = Color(1,1,1,1)
 	$Node2D/Node2D/ToolTip/Background2.modulate = Color(1,1,1,1)
+	$Node2D/Node2D/Hover.hide()
 	$Node2D/Node2D/Symbol.modulate = Color(1,1,1,1)
 	$Node2D/Node2D/ContourCarte.visible = false
 	z_index = 0
