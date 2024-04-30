@@ -43,10 +43,10 @@ var move_speed = 4
 func _ready():
 	get_next_card()
 	pass
-	#if is_hand:
-		#get_cards()
-		#await get_tree().create_timer(2).timeout
-		#test()
+	if is_hand:
+		get_cards()
+		await get_tree().create_timer(2).timeout
+		test()
 		
 func clear():
 	for card in card_list:

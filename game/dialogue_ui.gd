@@ -65,6 +65,7 @@ func write_text_from_buffer():
 	dial.type = type
 	dial.listener = self
 	dial.center_all = center_all
+	dial.tags = text_req[2]
 	tag_buffer = text_req[2]
 	
 	$VBoxContainer.add_child(dial)

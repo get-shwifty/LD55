@@ -6,6 +6,7 @@ var text_buffer = ''
 var speed = 4
 var listener = null
 var center_all = false
+var tags = null
 
 var final_text = ''
 # Called every frame. 'delta' is the elapsed time since the previous frame.
